@@ -1,0 +1,115 @@
+/* Button system — see docs/COMPONENT-SYSTEM.md §9–10, §12 */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-button);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    filter var(--transition-base);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--color-flight-blue);
+  outline-offset: 2px;
+}
+
+/* --- Primary: Flight Gold on Midnight text --- */
+.primary {
+  background-color: var(--color-flight-gold);
+  color: var(--color-midnight);
+  box-shadow: 0 1px 2px rgba(5, 18, 49, 0.12);
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 4px 10px rgba(5, 18, 49, 0.18);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.98);
+  box-shadow: 0 1px 2px rgba(5, 18, 49, 0.12);
+}
+
+/* --- Secondary, on dark backgrounds: white outline --- */
+.secondaryOnDark {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.secondaryOnDark:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.secondaryOnDark:active:not(:disabled) {
+  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.secondaryOnDark:focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* --- Secondary, on light backgrounds: solid Navy --- */
+.secondaryOnLight {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.secondaryOnLight:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+  box-shadow: 0 4px 10px rgba(5, 18, 49, 0.15);
+}
+
+.secondaryOnLight:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* --- CTAGroup: primary + optional secondary action --- */
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Stack full-width on small mobile so both actions stay tappable */
+@media (max-width: 479px) {
+  .ctaGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaGroup .button {
+    width: 100%;
+  }
+}
