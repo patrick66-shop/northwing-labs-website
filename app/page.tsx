@@ -4,12 +4,42 @@ import ProblemRecognition from "@/components/ProblemRecognition";
 import ServicesOverview from "@/components/ServicesOverview";
 import BusinessOutcomes from "@/components/BusinessOutcomes";
 import HowWeWork from "@/components/HowWeWork";
+import CaseStudySection from "@/components/CaseStudySection";
+
+/* Approved case study copy from GitHub issue #8 — do not edit.
+ * First instance of the reusable CaseStudySection; future projects
+ * (HVAC, construction, inventory, …) supply their own props. */
+const WOODWORKING_CASE_STUDY = {
+  eyebrow: "CASE STUDY",
+  title: "Custom Business Management Platform",
+  description:
+    "See how NorthWing Labs partnered with a custom woodworking business to replace disconnected spreadsheets and manual workflows with an integrated business management platform.",
+  showcaseImage: {
+    src: "/images/case-studies/woodworking-toolkit-showcase.webp",
+    alt: "Woodworkers Pricing & Profit Toolkit case study: a business dashboard with revenue, profit, and order charts on a laptop, a quote and proposal builder on a tablet, and an order tracker on a phone, connected by a settings-to-dashboard workflow.",
+    width: 1536,
+    height: 1024,
+  },
+  challenge:
+    "Disconnected spreadsheets, manual calculations, and isolated information made pricing, quoting, reporting, and order management more time-consuming than they needed to be.",
+  solution:
+    "NorthWing Labs designed an integrated platform connecting pricing, quotes, orders, dashboards, and business settings into one workflow.",
+  businessOutcomes: [
+    "Accurate Pricing",
+    "Professional Quotes",
+    "Connected Workflow",
+    "Order Tracking",
+    "Profit Visibility",
+    "Better Business Decisions",
+  ],
+  buttonText: "Explore the Full Case Study →",
+  buttonLink: "#", // dedicated Case Study page arrives in a future sprint
+};
 
 /*
  * Homepage — built in approved stages (docs/CLAUDE-IMPLEMENTATION-BRIEF.md §17).
- * Current stage: sections 1–6 (through How We Work). Remaining sections
- * (Featured Work, Why NorthWing, Results, Final CTA, Footer) arrive in
- * later issues.
+ * Current stage: sections 1–7 (through the Case Study showcase). Remaining
+ * sections (Why NorthWing, Results, Final CTA, Footer) arrive in later issues.
  */
 export default function HomePage() {
   return (
@@ -20,6 +50,7 @@ export default function HomePage() {
       <ServicesOverview />
       <BusinessOutcomes />
       <HowWeWork />
+      <CaseStudySection {...WOODWORKING_CASE_STUDY} />
     </>
   );
 }
