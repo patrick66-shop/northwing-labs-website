@@ -15,31 +15,31 @@ const SERVICES = [
   {
     title: "Custom Software",
     icon: "/brand/icons/services/custom-software.png",
-    iconDisplay: { width: 210, left: -54, top: -12 },
+    iconDisplay: { width: 309, left: -106, top: -28 },
     copy: "Software built around your workflow, data, customers, and operational needs.",
   },
   {
     title: "AI Tools",
     icon: "/brand/icons/services/ai-tools.png",
-    iconDisplay: { width: 140, left: -15, top: 5 },
+    iconDisplay: { width: 214, left: -54, top: -12 },
     copy: "Practical AI assistants and tools that help your team work faster, organize information, and make better use of business knowledge.",
   },
   {
     title: "Business Automation",
     icon: "/brand/icons/services/business-automation.png",
-    iconDisplay: { width: 127, left: -10, top: 10 },
+    iconDisplay: { width: 202, left: -32, top: 3 },
     copy: "Connected workflows that reduce repetitive tasks, improve follow-up, and keep information moving between systems.",
   },
   {
     title: "Mobile Apps",
     icon: "/brand/icons/services/mobile-apps.png",
-    iconDisplay: { width: 129, left: -10, top: 4 },
+    iconDisplay: { width: 194, left: -45, top: -10 },
     copy: "Purpose-built mobile experiences for customers, employees, field teams, and business operations.",
   },
   {
     title: "SaaS Development",
     icon: "/brand/icons/services/saas-development.png",
-    iconDisplay: { width: 124, left: -7, top: 6 },
+    iconDisplay: { width: 186, left: -42, top: -9 },
     copy: "From concept to working product, NorthWing Labs helps design and build software products that can serve customers at scale.",
   },
 ];

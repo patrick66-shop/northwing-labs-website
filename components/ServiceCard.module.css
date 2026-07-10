@@ -16,13 +16,14 @@
   box-shadow: 0 6px 16px rgba(5, 18, 49, 0.1);
 }
 
-/* Icon area (within the approved 80–112px display range). The frame clips
-   only transparent canvas margins of the source files — visible artwork is
-   scaled and centered per icon to stay inside it. */
+/* Icon area. The frame clips only transparent canvas margins of the source
+   files — visible artwork is scaled per icon (perceived ~95–115px) and
+   aligned to the frame's left and bottom edges, so every card gets an
+   identical icon-to-title gap. */
 .iconFrame {
   position: relative;
-  width: 112px;
-  height: 96px;
+  width: 148px;
+  height: 104px;
   margin-bottom: var(--space-5);
   overflow: hidden;
 }
