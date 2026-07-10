@@ -64,25 +64,42 @@
     transform: translateY(-50%) rotate(45deg);
   }
 
-  /* Row transition: the downward connector lands at the start of Step 05,
-     directly above its number node — a short stem plus chevron that guides
-     the eye from the end of row one into Test. */
-  .item:nth-child(5)::before {
+  /* Row transition: the connector originates beneath Step 04 (Build),
+     runs back along the row gap, and lands with a downward chevron at
+     Step 05's number node — 04 ↓ ← ↓ 05. Node centers sit 43px inside
+     each card, and the node-to-node span is exactly 2.5 card+gap widths,
+     so the path stays anchored at every viewport. */
+
+  /* stem down from Build */
+  .item:nth-child(4)::before {
     content: "";
     position: absolute;
-    top: calc(-1 * var(--space-5) + 2px);
-    left: calc(var(--space-5) + 19px); /* card padding + node center */
+    bottom: -12px;
+    left: 43px;
     width: 2px;
     height: 12px;
     border-radius: 1px;
     background-color: rgba(13, 105, 206, 0.45);
   }
 
+  /* return line along the row gap, from Test's node across to Build's */
+  .item:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 43px;
+    width: calc(2.5 * (100% + var(--space-5)));
+    height: 2px;
+    border-radius: 1px;
+    background-color: rgba(13, 105, 206, 0.45);
+  }
+
+  /* landing chevron above Test's number node */
   .item:nth-child(5) .step::before {
     content: "";
     position: absolute;
-    top: -11px;
-    left: calc(var(--space-5) + 15.5px);
+    top: -12px;
+    left: 39.5px;
     width: 9px;
     height: 9px;
     border-top: 2px solid rgba(13, 105, 206, 0.45);
