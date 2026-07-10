@@ -142,11 +142,11 @@ Eyebrow:
 
 Headline:
 
-**Practical Technology Built Around Your Business.**
+**Understand the Problem. Build the Right Solution. Create Real Results.**
 
 Supporting copy:
 
-NorthWing Labs builds custom software, AI tools, and automations that help small businesses save time, reduce manual work, and operate more efficiently.
+NorthWing Labs starts by understanding what is slowing your business down. Then we design practical software, AI tools, and automation systems that reduce manual work, improve efficiency, and help your business grow.
 
 Primary CTA:
 
@@ -181,7 +181,7 @@ Primary background:
 
 Primary hero visual:
 
-`/public/images/hero/northwing-hero-workflow-visual.png`
+`/public/images/hero/northwing-hero-whiteboard-robot.png`
 
 Supporting glow:
 

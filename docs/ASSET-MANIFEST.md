@@ -17,6 +17,17 @@ This manifest documents the approved visual assets for the NorthWing Labs websit
 
 > If the saved logo filenames differ, either rename them to this standard or update this manifest to match the actual production filenames.
 
+### Current Production Logo Files
+
+| File | Notes |
+|---|---|
+| `Logo_Header.png` | Blue wordmark, transparent background; suited to light backgrounds |
+| `Logo_white_navy.png` | Reversed (white) logo on solid navy background — source file |
+| `northwing-logo-reversed.png` | Production derivative of `Logo_white_navy.png` with the flat navy background keyed out (transparent). Used by the site header and dark surfaces. No recolor or proportion change |
+| `Logo_Monochrome.png` | Single-color logo on white |
+| `Logo_square.png` | Square lockup |
+| `northwing_labs_profile_logo.png` | Social profile avatar |
+
 ## 2. Favicon Assets
 
 | Asset | File Name | Folder | Primary Use |
@@ -56,7 +67,8 @@ Folder: `/public/images/hero/`
 
 | Asset | Recommended File Name | Primary Use |
 |---|---|---|
-| Primary Hero Visual | `northwing-hero-workflow-visual.png` | Main homepage hero supporting visual |
+| Primary Hero Visual | `northwing-hero-whiteboard-robot.png` | Approved hero design comp: robot mapping workflows, system architecture, and business outcomes on a futuristic whiteboard (contains baked-in copy — reference only) |
+| Hero Visual (production crop) | `northwing-hero-whiteboard-robot-visual.png` | Production derivative of the approved comp: robot + whiteboard region only, baked comp copy removed. Used by the live hero so headline and CTA text remain live HTML |
 
 ### Hero Visual Rules
 

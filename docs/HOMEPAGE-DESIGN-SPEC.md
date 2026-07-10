@@ -294,7 +294,7 @@ CTA gap:
 
 Primary asset:
 
-`/public/images/hero/northwing-hero-workflow-visual.png`
+`/public/images/hero/northwing-hero-whiteboard-robot.png`
 
 Placement:
 
@@ -303,6 +303,8 @@ Placement:
 - Maintain aspect ratio
 - Do not crop critical content
 - Keep strongest visual mass away from the copy column
+- Preserve the robot-at-whiteboard storytelling: problem mapping, process design, system architecture, and business outcomes
+- Keep the approved NorthWing logo treatment on the robot subtle and secondary
 
 Supporting assets:
 
