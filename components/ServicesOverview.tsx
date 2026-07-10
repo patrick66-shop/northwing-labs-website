@@ -27,7 +27,7 @@ const SERVICES = [
   {
     title: "Business Automation",
     icon: "/brand/icons/services/business-automation.png",
-    iconDisplay: { width: 157, left: -22, top: 0 },
+    iconDisplay: { width: 127, left: -10, top: 10 },
     copy: "Connected workflows that reduce repetitive tasks, improve follow-up, and keep information moving between systems.",
   },
   {
