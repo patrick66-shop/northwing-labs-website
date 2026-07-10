@@ -8,5 +8,5 @@
 .ctaRow {
   display: flex;
   justify-content: center;
-  margin-top: var(--space-7);
+  margin-top: var(--space-6); /* CTA concludes the timeline, not detached */
 }
