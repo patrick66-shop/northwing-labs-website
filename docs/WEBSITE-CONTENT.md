@@ -35,11 +35,11 @@ The NorthWing Labs logo links to the homepage.
 
 ### Headline
 
-**Practical Technology Built Around Your Business.**
+**Understand the Problem. Build the Right Solution. Create Real Results.**
 
 ### Supporting Copy
 
-NorthWing Labs builds custom software, AI tools, and automations that help small businesses save time, reduce manual work, and operate more efficiently.
+NorthWing Labs starts by understanding what is slowing your business down. Then we design practical software, AI tools, and automation systems that reduce manual work, improve efficiency, and help your business grow.
 
 ### Primary CTA
 
@@ -48,6 +48,12 @@ NorthWing Labs builds custom software, AI tools, and automations that help small
 ### Secondary CTA
 
 **Explore Our Services**
+
+### Brand Tagline
+
+**Helping Your Business Take Flight.**
+
+The tagline supports the brand identity and should not replace the homepage value proposition.
 
 ---
 

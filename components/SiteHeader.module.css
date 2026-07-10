@@ -1,0 +1,202 @@
+/* SiteHeader — docs/COMPONENT-SYSTEM.md §30–32, HOMEPAGE-DESIGN-SPEC §5 */
+
+.header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 50;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Scrolled state: stable solid background, subtle bottom edge */
+.scrolled {
+  background-color: var(--color-midnight);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08),
+    0 6px 20px rgba(5, 18, 49, 0.35);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoLink img {
+  width: 200px;
+  height: auto;
+}
+
+/* --- Desktop navigation (≥1024px) --- */
+.desktopNav {
+  display: none;
+  margin-left: auto;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+  padding-block: var(--space-2);
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-white);
+  border-bottom-color: var(--color-flight-gold);
+}
+
+.navLink:focus-visible {
+  outline-color: var(--color-white);
+}
+
+.headerCta {
+  display: none;
+  flex-shrink: 0;
+}
+
+/* Slightly more compact CTA inside the 80px header bar */
+.ctaButton {
+  min-height: 44px;
+  padding-inline: var(--space-4);
+  font-size: 0.9375rem;
+}
+
+/* --- Mobile menu trigger (<1024px) --- */
+.menuTrigger {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-button);
+  color: var(--color-white);
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: block;
+  }
+
+  .headerCta {
+    display: block;
+  }
+
+  .menuTrigger {
+    display: none;
+  }
+}
+
+.menuTrigger:focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* --- Mobile navigation panel --- */
+.mobilePanel {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-midnight);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-midnight) 0%,
+    var(--color-navy) 130%
+  );
+  padding-block: 0 var(--space-6);
+  overflow-y: auto;
+}
+
+.mobilePanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  flex-shrink: 0;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-button);
+  color: var(--color-white);
+}
+
+.closeButton:focus-visible {
+  outline-color: var(--color-white);
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: var(--space-4) 0;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--color-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-flight-gold);
+}
+
+.mobileNavLink:focus-visible {
+  outline-color: var(--color-white);
+}
+
+.mobileCta {
+  margin-top: var(--space-6);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
