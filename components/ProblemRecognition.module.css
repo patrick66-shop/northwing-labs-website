@@ -1,0 +1,29 @@
+/* Approved subtle light technical texture behind readable content
+   (ASSET-MANIFEST §5); decorative, so it stays in CSS. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* 2 × 2 on tablet and desktop */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: var(--space-6);
+  }
+}

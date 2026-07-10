@@ -1,0 +1,43 @@
+/* Flex (not grid) so the 5-card set wraps 3 + 2 with the second row
+   centered on desktop. */
+.grid {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.cell {
+  width: 100%;
+  display: flex; /* stretch cards to equal height per row */
+}
+
+.cell > * {
+  flex: 1;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .cell {
+    width: calc((100% - var(--space-5)) / 2);
+  }
+}
+
+/* Desktop: 3 across, remainder (2) centered by justify-content */
+@media (min-width: 1024px) {
+  .grid {
+    gap: var(--space-6);
+  }
+
+  .cell {
+    width: calc((100% - 2 * var(--space-6)) / 3);
+  }
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+}
