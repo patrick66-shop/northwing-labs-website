@@ -21,6 +21,8 @@ type CaseStudySectionProps = {
   showcaseImage: ShowcaseImage;
   challenge: string;
   solution: string;
+  /** Optional bold lead sentence shown before the solution paragraph. */
+  solutionLead?: string;
   businessOutcomes: string[];
   buttonText: string;
   buttonLink: string;
@@ -49,7 +51,8 @@ function CheckIcon() {
  * (GitHub issue #8). Dark Midnight section per the background rhythm
  * (HOMEPAGE-DESIGN-SPEC §24): centered header, large showcase image
  * with blue radial glow, three story cards (Challenge / Solution /
- * Business Outcomes checklist), and a centered primary CTA.
+ * Results checklist) with a warm → blue → gold accent progression,
+ * and a centered primary CTA.
  * Not project-specific — future case studies reuse it via props.
  */
 export default function CaseStudySection({
@@ -59,6 +62,7 @@ export default function CaseStudySection({
   showcaseImage,
   challenge,
   solution,
+  solutionLead,
   businessOutcomes,
   buttonText,
   buttonLink,
@@ -96,19 +100,23 @@ export default function CaseStudySection({
         <ul className={styles.cards}>
           <Reveal as="li" variant="up">
             <article className={styles.card}>
+              <span className={`${styles.accent} ${styles.accentChallenge}`} aria-hidden="true" />
               <h3 className={styles.cardTitle}>Challenge</h3>
               <p className={styles.cardCopy}>{challenge}</p>
             </article>
           </Reveal>
           <Reveal as="li" variant="up" delay={90}>
             <article className={styles.card}>
+              <span className={`${styles.accent} ${styles.accentSolution}`} aria-hidden="true" />
               <h3 className={styles.cardTitle}>Solution</h3>
+              {solutionLead ? <p className={styles.cardLead}>{solutionLead}</p> : null}
               <p className={styles.cardCopy}>{solution}</p>
             </article>
           </Reveal>
           <Reveal as="li" variant="up" delay={180}>
             <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Business Outcomes</h3>
+              <span className={`${styles.accent} ${styles.accentResults}`} aria-hidden="true" />
+              <h3 className={styles.cardTitle}>Results</h3>
               <ul className={styles.outcomeList}>
                 {businessOutcomes.map((outcome) => (
                   <li key={outcome} className={styles.outcomeItem}>

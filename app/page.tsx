@@ -6,7 +6,9 @@ import BusinessOutcomes from "@/components/BusinessOutcomes";
 import HowWeWork from "@/components/HowWeWork";
 import CaseStudySection from "@/components/CaseStudySection";
 
-/* Approved case study copy from GitHub issue #8 — do not edit.
+/* Approved case study copy from GitHub issue #8 + the visual polish
+ * pass (Results rename, tightened Challenge copy, solution lead,
+ * CTA wording) — do not edit.
  * First instance of the reusable CaseStudySection; future projects
  * (HVAC, construction, inventory, …) supply their own props. */
 const WOODWORKING_CASE_STUDY = {
@@ -16,12 +18,13 @@ const WOODWORKING_CASE_STUDY = {
     "See how NorthWing Labs partnered with a custom woodworking business to replace disconnected spreadsheets and manual workflows with an integrated business management platform.",
   showcaseImage: {
     src: "/images/case-studies/woodworking-toolkit-showcase.webp",
-    alt: "Woodworkers Pricing & Profit Toolkit case study: a business dashboard with revenue, profit, and order charts on a laptop, a quote and proposal builder on a tablet, and an order tracker on a phone, connected by a settings-to-dashboard workflow.",
+    alt: "Custom business management platform case study, built for a custom woodworking business: a dashboard with revenue, profit, and order charts on a laptop, a quote and proposal builder on a tablet, and an order tracker on a phone, connected by a settings-to-dashboard workflow.",
     width: 1536,
     height: 1024,
   },
   challenge:
-    "Disconnected spreadsheets, manual calculations, and isolated information made pricing, quoting, reporting, and order management more time-consuming than they needed to be.",
+    "Manual spreadsheets, disconnected information, and repetitive workflows slowed down pricing, quoting, reporting, and order management.",
+  solutionLead: "One connected business platform.",
   solution:
     "NorthWing Labs designed an integrated platform connecting pricing, quotes, orders, dashboards, and business settings into one workflow.",
   businessOutcomes: [
@@ -32,7 +35,7 @@ const WOODWORKING_CASE_STUDY = {
     "Profit Visibility",
     "Better Business Decisions",
   ],
-  buttonText: "Explore the Full Case Study →",
+  buttonText: "View the Complete Case Study →",
   buttonLink: "#", // dedicated Case Study page arrives in a future sprint
 };
 

@@ -11,7 +11,7 @@
 /* --- Showcase image --- */
 
 .showcase {
-  max-width: 1240px;
+  max-width: 1160px; /* ~6.5% under the original 1240px for more breathing room */
   margin-inline: auto;
   margin-bottom: var(--space-8);
 }
@@ -91,10 +91,40 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Accent bars mirror the ProblemCard marker; the warm → blue → gold
+   progression walks the eye Challenge → Solution → Results. */
+.accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.accentChallenge {
+  background-color: #d98a4e; /* soft warm amber — approved polish accent */
+}
+
+.accentSolution {
+  background-color: var(--color-flight-blue);
+}
+
+.accentResults {
+  background-color: var(--color-flight-gold);
+}
+
 .cardTitle {
   font-size: 1.25rem;
   color: var(--color-white);
   margin-bottom: var(--space-3);
+}
+
+.cardLead {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
 }
 
 .cardCopy {
@@ -135,15 +165,16 @@
   flex-shrink: 0;
 }
 
+/* Gold checks: successful outcomes carry the brand gold accent. */
 .checkRing {
-  fill: rgba(13, 105, 206, 0.16);
-  stroke: rgba(13, 105, 206, 0.65);
+  fill: rgba(237, 183, 67, 0.14);
+  stroke: rgba(237, 183, 67, 0.6);
   stroke-width: 1.5;
 }
 
 .checkMark {
   fill: none;
-  stroke: var(--color-flight-blue);
+  stroke: var(--color-flight-gold);
   stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
