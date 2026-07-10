@@ -16,16 +16,21 @@
   box-shadow: 0 6px 16px rgba(5, 18, 49, 0.1);
 }
 
+/* Icon area (within the approved 80–112px display range). The frame clips
+   only transparent canvas margins of the source files — visible artwork is
+   scaled and centered per icon to stay inside it. */
 .iconFrame {
-  width: 96px;
+  position: relative;
+  width: 112px;
   height: 96px;
   margin-bottom: var(--space-5);
+  overflow: hidden;
 }
 
 .icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  position: absolute;
+  height: auto;
+  max-width: none; /* display width is set per icon, wider than the frame */
 }
 
 .title {
