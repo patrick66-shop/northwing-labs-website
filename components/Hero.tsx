@@ -22,8 +22,11 @@ export default function Hero() {
           <div className={styles.copy}>
             <SectionEyebrow>SOFTWARE • AI • AUTOMATION</SectionEyebrow>
             <SectionHeading as="h1" id="hero-heading" className={styles.headline}>
-              Understand the Problem. Build the Right Solution. Create Real
-              Results.
+              <span className={styles.headlineLine}>Understand the Problem.</span>{" "}
+              <span className={styles.headlineLine}>Build the Right Solution.</span>{" "}
+              <span className={`${styles.headlineLine} ${styles.headlineAccent}`}>
+                Create Real Results.
+              </span>
             </SectionHeading>
             <SupportingCopy size="large" className={styles.supporting}>
               NorthWing Labs starts by understanding what is slowing your
@@ -39,15 +42,21 @@ export default function Hero() {
             </CTAGroup>
           </div>
           <div className={styles.visual}>
-            <Image
-              src="/images/hero/northwing-hero-whiteboard-robot-visual.png"
-              alt="Humanoid robot mapping a business workflow, system architecture, and business outcomes on a futuristic whiteboard."
-              width={951}
-              height={798}
-              priority
-              sizes="(min-width: 1024px) 56vw, (min-width: 768px) 54vw, 100vw"
-              className={styles.visualImage}
-            />
+            {/* Nested wrappers each carry one gradient mask (horizontal, then
+                vertical) — masks intersect through nesting, blending the
+                rectangular image edges into the hero background without
+                mask-composite browser quirks. */}
+            <div className={styles.visualFrame}>
+              <Image
+                src="/images/hero/northwing-hero-whiteboard-robot-visual.png"
+                alt="Humanoid robot mapping a business workflow, system architecture, and business outcomes on a futuristic whiteboard."
+                width={951}
+                height={798}
+                priority
+                sizes="(min-width: 1024px) 56vw, (min-width: 768px) 54vw, 100vw"
+                className={styles.visualImage}
+              />
+            </div>
           </div>
         </div>
       </SiteContainer>

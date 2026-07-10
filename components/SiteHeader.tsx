@@ -39,8 +39,8 @@ export default function SiteHeader() {
           <Image
             src="/brand/logos/northwing-logo-reversed.png"
             alt="NorthWing Labs — home"
-            width={814}
-            height={220}
+            width={892}
+            height={240}
             priority
           />
         </Link>

@@ -9,13 +9,15 @@
   --color-eyebrow: var(--color-flight-gold);
   --color-border: rgba(255, 255, 255, 0.18);
 
-  /* Approved environmental background over midnight/navy gradient fallback */
+  /* Approved environmental background over midnight/navy gradient fallback.
+     The bottom-up gradient quiets the particle wave behind the CTA area. */
   background-color: var(--color-midnight);
   background-image:
     linear-gradient(180deg, rgba(5, 18, 49, 0.55) 0%, rgba(5, 18, 49, 0.15) 60%),
+    linear-gradient(0deg, rgba(5, 18, 49, 0.72) 0%, rgba(5, 18, 49, 0.35) 14%, rgba(5, 18, 49, 0) 32%),
     url("/images/backgrounds/northwing-hero-background-primary.png"),
     linear-gradient(180deg, var(--color-midnight) 0%, var(--color-navy) 100%);
-  background-size: cover, cover, cover;
+  background-size: cover, cover, cover, cover;
   background-position: center;
 
   /* Clear the fixed header, then hero breathing room */
@@ -34,11 +36,12 @@
    ~46% column at these widths, so the spec's fallback applies — stack the
    visual below the copy. Two columns return at desktop. */
 
-/* Desktop: 43/57, minimum hero presence ~720–800px total */
+/* Desktop: 45/55 (spec range 42–45 / 55–58) — the wider copy column keeps
+   the three forced H1 lines at a stronger size. Min hero presence ~720–800px. */
 @media (min-width: 1024px) {
   .layout {
-    grid-template-columns: 43fr 57fr;
-    gap: var(--space-7);
+    grid-template-columns: 45fr 55fr;
+    gap: var(--space-6);
     min-height: 560px;
   }
 }
@@ -52,15 +55,30 @@
 }
 
 .headline {
-  /* Hero H1 scale: 32–38 mobile small → 56px desktop. The approved
-     three-sentence headline is long; 56px keeps it to ~4 balanced lines
-     in the 43% copy column (60–64px forces cramped 5+ line wrapping). */
-  font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem);
+  /* Three intentional message lines, one sentence each. The size tracks the
+     copy-column width so "Understand the Problem." (the widest sentence,
+     ~12em at this weight) holds one line at every viewport. */
+  font-size: clamp(1.375rem, 8vw - 4px, 3rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   max-width: 620px;
-  text-wrap: balance;
+}
+
+/* Two-column desktop: font follows the 45% copy column, capped at 42px
+   once the 1280px container stops growing. */
+@media (min-width: 1024px) {
+  .headline {
+    font-size: min(calc(3.7vw - 4px), 2.625rem);
+  }
+}
+
+.headlineLine {
+  display: block;
+}
+
+.headlineAccent {
+  color: var(--color-flight-gold);
 }
 
 .supporting {
@@ -68,7 +86,7 @@
 }
 
 .ctas {
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
   align-self: stretch; /* let mobile CTAs span the full copy column */
 }
 
@@ -88,10 +106,48 @@
   pointer-events: none;
 }
 
+/* Horizontal edge fade: the left side is dark environment (generous fade);
+   the whiteboard reaches the right edge, so that fade stays minimal. */
+.visualFrame {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 14%,
+    #000 97%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 14%,
+    #000 97%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* Vertical edge fade: soft into the dark environment above, dissolving
+   toward the section background below. Nested with .visualFrame so the
+   two masks intersect without mask-composite. */
 .visualImage {
   position: relative;
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 10%,
+    #000 88%,
+    rgba(0, 0, 0, 0.35) 99%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 10%,
+    #000 88%,
+    rgba(0, 0, 0, 0.35) 99%,
+    transparent 100%
+  );
 }
