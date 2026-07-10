@@ -1,0 +1,29 @@
+.section {
+  padding-block: var(--section-space);
+  background-color: var(--color-background);
+}
+
+.light {
+  --color-background: var(--color-white);
+}
+
+.tinted {
+  --color-background: var(--color-tint);
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+/* Dark sections re-map semantic tokens so nested components
+   (headings, copy, eyebrows, links) meet contrast automatically. */
+.dark {
+  --color-background: var(--color-midnight);
+  --color-heading: var(--color-white);
+  --color-text: var(--color-white);
+  --color-text-muted: var(--color-cloud);
+  --color-eyebrow: var(--color-flight-gold);
+  --color-link: var(--color-cloud);
+  --color-link-hover: var(--color-white);
+  --color-border: rgba(255, 255, 255, 0.18);
+}
