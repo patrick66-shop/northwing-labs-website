@@ -1,0 +1,44 @@
+.card {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-card-sm);
+  padding: var(--space-5);
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-6);
+  }
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--color-flight-blue);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.copy {
+  color: var(--color-cloud);
+  font-size: 1rem;
+  line-height: 1.6;
+}

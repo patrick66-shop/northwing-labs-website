@@ -1,0 +1,32 @@
+/* Approved workflow-lines overlay at low opacity (ASSET-MANIFEST §5
+   recommends 15–30%) layered over the Midnight base via gradient blend. */
+.section {
+  background-image:
+    linear-gradient(rgba(5, 18, 49, 0.8), rgba(5, 18, 49, 0.8)),
+    url("/images/backgrounds/northwing-workflow-lines-overlay.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop: 3 × 2 */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
