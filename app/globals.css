@@ -49,6 +49,7 @@
   --radius-mockup: 22px;
 
   /* --- Layout (responsive; see media queries below) --- */
+  --header-height: 80px;
   --container-max-width: 1280px;
   --container-padding: 24px; /* mobile 20–24px */
   --section-space: 64px; /* mobile 56–72px */
@@ -204,6 +205,25 @@ select {
   outline: 3px solid var(--color-flight-blue);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+/* Skip link: hidden until keyboard-focused (fixed header sits over content) */
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 /* Reduced motion: collapse transitions and animations */

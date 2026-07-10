@@ -1,0 +1,97 @@
+/* Hero — HOMEPAGE-DESIGN-SPEC §6, RESPONSIVE-SPEC §7 */
+
+.hero {
+  /* Dark-context semantic tokens (matches SectionWrapper dark variant) */
+  --color-background: var(--color-midnight);
+  --color-heading: var(--color-white);
+  --color-text: var(--color-white);
+  --color-text-muted: var(--color-cloud);
+  --color-eyebrow: var(--color-flight-gold);
+  --color-border: rgba(255, 255, 255, 0.18);
+
+  /* Approved environmental background over midnight/navy gradient fallback */
+  background-color: var(--color-midnight);
+  background-image:
+    linear-gradient(180deg, rgba(5, 18, 49, 0.55) 0%, rgba(5, 18, 49, 0.15) 60%),
+    url("/images/backgrounds/northwing-hero-background-primary.png"),
+    linear-gradient(180deg, var(--color-midnight) 0%, var(--color-navy) 100%);
+  background-size: cover, cover, cover;
+  background-position: center;
+
+  /* Clear the fixed header, then hero breathing room */
+  padding-block: calc(var(--header-height) + var(--space-7)) var(--space-8);
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+/* Tablet (768–1023): the approved three-sentence H1 becomes unreadable in a
+   ~46% column at these widths, so the spec's fallback applies — stack the
+   visual below the copy. Two columns return at desktop. */
+
+/* Desktop: 43/57, minimum hero presence ~720–800px total */
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 43fr 57fr;
+    gap: var(--space-7);
+    min-height: 560px;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  max-width: 620px;
+}
+
+.headline {
+  /* Hero H1 scale: 32–38 mobile small → 56px desktop. The approved
+     three-sentence headline is long; 56px keeps it to ~4 balanced lines
+     in the 43% copy column (60–64px forces cramped 5+ line wrapping). */
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  max-width: 620px;
+  text-wrap: balance;
+}
+
+.supporting {
+  max-width: 560px;
+}
+
+.ctas {
+  margin-top: var(--space-2);
+  align-self: stretch; /* let mobile CTAs span the full copy column */
+}
+
+.visual {
+  position: relative;
+  width: 100%;
+}
+
+/* Approved blue radial glow behind the visual, low opacity, decorative */
+.visual::before {
+  content: "";
+  position: absolute;
+  inset: -14% -18%;
+  background: url("/images/backgrounds/northwing-radial-glow-blue.png")
+    center / contain no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.visualImage {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
