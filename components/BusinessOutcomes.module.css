@@ -1,0 +1,39 @@
+/* Approved workflow-lines overlay as a subtle technical texture: the
+   vertical gradient keeps it quietest behind the header and card text
+   and lets slightly more detail read in the open lower background. */
+.section {
+  background-image:
+    linear-gradient(rgba(5, 18, 49, 0.94) 0%, rgba(5, 18, 49, 0.92) 55%, rgba(5, 18, 49, 0.86) 100%),
+    url("/images/backgrounds/northwing-workflow-lines-overlay.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tighter header measure for this section (overrides SectionHeader's
+   820px default; doubled class beats the cross-module cascade). */
+.header.header {
+  max-width: 700px;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop: 3 × 2 */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-6);
+  }
+}

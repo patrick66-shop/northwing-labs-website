@@ -1,0 +1,182 @@
+/* ProcessTimeline / ProcessStep / ProcessConnector
+   (docs/COMPONENT-SYSTEM.md §20–22, style ref: workflow diagram guide) */
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+  counter-reset: step;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.item > * {
+  flex: 1;
+}
+
+/* Mobile: vertical sequence with a simple visible connector between steps
+   (aligned under each step's number node). */
+@media (max-width: 767px) {
+  .item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--space-5) + 20px); /* card padding + node center */
+    bottom: calc(-1 * var(--space-5));
+    width: 2px;
+    height: var(--space-5);
+    background-color: rgba(13, 105, 206, 0.35);
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .item {
+    width: calc((100% - var(--space-5)) / 2);
+  }
+}
+
+/* Desktop: 4 + 3 with the second row centered, connected as one journey:
+   chevrons bridge the gaps between adjacent cards (1→2→3→4, 5→6→7) and a
+   downward chevron carries the flow from the end of row one into row two. */
+@media (min-width: 1024px) {
+  .item {
+    width: calc((100% - 3 * var(--space-5)) / 4);
+  }
+
+  .item:nth-child(-n + 3)::after,
+  .item:nth-child(5)::after,
+  .item:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc(-1 * var(--space-5) / 2 - 5px);
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid rgba(13, 105, 206, 0.45);
+    border-right: 2px solid rgba(13, 105, 206, 0.45);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  /* Row transition: the connector originates beneath Step 04 (Build),
+     runs back along the row gap, and lands with a downward chevron at
+     Step 05's number node — 04 ↓ ← ↓ 05. Node centers sit 43px inside
+     each card, and the node-to-node span is exactly 2.5 card+gap widths,
+     so the path stays anchored at every viewport. */
+
+  /* stem down from Build */
+  .item:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 43px;
+    width: 2px;
+    height: 12px;
+    border-radius: 1px;
+    background-color: rgba(13, 105, 206, 0.45);
+  }
+
+  /* return line along the row gap, from Test's node across to Build's */
+  .item:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 43px;
+    width: calc(2.5 * (100% + var(--space-5)));
+    height: 2px;
+    border-radius: 1px;
+    background-color: rgba(13, 105, 206, 0.45);
+  }
+
+  /* landing chevron above Test's number node */
+  .item:nth-child(5) .step::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 39.5px;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid rgba(13, 105, 206, 0.45);
+    border-right: 2px solid rgba(13, 105, 206, 0.45);
+    transform: rotate(135deg);
+  }
+}
+
+/* --- Step card --- */
+.step {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cloud);
+  border-radius: var(--radius-card-sm);
+  padding: var(--space-5);
+  box-shadow: 0 1px 3px rgba(5, 18, 49, 0.06);
+}
+
+/* Node + trailing connector line (ProcessConnector) */
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-flight-blue);
+  background-color: rgba(13, 105, 206, 0.08);
+  color: var(--color-flight-blue);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.stepHeader::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  border-radius: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(13, 105, 206, 0.4),
+    rgba(13, 105, 206, 0.08)
+  );
+}
+
+/* Step 07 (Improve): restrained Flight Gold finishing accent. Number text
+   stays Navy for contrast on the light card. */
+.item:last-child .stepNumber {
+  border-color: var(--color-flight-gold);
+  background-color: rgba(237, 183, 67, 0.14);
+  color: var(--color-navy);
+}
+
+.item:last-child .stepHeader::after {
+  background-image: linear-gradient(
+    to right,
+    rgba(237, 183, 67, 0.55),
+    rgba(237, 183, 67, 0.1)
+  );
+}
+
+.stepTitle {
+  font-size: 1.125rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-2);
+}
+
+.stepCopy {
+  color: var(--color-slate);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}

@@ -1,0 +1,12 @@
+/* Approved subtle light technical texture (ASSET-MANIFEST §5). */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6); /* CTA concludes the timeline, not detached */
+}
