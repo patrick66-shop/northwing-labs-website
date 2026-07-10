@@ -64,16 +64,30 @@
     transform: translateY(-50%) rotate(45deg);
   }
 
-  .item:nth-child(4)::before {
+  /* Row transition: the downward connector lands at the start of Step 05,
+     directly above its number node — a short stem plus chevron that guides
+     the eye from the end of row one into Test. */
+  .item:nth-child(5)::before {
     content: "";
     position: absolute;
-    bottom: calc(-1 * var(--space-5) / 2 - 5px);
-    left: 50%;
+    top: calc(-1 * var(--space-5) + 2px);
+    left: calc(var(--space-5) + 19px); /* card padding + node center */
+    width: 2px;
+    height: 12px;
+    border-radius: 1px;
+    background-color: rgba(13, 105, 206, 0.45);
+  }
+
+  .item:nth-child(5) .step::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: calc(var(--space-5) + 15.5px);
     width: 9px;
     height: 9px;
     border-top: 2px solid rgba(13, 105, 206, 0.45);
     border-right: 2px solid rgba(13, 105, 206, 0.45);
-    transform: translateX(-50%) rotate(135deg);
+    transform: rotate(135deg);
   }
 }
 
