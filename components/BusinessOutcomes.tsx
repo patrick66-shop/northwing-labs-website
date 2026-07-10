@@ -5,30 +5,38 @@ import SupportingCopy from "./SupportingCopy";
 import OutcomeCard from "./OutcomeCard";
 import styles from "./BusinessOutcomes.module.css";
 
+import type { OutcomeIconName } from "./OutcomeIcon";
+
 /* Approved production copy from docs/WEBSITE-CONTENT.md §5 — do not edit. */
-const OUTCOMES = [
+const OUTCOMES: { title: string; icon: OutcomeIconName; copy: string }[] = [
   {
     title: "Save Time",
+    icon: "clock",
     copy: "Reduce repetitive work and give people more time for higher-value tasks.",
   },
   {
     title: "Respond Faster",
+    icon: "bolt",
     copy: "Improve how quickly customers receive quotes, answers, updates, and follow-up.",
   },
   {
     title: "Reduce Errors",
+    icon: "shield-check",
     copy: "Replace fragile manual steps with consistent workflows and connected systems.",
   },
   {
     title: "Improve Visibility",
+    icon: "eye",
     copy: "Turn scattered information into useful dashboards, alerts, and operational views.",
   },
   {
     title: "Create Better Experiences",
+    icon: "people",
     copy: "Make it easier for customers and employees to interact with the business.",
   },
   {
     title: "Support Growth",
+    icon: "growth",
     copy: "Build systems that can handle more customers, more work, and more complexity.",
   },
 ];
@@ -50,6 +58,7 @@ export default function BusinessOutcomes() {
           eyebrow="WHAT CHANGES"
           heading="Better systems create better businesses."
           headingId="outcomes-heading"
+          className={styles.header}
         >
           <SupportingCopy>
             The value of technology is not the software itself. The value is
@@ -60,7 +69,9 @@ export default function BusinessOutcomes() {
         <ul className={styles.grid}>
           {OUTCOMES.map((outcome) => (
             <li key={outcome.title}>
-              <OutcomeCard title={outcome.title}>{outcome.copy}</OutcomeCard>
+              <OutcomeCard title={outcome.title} icon={outcome.icon}>
+                {outcome.copy}
+              </OutcomeCard>
             </li>
           ))}
         </ul>

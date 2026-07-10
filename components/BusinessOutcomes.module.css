@@ -1,11 +1,18 @@
-/* Approved workflow-lines overlay at low opacity (ASSET-MANIFEST §5
-   recommends 15–30%) layered over the Midnight base via gradient blend. */
+/* Approved workflow-lines overlay as a subtle technical texture: the
+   vertical gradient keeps it quietest behind the header and card text
+   and lets slightly more detail read in the open lower background. */
 .section {
   background-image:
-    linear-gradient(rgba(5, 18, 49, 0.8), rgba(5, 18, 49, 0.8)),
+    linear-gradient(rgba(5, 18, 49, 0.94) 0%, rgba(5, 18, 49, 0.92) 55%, rgba(5, 18, 49, 0.86) 100%),
     url("/images/backgrounds/northwing-workflow-lines-overlay.png");
   background-size: cover;
   background-position: center;
+}
+
+/* Tighter header measure for this section (overrides SectionHeader's
+   820px default; doubled class beats the cross-module cascade). */
+.header.header {
+  max-width: 700px;
 }
 
 .grid {

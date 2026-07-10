@@ -1,7 +1,7 @@
 .card {
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-color: rgba(11, 30, 66, 0.72); /* navy-tinted, more separation */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-card-sm);
   padding: var(--space-5);
   transition:
@@ -18,16 +18,13 @@
 
 .card:hover {
   transform: translateY(-2px);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.22);
+  background-color: rgba(15, 38, 80, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.accent {
+.icon {
   display: block;
-  width: 40px;
-  height: 3px;
-  border-radius: 2px;
-  background-color: var(--color-flight-blue);
+  color: var(--color-flight-blue);
   margin-bottom: var(--space-4);
 }
 
