@@ -1,0 +1,106 @@
+import SectionWrapper from "./SectionWrapper";
+import SiteContainer from "./SiteContainer";
+import SectionHeader from "./SectionHeader";
+import SupportingCopy from "./SupportingCopy";
+import DifferentiatorCard, {
+  type DifferentiatorIconName,
+} from "./DifferentiatorCard";
+import Reveal from "./Reveal";
+import styles from "./WhyNorthWing.module.css";
+
+/* Approved copy from GitHub issue #13 — do not edit. */
+const DIFFERENTIATORS: {
+  title: string;
+  lead: string;
+  icon: DifferentiatorIconName;
+  copy: string;
+}[] = [
+  {
+    title: "Business First",
+    lead: "The right solution begins with understanding the real problem.",
+    icon: "discovery",
+    copy: "Before recommending software, AI, or automation, we learn your workflow, customers, team, existing tools, and operational constraints.",
+  },
+  {
+    title: "Practical by Design",
+    lead: "No unnecessary complexity.",
+    icon: "practical",
+    copy: "Every feature should reduce manual work, improve accuracy, create visibility, strengthen the customer experience, or support growth.",
+  },
+  {
+    title: "Built Collaboratively",
+    lead: "You remain part of the process.",
+    icon: "collaboration",
+    copy: "We work in clear, reviewable stages so ideas can be tested, feedback can be incorporated, and the final solution fits the way your business operates.",
+  },
+  {
+    title: "Designed to Grow",
+    lead: "Build for today without creating tomorrow’s bottleneck.",
+    icon: "growth",
+    copy: "We design systems that solve the immediate need while leaving room for more customers, more work, new capabilities, and greater operational complexity.",
+  },
+];
+
+/**
+ * Why NorthWing Labs — homepage differentiator section (GitHub issue #13).
+ * Softly tinted light band between Who We Work With and the upcoming
+ * Final CTA: centered header, four differentiator cards (2×2 on tablet
+ * and desktop, one column on mobile), and a centered trust statement
+ * under a small gold rule.
+ */
+export default function WhyNorthWing() {
+  return (
+    <SectionWrapper
+      variant="tinted"
+      id="why-northwing"
+      aria-labelledby="why-northwing-heading"
+    >
+      <SiteContainer>
+        <SectionHeader
+          eyebrow="WHY NORTHWING LABS"
+          heading="Technology should solve business problems—not create new ones."
+          headingId="why-northwing-heading"
+          align="center"
+          animate
+        >
+          <SupportingCopy>
+            NorthWing Labs starts with your business, not a predetermined
+            technology stack. We learn how your work gets done, identify what
+            is creating friction, and design practical software, AI, and
+            automation around the results your business actually needs.
+          </SupportingCopy>
+        </SectionHeader>
+
+        <ul className={styles.grid}>
+          {DIFFERENTIATORS.map((differentiator, index) => (
+            <Reveal
+              as="li"
+              variant="up"
+              delay={index * 90}
+              key={differentiator.title}
+            >
+              <DifferentiatorCard
+                title={differentiator.title}
+                lead={differentiator.lead}
+                icon={differentiator.icon}
+              >
+                {differentiator.copy}
+              </DifferentiatorCard>
+            </Reveal>
+          ))}
+        </ul>
+
+        <Reveal variant="up" delay={120}>
+          <div className={styles.trust}>
+            <span className={styles.trustRule} aria-hidden="true" />
+            <p className={styles.trustCopy}>
+              You do not need to know exactly what technology to ask for.
+              Start with the problem, and we will help determine what makes
+              sense.
+            </p>
+          </div>
+        </Reveal>
+      </SiteContainer>
+    </SectionWrapper>
+  );
+}
