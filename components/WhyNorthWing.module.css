@@ -1,3 +1,12 @@
+/* --- Section header --- */
+
+/* Readability pass: a touch more air between intro lines (1.6 → 1.7,
+   ~6%). Doubled class beats Typography.module.css in the cross-module
+   cascade. Scoped here so other sections' supporting copy is untouched. */
+.intro.intro {
+  line-height: 1.7;
+}
+
 /* --- Differentiator grid --- */
 
 /* 2×2 from tablet up; capped below the full container width so two-up

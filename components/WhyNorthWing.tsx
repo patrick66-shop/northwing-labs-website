@@ -21,19 +21,19 @@ const DIFFERENTIATORS: {
     title: "Business First",
     lead: "The right solution starts with the real problem.",
     icon: "discovery",
-    copy: "Before recommending any technology, we learn your workflow, customers, team, existing tools, and everyday constraints.",
+    copy: "Before recommending anything, we learn your workflow, customers, team, existing tools, and constraints.",
   },
   {
     title: "Practical by Design",
     lead: "No unnecessary complexity.",
     icon: "practical",
-    copy: "Every feature should cut manual work, improve accuracy, add visibility, or support growth.",
+    copy: "Every feature should earn its place: reduce manual work, improve accuracy, increase visibility, or support growth.",
   },
   {
     title: "Built Collaboratively",
     lead: "Built with you, not just for you.",
     icon: "collaboration",
-    copy: "We work in clear, reviewable stages, so ideas get tested, feedback gets heard, and the result fits how your business runs.",
+    copy: "We work in clear, reviewable stages — ideas get tested, feedback gets heard, and the result fits your business.",
   },
   {
     title: "Designed to Grow",
@@ -65,7 +65,7 @@ export default function WhyNorthWing() {
           align="center"
           animate
         >
-          <SupportingCopy>
+          <SupportingCopy className={styles.intro}>
             NorthWing Labs starts with your business, not a predetermined
             technology stack. We learn how your work gets done, identify what
             is creating friction, and design practical software, AI, and
