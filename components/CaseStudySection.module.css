@@ -1,0 +1,195 @@
+/* Blue radial glow behind the showcase, per the approved mockup
+   presentation direction (HOMEPAGE-DESIGN-SPEC §11). */
+.section {
+  background-image: radial-gradient(
+    ellipse 62% 44% at 50% 36%,
+    rgba(13, 105, 206, 0.16),
+    transparent 72%
+  );
+}
+
+/* --- Showcase image --- */
+
+.showcase {
+  max-width: 1160px; /* ~6.5% under the original 1240px for more breathing room */
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+.showcaseImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card-sm);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 24px 64px rgba(2, 8, 24, 0.55),
+    0 0 90px rgba(13, 105, 206, 0.22);
+}
+
+@media (min-width: 768px) {
+  .showcaseImage {
+    border-radius: var(--radius-mockup);
+  }
+}
+
+/* --- Story cards --- */
+
+.cards {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Tablet: 2 + 1 — the outcomes card takes the full second row */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards > li:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop: three equal columns */
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .cards > li:last-child {
+    grid-column: auto;
+  }
+}
+
+/* Card surface matches the approved dark-section card treatment
+   (OutcomeCard: translucent navy, subtle border, hover lift). */
+.card {
+  height: 100%;
+  background-color: rgba(11, 30, 66, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-card-sm);
+  padding: var(--space-5);
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-6);
+  }
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background-color: rgba(15, 38, 80, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Accent bars mirror the ProblemCard marker; the warm → blue → gold
+   progression walks the eye Challenge → Solution → Results. */
+.accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.accentChallenge {
+  background-color: #d98a4e; /* soft warm amber — approved polish accent */
+}
+
+.accentSolution {
+  background-color: var(--color-flight-blue);
+}
+
+.accentResults {
+  background-color: var(--color-flight-gold);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.cardLead {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+.cardCopy {
+  color: var(--color-cloud);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Business Outcomes checklist --- */
+
+.outcomeList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Two columns while the outcomes card spans the full tablet row */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .outcomeList {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-6);
+  }
+}
+
+.outcomeItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.check {
+  flex-shrink: 0;
+}
+
+/* Gold checks: successful outcomes carry the brand gold accent. */
+.checkRing {
+  fill: rgba(237, 183, 67, 0.14);
+  stroke: rgba(237, 183, 67, 0.6);
+  stroke-width: 1.5;
+}
+
+.checkMark {
+  fill: none;
+  stroke: var(--color-flight-gold);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- CTA --- */
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+}
+
+@media (min-width: 1024px) {
+  .ctaRow {
+    margin-top: var(--space-8);
+  }
+}

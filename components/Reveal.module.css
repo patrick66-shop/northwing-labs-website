@@ -1,0 +1,25 @@
+.reveal {
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Hidden state is applied without transition so hydration never flashes. */
+.hidden {
+  transition: none;
+  opacity: 0;
+}
+
+.up.hidden {
+  transform: translateY(20px);
+}
+
+.scale.hidden {
+  transform: scale(0.97);
+}
+
+.shown {
+  opacity: 1;
+  transform: none;
+}
