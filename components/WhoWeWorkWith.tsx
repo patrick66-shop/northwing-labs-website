@@ -7,7 +7,8 @@ import PrimaryButton from "./PrimaryButton";
 import Reveal from "./Reveal";
 import styles from "./WhoWeWorkWith.module.css";
 
-/* Approved copy from GitHub issue #11 — do not edit. */
+/* Approved copy from GitHub issue #11, card descriptions replaced per
+   the approved refinement pass (problem-focused framing) — do not edit. */
 const AUDIENCES: {
   title: string;
   icon: AudienceIconName;
@@ -24,7 +25,7 @@ const AUDIENCES: {
       "Marketing Companies",
       "Home Services",
     ],
-    copy: "Manage customers, scheduling, proposals, recurring work, and team workflows from one connected system.",
+    copy: "Stop juggling emails, calendars, proposals, and customer information. Bring your entire client workflow into one connected system.",
   },
   {
     title: "Trades & Contractors",
@@ -37,7 +38,7 @@ const AUDIENCES: {
       "Landscapers",
       "HVAC",
     ],
-    copy: "Connect estimating, quoting, job tracking, customer communication, and invoicing into one streamlined workflow.",
+    copy: "Replace paper estimates, spreadsheets, and manual follow-up with a connected workflow from quote to completed job.",
   },
   {
     title: "Product Businesses",
@@ -48,7 +49,7 @@ const AUDIENCES: {
       "Custom Builders",
       "Online Stores",
     ],
-    copy: "Organize pricing, inventory, orders, production, and reporting with software designed around your business.",
+    copy: "Bring pricing, production, inventory, and order management together so your business can grow without more administrative work.",
   },
 ];
 
@@ -119,6 +120,13 @@ export default function WhoWeWorkWith() {
             </Reveal>
           ))}
         </ul>
+
+        <Reveal variant="up" delay={90}>
+          <p className={styles.transition}>
+            If your business has outgrown spreadsheets, disconnected software,
+            or repetitive manual work, you&rsquo;re exactly who we build for.
+          </p>
+        </Reveal>
 
         <Reveal variant="up" delay={120}>
           <div className={styles.banner}>

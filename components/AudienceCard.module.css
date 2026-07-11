@@ -27,22 +27,25 @@
 
 .icon {
   display: block;
-  color: var(--color-flight-blue);
   margin-bottom: var(--space-4);
 }
 
+/* Refinement pass: titles lead the card (≈12% larger, heavier than the
+   global h3 600), examples recede (smaller, lighter gray — #6b7588
+   holds 4.6:1 on white — with more air before the body copy). */
 .title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--color-navy);
   margin-bottom: var(--space-2);
 }
 
 .examples {
-  color: var(--color-slate);
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: #6b7588;
+  font-size: 0.8125rem;
+  font-weight: 400;
   line-height: 1.55;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .copy {
