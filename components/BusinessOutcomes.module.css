@@ -4,7 +4,7 @@
 .section {
   background-image:
     linear-gradient(rgba(5, 18, 49, 0.94) 0%, rgba(5, 18, 49, 0.92) 55%, rgba(5, 18, 49, 0.86) 100%),
-    url("/images/backgrounds/northwing-workflow-lines-overlay.png");
+    url("/images/backgrounds/northwing-workflow-lines-overlay.webp");
   background-size: cover;
   background-position: center;
 }

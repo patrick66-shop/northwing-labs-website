@@ -1,7 +1,7 @@
 /* Approved subtle light technical texture behind readable content
    (ASSET-MANIFEST §5); decorative, so it stays in CSS. */
 .section {
-  background-image: url("/images/backgrounds/northwing-section-background-light.png");
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
   background-size: cover;
   background-position: center;
 }

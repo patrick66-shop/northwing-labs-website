@@ -3,6 +3,7 @@ import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
 import OutcomeCard from "./OutcomeCard";
+import Reveal from "./Reveal";
 import styles from "./BusinessOutcomes.module.css";
 
 import type { OutcomeIconName } from "./OutcomeIcon";
@@ -58,6 +59,7 @@ export default function BusinessOutcomes() {
           eyebrow="WHAT CHANGES"
           heading="Better systems create better businesses."
           headingId="outcomes-heading"
+          animate
           className={styles.header}
         >
           <SupportingCopy>
@@ -67,12 +69,12 @@ export default function BusinessOutcomes() {
           </SupportingCopy>
         </SectionHeader>
         <ul className={styles.grid}>
-          {OUTCOMES.map((outcome) => (
-            <li key={outcome.title}>
+          {OUTCOMES.map((outcome, index) => (
+            <Reveal as="li" variant="up" delay={index * 90} key={outcome.title}>
               <OutcomeCard title={outcome.title} icon={outcome.icon}>
                 {outcome.copy}
               </OutcomeCard>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </SiteContainer>

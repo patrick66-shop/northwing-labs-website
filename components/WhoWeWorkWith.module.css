@@ -1,0 +1,119 @@
+/* Approved subtle light technical texture behind readable content
+   (ASSET-MANIFEST §5) — same treatment as ProblemRecognition/HowWeWork. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- Audience cards --- */
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Tablet: 2 + 1 — the third audience takes the full second row */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid > li:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop: three equal columns */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .grid > li:last-child {
+    grid-column: auto;
+  }
+}
+
+/* --- Transitional positioning statement --- */
+
+/* Bare centered statement bridging the cards toward Why NorthWing —
+   no card, no border, just type with generous air on both sides. */
+.transition {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-top: var(--space-7);
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--color-navy);
+}
+
+@media (min-width: 768px) {
+  .transition {
+    font-size: 1.1875rem;
+    margin-top: var(--space-8);
+  }
+}
+
+/* --- Highlight banner --- */
+
+/* Dark Navy premium band with a restrained blue glow, echoing the dark
+   section language while sitting inside the light section. */
+.banner {
+  background-color: var(--color-navy);
+  background-image: radial-gradient(
+    ellipse 75% 95% at 50% 0%,
+    rgba(13, 105, 206, 0.28),
+    transparent 72%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-card-lg);
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  margin-top: var(--space-7);
+}
+
+@media (min-width: 768px) {
+  .banner {
+    padding: var(--space-8) var(--space-7);
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    margin-top: var(--space-8);
+  }
+}
+
+.bannerIcon {
+  display: block;
+  color: var(--color-flight-gold);
+  margin-inline: auto;
+  margin-bottom: var(--space-4);
+}
+
+.bannerHeading {
+  color: var(--color-white);
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  margin-bottom: var(--space-3);
+}
+
+.bannerCopy {
+  color: var(--color-cloud);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+}
+
+.bannerCta {
+  display: flex;
+  justify-content: center;
+}

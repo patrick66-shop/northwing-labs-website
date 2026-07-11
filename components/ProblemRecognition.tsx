@@ -3,6 +3,7 @@ import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
 import ProblemCard from "./ProblemCard";
+import Reveal from "./Reveal";
 import styles from "./ProblemRecognition.module.css";
 
 /* Approved production copy from docs/WEBSITE-CONTENT.md §3 — do not edit. */
@@ -41,6 +42,7 @@ export default function ProblemRecognition() {
           eyebrow="WHEN BUSINESS OUTGROWS THE PROCESS"
           heading="The problem is not always the business. Sometimes it is the system behind it."
           headingId="problems-heading"
+          animate
         >
           <SupportingCopy>
             Small businesses often reach a point where spreadsheets,
@@ -53,10 +55,10 @@ export default function ProblemRecognition() {
           </SupportingCopy>
         </SectionHeader>
         <ul className={styles.grid}>
-          {PROBLEMS.map((problem) => (
-            <li key={problem.title}>
+          {PROBLEMS.map((problem, index) => (
+            <Reveal as="li" variant="up" delay={index * 90} key={problem.title}>
               <ProblemCard title={problem.title}>{problem.copy}</ProblemCard>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </SiteContainer>

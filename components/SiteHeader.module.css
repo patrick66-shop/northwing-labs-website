@@ -74,6 +74,12 @@
   border-bottom-color: var(--color-flight-gold);
 }
 
+/* Scroll-spy active state — same understated gold underline as hover */
+.navLinkActive {
+  color: var(--color-white);
+  border-bottom-color: var(--color-flight-gold);
+}
+
 .navLink:focus-visible {
   outline-color: var(--color-white);
 }

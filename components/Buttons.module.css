@@ -42,10 +42,15 @@
   box-shadow: 0 1px 2px rgba(5, 18, 49, 0.12);
 }
 
+/* Each variant re-asserts its text color on hover: link-styled buttons
+   are <a> elements, and the global `a:hover` color rule outspecifies a
+   single variant class — without this the label inherits the link-hover
+   color (blue on light sections, matching the hover background). */
 .primary:hover:not(:disabled) {
   transform: translateY(-1px);
   filter: brightness(1.04);
   box-shadow: 0 4px 10px rgba(5, 18, 49, 0.18);
+  color: var(--color-midnight);
 }
 
 .primary:active:not(:disabled) {
@@ -64,6 +69,7 @@
 .secondaryOnDark:hover:not(:disabled) {
   transform: translateY(-1px);
   background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
 }
 
 .secondaryOnDark:active:not(:disabled) {
@@ -87,6 +93,7 @@
   background-color: var(--color-blue);
   border-color: var(--color-blue);
   box-shadow: 0 4px 10px rgba(5, 18, 49, 0.15);
+  color: var(--color-white);
 }
 
 .secondaryOnLight:active:not(:disabled) {

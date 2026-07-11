@@ -28,6 +28,8 @@ type CaseStudySectionProps = {
   buttonLink: string;
   /** Unique heading id when more than one case study appears on a page. */
   headingId?: string;
+  /** Section element id (e.g. for navigation scroll-spy). */
+  id?: string;
 };
 
 function CheckIcon() {
@@ -67,24 +69,25 @@ export default function CaseStudySection({
   buttonText,
   buttonLink,
   headingId = "case-study-heading",
+  id,
 }: CaseStudySectionProps) {
   return (
     <SectionWrapper
       variant="dark"
+      id={id}
       className={styles.section}
       aria-labelledby={headingId}
     >
       <SiteContainer>
-        <Reveal variant="up">
-          <SectionHeader
-            eyebrow={eyebrow}
-            heading={title}
-            headingId={headingId}
-            align="center"
-          >
-            <SupportingCopy>{description}</SupportingCopy>
-          </SectionHeader>
-        </Reveal>
+        <SectionHeader
+          eyebrow={eyebrow}
+          heading={title}
+          headingId={headingId}
+          align="center"
+          animate
+        >
+          <SupportingCopy>{description}</SupportingCopy>
+        </SectionHeader>
 
         <Reveal variant="scale" className={styles.showcase}>
           <Image
