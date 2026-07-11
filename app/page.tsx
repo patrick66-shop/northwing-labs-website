@@ -6,6 +6,7 @@ import BusinessOutcomes from "@/components/BusinessOutcomes";
 import HowWeWork from "@/components/HowWeWork";
 import CaseStudySection from "@/components/CaseStudySection";
 import WhoWeWorkWith from "@/components/WhoWeWorkWith";
+import WhyNorthWing from "@/components/WhyNorthWing";
 
 /* Approved case study copy from GitHub issue #8 + the visual polish
  * pass (Results rename, tightened Challenge copy, solution lead,
@@ -42,8 +43,9 @@ const WOODWORKING_CASE_STUDY = {
 
 /*
  * Homepage — built in approved stages (docs/CLAUDE-IMPLEMENTATION-BRIEF.md §17).
- * Current stage: sections 1–7 plus Who We Work With (issue #11). Remaining
- * sections (Why NorthWing, Results, Final CTA, Footer) arrive in later issues.
+ * Current stage: sections 1–7 plus Who We Work With (issue #11) and Why
+ * NorthWing Labs (issue #13). Remaining sections (Results, Final CTA,
+ * Footer) arrive in later issues.
  */
 export default function HomePage() {
   return (
@@ -56,6 +58,7 @@ export default function HomePage() {
       <HowWeWork />
       <CaseStudySection {...WOODWORKING_CASE_STUDY} id="work" />
       <WhoWeWorkWith />
+      <WhyNorthWing />
     </>
   );
 }
