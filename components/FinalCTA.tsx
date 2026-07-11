@@ -24,7 +24,7 @@ export default function FinalCTA() {
     >
       <SiteContainer>
         <SectionHeader
-          eyebrow="READY TO GET STARTED?"
+          eyebrow="LET’S BUILD SOMETHING BETTER"
           heading="Let’s build software that helps your business grow."
           headingId="final-cta-heading"
           align="center"

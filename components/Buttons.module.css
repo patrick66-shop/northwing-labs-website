@@ -47,9 +47,9 @@
    single variant class — without this the label inherits the link-hover
    color (blue on light sections, matching the hover background). */
 .primary:hover:not(:disabled) {
-  transform: translateY(-1px);
-  filter: brightness(1.04);
-  box-shadow: 0 4px 10px rgba(5, 18, 49, 0.18);
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 6px 14px rgba(5, 18, 49, 0.22);
   color: var(--color-midnight);
 }
 
@@ -60,14 +60,17 @@
 }
 
 /* --- Secondary, on dark backgrounds: white outline --- */
+/* Resting border sits at 80% so the hover visibly brightens it to
+   full white (final polish pass). */
 .secondaryOnDark {
   background-color: transparent;
-  border-color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.8);
   color: var(--color-white);
 }
 
 .secondaryOnDark:hover:not(:disabled) {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  border-color: var(--color-white);
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-white);
 }
@@ -89,7 +92,7 @@
 }
 
 .secondaryOnLight:hover:not(:disabled) {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   background-color: var(--color-blue);
   border-color: var(--color-blue);
   box-shadow: 0 4px 10px rgba(5, 18, 49, 0.15);

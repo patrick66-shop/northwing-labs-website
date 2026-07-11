@@ -10,13 +10,16 @@
     url("/images/backgrounds/northwing-radial-glow-blue.webp");
   background-size: cover, cover;
   background-position: center;
+  /* Final polish: a touch more room before the footer divider. */
+  padding-block-end: calc(var(--section-space) + var(--space-3));
 }
 
 /* Final CTA text block caps at 760px (design spec) — tighter than the
    SectionHeader default; doubled class beats the cross-module cascade. */
 .header.header {
   max-width: 760px;
-  margin-bottom: var(--space-6);
+  /* 44px — the supporting copy gets ~12px more air before the CTAs. */
+  margin-bottom: calc(var(--space-6) + var(--space-3));
 }
 
 .ctaRow {
