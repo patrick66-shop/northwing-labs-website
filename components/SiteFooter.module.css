@@ -1,0 +1,165 @@
+/* Midnight closing band, separated from the Final CTA above by a thin
+   divider. Compact by design (~240px on desktop, per the approved spec)
+   — footer padding is deliberately tighter than --section-space. */
+.footer {
+  position: relative;
+  background-color: var(--color-midnight);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: var(--space-6) var(--space-5);
+  overflow: hidden;
+}
+
+/* Approved network wave anchored to the bottom edge, wide and quiet
+   (HOMEPAGE-DESIGN-SPEC §15: anchor bottom, scale wide, no tiling,
+   content stays readable). */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/backgrounds/northwing-footer-network-wave.webp")
+    bottom center / 100% auto no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative; /* content above the wave */
+}
+
+/* --- Columns --- */
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .columns {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+/* --- Brand column --- */
+
+.logoLink {
+  display: inline-block;
+}
+
+.logo {
+  width: 172px;
+  height: auto;
+}
+
+.tagline {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-flight-gold);
+  margin-top: var(--space-3);
+}
+
+.description {
+  color: var(--color-cloud);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-top: var(--space-2);
+}
+
+/* --- Column headings --- */
+
+.columnHeading {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-steel);
+  margin-bottom: var(--space-4);
+}
+
+/* --- Navigation column --- */
+
+.navList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  column-gap: var(--space-7);
+  row-gap: var(--space-3);
+}
+
+/* --- Contact column --- */
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  row-gap: var(--space-4);
+}
+
+.contactItem {
+  display: grid;
+  row-gap: var(--space-1);
+}
+
+.contactLabel {
+  font-size: 0.8125rem;
+  color: var(--color-steel);
+}
+
+/* --- Shared link treatment --- */
+
+/* Wing White with a subtle underline on hover (design spec §15).
+   :hover color re-asserted with class specificity so the global
+   a:hover rule cannot override it on the dark surface. */
+.footerLink {
+  color: var(--color-cloud);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--color-flight-gold);
+}
+
+.footerLink:focus-visible {
+  outline: 3px solid var(--color-flight-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --- Bottom bar --- */
+
+.bottomBar {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+}
+
+.copyright {
+  color: var(--color-steel);
+  font-size: 0.875rem;
+}
+
+.legalList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: var(--space-5);
+}
+
+.legalLink {
+  composes: footerLink;
+  font-size: 0.875rem;
+}
