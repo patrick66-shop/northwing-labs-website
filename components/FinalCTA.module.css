@@ -1,0 +1,28 @@
+/* Approved blue radial glow over the dark-variant Midnight base
+   (HOMEPAGE-DESIGN-SPEC §14) — the same environmental asset the Hero
+   uses, so the page closes in the visual language it opened with.
+   The Midnight gradient on top quiets the asset's bright core so the
+   gold eyebrow and Cloud copy stay readable (same technique as the
+   BusinessOutcomes overlay). */
+.section {
+  background-image:
+    linear-gradient(rgba(5, 18, 49, 0.8), rgba(5, 18, 49, 0.88)),
+    url("/images/backgrounds/northwing-radial-glow-blue.webp");
+  background-size: cover, cover;
+  background-position: center;
+  /* Final polish: a touch more room before the footer divider. */
+  padding-block-end: calc(var(--section-space) + var(--space-3));
+}
+
+/* Final CTA text block caps at 760px (design spec) — tighter than the
+   SectionHeader default; doubled class beats the cross-module cascade. */
+.header.header {
+  max-width: 760px;
+  /* 44px — the supporting copy gets ~12px more air before the CTAs. */
+  margin-bottom: calc(var(--space-6) + var(--space-3));
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+}
