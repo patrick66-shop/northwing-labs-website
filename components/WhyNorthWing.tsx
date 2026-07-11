@@ -8,7 +8,9 @@ import DifferentiatorCard, {
 import Reveal from "./Reveal";
 import styles from "./WhyNorthWing.module.css";
 
-/* Approved copy from GitHub issue #13 — do not edit. */
+/* Copy from GitHub issue #13, tightened per the approved readability
+   pass (chat-delivered): body copy trimmed ~15–20%, two leads
+   sharpened, same meaning and tone — do not edit. */
 const DIFFERENTIATORS: {
   title: string;
   lead: string;
@@ -17,27 +19,27 @@ const DIFFERENTIATORS: {
 }[] = [
   {
     title: "Business First",
-    lead: "The right solution begins with understanding the real problem.",
+    lead: "The right solution starts with the real problem.",
     icon: "discovery",
-    copy: "Before recommending software, AI, or automation, we learn your workflow, customers, team, existing tools, and operational constraints.",
+    copy: "Before recommending any technology, we learn your workflow, customers, team, existing tools, and everyday constraints.",
   },
   {
     title: "Practical by Design",
     lead: "No unnecessary complexity.",
     icon: "practical",
-    copy: "Every feature should reduce manual work, improve accuracy, create visibility, strengthen the customer experience, or support growth.",
+    copy: "Every feature should cut manual work, improve accuracy, add visibility, or support growth.",
   },
   {
     title: "Built Collaboratively",
-    lead: "You remain part of the process.",
+    lead: "Built with you, not just for you.",
     icon: "collaboration",
-    copy: "We work in clear, reviewable stages so ideas can be tested, feedback can be incorporated, and the final solution fits the way your business operates.",
+    copy: "We work in clear, reviewable stages, so ideas get tested, feedback gets heard, and the result fits how your business runs.",
   },
   {
     title: "Designed to Grow",
     lead: "Build for today without creating tomorrow’s bottleneck.",
     icon: "growth",
-    copy: "We design systems that solve the immediate need while leaving room for more customers, more work, new capabilities, and greater operational complexity.",
+    copy: "We build systems that solve today’s need — with room for more customers, more work, and new capabilities.",
   },
 ];
 
@@ -94,9 +96,9 @@ export default function WhyNorthWing() {
           <div className={styles.trust}>
             <span className={styles.trustRule} aria-hidden="true" />
             <p className={styles.trustCopy}>
-              You do not need to know exactly what technology to ask for.
-              Start with the problem, and we will help determine what makes
-              sense.
+              You do not need to know what technology to ask for. Start with
+              the problem, and we will recommend the simplest solution that
+              works.
             </p>
           </div>
         </Reveal>
