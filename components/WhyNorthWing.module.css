@@ -10,7 +10,9 @@
 /* --- Differentiator grid --- */
 
 /* 2×2 from tablet up; capped below the full container width so two-up
-   cards keep a readable measure. */
+   cards keep a readable measure. The top margin collapses with the
+   header's 48px bottom margin, so it states the full 72px target
+   (+24px of breathing room before the cards begin). */
 .grid {
   list-style: none;
   padding: 0;
@@ -19,6 +21,7 @@
   gap: var(--space-5);
   max-width: 1080px;
   margin-inline: auto;
+  margin-top: calc(var(--space-7) + var(--space-5));
 }
 
 @media (min-width: 768px) {
@@ -50,7 +53,7 @@
 
 .trustRule {
   display: block;
-  width: 48px;
+  width: 56px;
   height: 3px;
   border-radius: 2px;
   background-color: var(--color-flight-gold);
@@ -58,10 +61,12 @@
   margin-bottom: var(--space-5);
 }
 
+/* The section's final takeaway — one step up from body copy (19/20px,
+   medium weight) without competing with the card titles. */
 .trustCopy {
   max-width: 760px;
   margin-inline: auto;
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
   font-weight: 500;
   line-height: 1.55;
   color: var(--color-navy);
@@ -69,6 +74,6 @@
 
 @media (min-width: 768px) {
   .trustCopy {
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
   }
 }

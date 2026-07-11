@@ -30,7 +30,7 @@ const DIFFERENTIATORS: {
     copy: "Every feature should earn its place: reduce manual work, improve accuracy, increase visibility, or support growth.",
   },
   {
-    title: "Built Collaboratively",
+    title: "Built Together",
     lead: "Built with you, not just for you.",
     icon: "collaboration",
     copy: "We work in clear, reviewable stages — ideas get tested, feedback gets heard, and the result fits your business.",

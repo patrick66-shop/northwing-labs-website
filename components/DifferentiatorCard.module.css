@@ -35,8 +35,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   background-image: linear-gradient(160deg, #eef5fd, #dcebfa);
   border: 1px solid #cfe2f8;
   border-radius: 14px;
@@ -57,10 +57,12 @@
   margin-bottom: var(--space-2);
 }
 
+/* 650 (Inter is variable) — a step up from the original 600 so the
+   lead bridges the 700 title and 400 body more assertively. */
 .lead {
   color: var(--color-navy);
   font-size: 1.0625rem;
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.45;
   margin-bottom: var(--space-3);
 }
