@@ -4,6 +4,7 @@ import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
 import ServiceCard from "./ServiceCard";
 import SecondaryButton from "./SecondaryButton";
+import Reveal from "./Reveal";
 import styles from "./ServicesOverview.module.css";
 
 /* Approved production copy from docs/WEBSITE-CONTENT.md §4 and approved
@@ -51,12 +52,13 @@ const SERVICES = [
  */
 export default function ServicesOverview() {
   return (
-    <SectionWrapper variant="light" aria-labelledby="services-heading">
+    <SectionWrapper variant="light" id="services" aria-labelledby="services-heading">
       <SiteContainer>
         <SectionHeader
           eyebrow="WHAT WE BUILD"
           heading="Technology that fits the way your business actually works."
           headingId="services-heading"
+          animate
         >
           <SupportingCopy>
             Every business has different workflows, customers, systems, and
@@ -68,8 +70,14 @@ export default function ServicesOverview() {
           </SupportingCopy>
         </SectionHeader>
         <ul className={styles.grid}>
-          {SERVICES.map((service) => (
-            <li key={service.title} className={styles.cell}>
+          {SERVICES.map((service, index) => (
+            <Reveal
+              as="li"
+              variant="up"
+              delay={index * 90}
+              key={service.title}
+              className={styles.cell}
+            >
               <ServiceCard
                 title={service.title}
                 icon={service.icon}
@@ -77,14 +85,14 @@ export default function ServicesOverview() {
               >
                 {service.copy}
               </ServiceCard>
-            </li>
+            </Reveal>
           ))}
         </ul>
-        <div className={styles.ctaRow}>
+        <Reveal variant="up" delay={120} className={styles.ctaRow}>
           <SecondaryButton variant="on-light" href="/services">
             Explore Our Services
           </SecondaryButton>
-        </div>
+        </Reveal>
       </SiteContainer>
     </SectionWrapper>
   );

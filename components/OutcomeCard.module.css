@@ -16,8 +16,10 @@
   }
 }
 
+/* Shared dark-card hover: same -3px lift as the light card family;
+   background/border shift stands in for shadows on Midnight. */
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   background-color: rgba(15, 38, 80, 0.8);
   border-color: rgba(255, 255, 255, 0.3);
 }

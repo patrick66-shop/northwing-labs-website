@@ -4,6 +4,7 @@ import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
 import ProcessTimeline from "./ProcessTimeline";
 import SecondaryButton from "./SecondaryButton";
+import Reveal from "./Reveal";
 import styles from "./HowWeWork.module.css";
 
 /* Approved production copy from docs/WEBSITE-CONTENT.md §6 — do not edit. */
@@ -47,6 +48,7 @@ export default function HowWeWork() {
   return (
     <SectionWrapper
       variant="light"
+      id="process"
       className={styles.section}
       aria-labelledby="process-heading"
     >
@@ -55,6 +57,7 @@ export default function HowWeWork() {
           eyebrow="HOW WE WORK"
           heading="A clear process from problem to working solution."
           headingId="process-heading"
+          animate
         >
           <SupportingCopy>
             Good technology starts with a clear understanding of the business
@@ -63,12 +66,16 @@ export default function HowWeWork() {
             and results that matter.
           </SupportingCopy>
         </SectionHeader>
-        <ProcessTimeline steps={STEPS} />
-        <div className={styles.ctaRow}>
+        {/* The timeline reveals as one unit — its connector lines join
+            adjacent steps, so per-step staggering would tear the drawing. */}
+        <Reveal variant="up">
+          <ProcessTimeline steps={STEPS} />
+        </Reveal>
+        <Reveal variant="up" delay={120} className={styles.ctaRow}>
           <SecondaryButton variant="on-light" href="/process">
             See Our Process
           </SecondaryButton>
-        </div>
+        </Reveal>
       </SiteContainer>
     </SectionWrapper>
   );

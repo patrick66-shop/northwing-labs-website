@@ -15,9 +15,18 @@ import styles from "./SiteHeader.module.css";
  * solid Midnight background with a subtle edge on scroll. Shows desktop
  * navigation + CTA at ≥1024px and the mobile menu trigger below that.
  */
+/* Homepage sections that correspond to primary nav destinations
+   (scroll-spy). Section ids are set by the section components. */
+const SECTION_NAV_MAP: { id: string; href: string }[] = [
+  { id: "services", href: "/services" },
+  { id: "work", href: "/work" },
+  { id: "process", href: "/process" },
+];
+
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -25,6 +34,37 @@ export default function SiteHeader() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* Understated active state: while a mapped homepage section crosses
+     the middle band of the viewport, its nav item shows the gold
+     underline. Pages without those sections simply never activate it. */
+  useEffect(() => {
+    const targets = SECTION_NAV_MAP.map(({ id, href }) => ({
+      el: document.getElementById(id),
+      href,
+    })).filter((t): t is { el: HTMLElement; href: string } => t.el !== null);
+    if (targets.length === 0) return;
+
+    const inBand = new Set<string>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const href = targets.find((t) => t.el === entry.target)?.href;
+          if (!href) continue;
+          if (entry.isIntersecting) inBand.add(href);
+          else inBand.delete(href);
+        }
+        setActiveHref(
+          targets.find((t) => inBand.has(t.href))?.href ?? null,
+        );
+      },
+      /* A thin band around the viewport's vertical midpoint, so exactly
+         one section is active at a time. */
+      { rootMargin: "-45% 0px -45% 0px" }
+    );
+    targets.forEach((t) => observer.observe(t.el));
+    return () => observer.disconnect();
   }, []);
 
   const closeMenu = useCallback(() => {
@@ -48,7 +88,15 @@ export default function SiteHeader() {
           <ul className={styles.navList}>
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className={styles.navLink}>
+                <Link
+                  href={link.href}
+                  className={
+                    activeHref === link.href
+                      ? `${styles.navLink} ${styles.navLinkActive}`
+                      : styles.navLink
+                  }
+                  aria-current={activeHref === link.href ? "true" : undefined}
+                >
                   {link.label}
                 </Link>
               </li>
