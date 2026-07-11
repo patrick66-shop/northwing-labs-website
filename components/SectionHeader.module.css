@@ -12,3 +12,13 @@
   text-align: center;
   margin-inline: auto;
 }
+
+/* Animated headers wrap each element in a Reveal div; the wrapper
+   re-creates the header's column gap so spacing is identical with
+   and without animation. */
+.revealItem {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+  gap: var(--space-4);
+}

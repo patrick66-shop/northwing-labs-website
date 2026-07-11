@@ -53,7 +53,7 @@ export default function HomePage() {
       <ServicesOverview />
       <BusinessOutcomes />
       <HowWeWork />
-      <CaseStudySection {...WOODWORKING_CASE_STUDY} />
+      <CaseStudySection {...WOODWORKING_CASE_STUDY} id="work" />
     </>
   );
 }
