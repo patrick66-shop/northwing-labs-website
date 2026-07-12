@@ -10,7 +10,12 @@ export type CapabilityIconName =
   | "portal"
   | "employee"
   | "documents"
-  | "workflow";
+  | "workflow"
+  | "assistant"
+  | "drafting"
+  | "extract"
+  | "email"
+  | "spark";
 
 /* Line icons on the site's 24px grid / 1.8 stroke convention
    (OutcomeIcon family). Decorative — card titles carry the meaning. */
@@ -94,6 +99,43 @@ const PATHS: Record<CapabilityIconName, React.ReactNode> = {
       <rect x="15" y="14.5" width="6" height="6" rx="1.6" />
       <path d="M9 6.5h6a3 3 0 0 1 3 3v5" />
       <path d="M15 17.5H9a3 3 0 0 1-3-3v-5" />
+    </>
+  ),
+  assistant: (
+    <>
+      <path d="M20 10.6c0 3.7-3.6 6.6-8 6.6-.9 0-1.8-.1-2.6-.35L5.2 18.4l1.1-2.9C4.4 14.3 3.5 12.5 3.5 10.6 3.5 7 7.1 4 12 4s8 3 8 6.6z" />
+      <path d="m12 8 .8 1.9 1.9.8-1.9.8L12 13.4l-.8-1.9-1.9-.8 1.9-.8L12 8z" />
+      <path d="M19 18.5v.01M20.7 20.8v.01" />
+    </>
+  ),
+  drafting: (
+    <>
+      <path d="M7 3.5h7l4 4V18a2.5 2.5 0 0 1-2.5 2.5h-8.5A2.5 2.5 0 0 1 4.5 18V6A2.5 2.5 0 0 1 7 3.5z" />
+      <path d="M14 3.5V8h4.5" />
+      <path d="m8 16.6 6-6a1.35 1.35 0 0 1 1.9 1.9l-6 6-2.5.6.6-2.5z" />
+    </>
+  ),
+  extract: (
+    <>
+      <path d="M13 3.5H7A2.5 2.5 0 0 0 4.5 6v12A2.5 2.5 0 0 0 7 20.5h6" />
+      <path d="M8 8h4M8 11.5h3M8 15h3" />
+      <path d="M13.5 11.8h7" />
+      <path d="m17.5 8.8 3 3-3 3" />
+      <path d="M16 16.9h4.5M16 19.6h3" />
+    </>
+  ),
+  email: (
+    <>
+      <rect x="3.5" y="5" width="17" height="14" rx="2.5" />
+      <path d="m4.5 7.5 7.5 5.6 7.5-5.6" />
+      <path d="m17.6 14.1.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4z" />
+    </>
+  ),
+  spark: (
+    <>
+      <path d="M12 3.5 13.8 9l5.5 1.8-5.5 1.8L12 18.2l-1.8-5.6L4.7 10.8 10.2 9 12 3.5z" />
+      <path d="m18.8 16.2.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z" />
+      <path d="M5.6 17.5v.01" />
     </>
   ),
 };
