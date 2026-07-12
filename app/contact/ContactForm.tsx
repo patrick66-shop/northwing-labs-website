@@ -125,8 +125,12 @@ export default function ContactForm() {
 
       {(Object.keys(errors).length > 0 || serverState.formError) ? (
         <div ref={summaryRef} tabIndex={-1} role="alert" className={styles.errorSummary}>
-          <h3>Your inquiry could not be sent.</h3>
-          <p>Please review the form and try again. If the problem continues, no information has been confirmed as delivered.</p>
+          <h3>{serverState.internalInquiryDelivered ? "Your inquiry was received." : "Your inquiry could not be sent."}</h3>
+          <p>
+            {serverState.internalInquiryDelivered
+              ? "NorthWing Labs received your inquiry, but could not send the confirmation email. Please do not submit the same inquiry again."
+              : "Please review the form and try again. If the problem continues, no information has been confirmed as delivered."}
+          </p>
           {serverState.formError ? <p>{serverState.formError}</p> : null}
         </div>
       ) : null}

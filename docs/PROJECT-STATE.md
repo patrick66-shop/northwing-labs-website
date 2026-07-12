@@ -154,7 +154,7 @@ Do not mark a page approved merely because it exists. Product Owner review is re
 ## 6. Known Follow-Up Items
 
 - Header, footer, service cards, and CTAs still include links to routes that are not implemented; `/contact` is now implemented.
-- Contact form delivery uses the approved Vercel + Resend integration with server-side validation. Production requires the provisioned `RESEND_API_KEY` and `RESEND_EMAIL_DOMAIN`; no success state is returned unless Resend confirms acceptance.
+- Contact form delivery uses the approved Vercel + Resend integration with server-side validation. The internal inquiry is sent first, followed by the visitor confirmation email; no success state is returned unless Resend confirms acceptance of both messages. Production requires the provisioned `RESEND_API_KEY` and `RESEND_EMAIL_DOMAIN`.
 - Business Automation requires the approved 3-column desktop, 2-column tablet, and 1-column mobile Automation Opportunities grid revision.
 - The configured `next lint` command is incompatible with the installed Next.js version and must be repaired in a separate task.
 - No automated test suite is configured.

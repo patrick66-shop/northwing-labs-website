@@ -101,6 +101,28 @@ This state must appear only after confirmed delivery.
 - Recipient: `hello@northwinglabs.com`
 - Sender: `NorthWing Labs Website <inquiries@forms.northwinglabs.com>`
 - Reply-To: the validated visitor email address
+- Visitor confirmation recipient: the validated visitor email address
+- Visitor confirmation sender: `NorthWing Labs <inquiries@forms.northwinglabs.com>`
+- Visitor confirmation Reply-To: `hello@northwinglabs.com`
+- Visitor confirmation subject: `We received your NorthWing Labs inquiry`
 - Server-only environment variables: `RESEND_API_KEY`, `RESEND_EMAIL_DOMAIN`
 
-The server action validates all submitted values, applies payload and abuse guards, escapes user content in the HTML email, and displays success only after Resend confirms acceptance. Secret values are never exposed to the browser or written to application logs.
+The server action validates all submitted values, applies payload and abuse guards, escapes user content in the HTML email, sends the internal inquiry first, and then sends the approved visitor confirmation. The page displays success only after Resend confirms acceptance of both messages. Secret values are never exposed to the browser or written to application logs.
+
+### Visitor Confirmation Copy
+
+```text
+Hi [First Name],
+
+Thank you for contacting NorthWing Labs.
+
+We received the information you shared and will review your business problem, current process, desired outcome, and practical constraints.
+
+If the opportunity appears aligned, the next step will be a focused conversation to clarify the problem and determine the most practical path forward.
+
+You do not need to prepare a technical brief. Starting with the business problem is enough.
+
+Patrick Nichols
+NorthWing Labs
+Helping Your Business Take Flight.
+```

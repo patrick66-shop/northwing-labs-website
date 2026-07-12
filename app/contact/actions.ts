@@ -6,6 +6,7 @@ export type InquiryState = {
   status: "idle" | "error" | "success";
   fieldErrors: FieldErrors;
   formError?: string;
+  internalInquiryDelivered?: boolean;
 };
 
 const MAX_PAYLOAD_CHARACTERS = 15_000;
@@ -79,6 +80,40 @@ function buildEmailContent(values: ReturnType<typeof readInquiry>) {
   return { text, html };
 }
 
+function buildConfirmationContent(fullName: string) {
+  const firstName = fullName.split(/\s+/)[0];
+  const text = `Hi ${firstName},
+
+Thank you for contacting NorthWing Labs.
+
+We received the information you shared and will review your business problem, current process, desired outcome, and practical constraints.
+
+If the opportunity appears aligned, the next step will be a focused conversation to clarify the problem and determine the most practical path forward.
+
+You do not need to prepare a technical brief. Starting with the business problem is enough.
+
+Patrick Nichols
+NorthWing Labs
+Helping Your Business Take Flight.`;
+
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <body style="margin:0;padding:24px;background:#f2f4f8;color:#051231;font-family:Arial,sans-serif;line-height:1.6">
+        <main style="max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #ced3db;border-radius:14px;padding:32px">
+          <p>Hi ${escapeHtml(firstName)},</p>
+          <p>Thank you for contacting NorthWing Labs.</p>
+          <p>We received the information you shared and will review your business problem, current process, desired outcome, and practical constraints.</p>
+          <p>If the opportunity appears aligned, the next step will be a focused conversation to clarify the problem and determine the most practical path forward.</p>
+          <p>You do not need to prepare a technical brief. Starting with the business problem is enough.</p>
+          <p style="margin-top:24px">Patrick Nichols<br>NorthWing Labs<br>Helping Your Business Take Flight.</p>
+        </main>
+      </body>
+    </html>`;
+
+  return { text, html };
+}
+
 export async function submitInquiry(
   _previousState: InquiryState,
   formData: FormData,
@@ -127,9 +162,10 @@ export async function submitInquiry(
 
   const { text, html } = buildEmailContent(values);
   const subjectName = values.fullName.replace(/\s+/g, " ").trim();
+  let internalInquiryDelivered = false;
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
+    const internalResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -147,7 +183,7 @@ export async function submitInquiry(
       cache: "no-store",
     });
 
-    if (!response.ok) {
+    if (!internalResponse.ok) {
       return {
         status: "error",
         fieldErrors: {},
@@ -155,9 +191,48 @@ export async function submitInquiry(
           "Inquiry delivery is temporarily unavailable. No information has been confirmed as delivered.",
       };
     }
+    internalInquiryDelivered = true;
+
+    const confirmation = buildConfirmationContent(values.fullName);
+    const confirmationResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        "Idempotency-Key": crypto.randomUUID(),
+      },
+      body: JSON.stringify({
+        from: `NorthWing Labs <inquiries@${configuredDomain}>`,
+        to: [values.email],
+        reply_to: INQUIRY_RECIPIENT,
+        subject: "We received your NorthWing Labs inquiry",
+        text: confirmation.text,
+        html: confirmation.html,
+      }),
+      cache: "no-store",
+    });
+
+    if (!confirmationResponse.ok) {
+      return {
+        status: "error",
+        fieldErrors: {},
+        internalInquiryDelivered: true,
+        formError:
+          "Your inquiry was received, but the confirmation email could not be sent.",
+      };
+    }
 
     return { status: "success", fieldErrors: {} };
   } catch {
+    if (internalInquiryDelivered) {
+      return {
+        status: "error",
+        fieldErrors: {},
+        internalInquiryDelivered: true,
+        formError:
+          "Your inquiry was received, but the confirmation email could not be sent.",
+      };
+    }
     return {
       status: "error",
       fieldErrors: {},
