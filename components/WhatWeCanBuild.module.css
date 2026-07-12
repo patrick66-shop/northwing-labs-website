@@ -1,0 +1,37 @@
+/* Centered pill cloud — concise on purpose (issue #16). */
+.pillList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3) var(--space-4);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* Wing White pill on the tinted band, same border/shadow family as the
+   light cards; the small gold dot keeps the brand accent restrained. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px; /* comfortable touch/read target */
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cloud);
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(5, 18, 49, 0.06);
+  color: var(--color-navy);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-flight-gold);
+}

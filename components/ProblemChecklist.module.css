@@ -1,0 +1,55 @@
+/* Approved subtle light technical texture behind readable content —
+   same treatment as the homepage light sections. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Two balanced checklist columns on tablet+, one on mobile — quieter
+   than a card grid on purpose (issue #16). */
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4) var(--space-7);
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5) var(--space-8);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* Gold check in a blue-tinted ring, echoing the icon-panel family. */
+.mark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e8f1fc;
+  border: 1px solid #cfe2f8;
+  color: var(--color-flight-gold);
+  margin-top: -2px; /* optically center against the first text line */
+}
+
+.itemText {
+  color: var(--color-navy);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-block: 3px; /* keeps the row's touch/read target comfortable */
+}
