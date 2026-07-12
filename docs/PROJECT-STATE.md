@@ -75,6 +75,7 @@ SaaS Development
 /services/custom-software
 /services/ai-tools
 /services/business-automation
+/contact
 ```
 
 These are the only routes eligible for the live technical sitemap at this checkpoint.
@@ -110,7 +111,6 @@ The following routes are referenced by project documentation or the current inte
 /work
 /process
 /about
-/contact
 /privacy
 /terms
 ```
@@ -129,9 +129,10 @@ The following routes are referenced by project documentation or the current inte
 | Custom Software service page | Implemented service-family reference |
 | AI Tools service page | Implemented service-family reference |
 | Business Automation service page | Implemented and reviewed. Approved with one required revision to the Automation Opportunities grid. Final product-owner approval pending. |
+| Contact page | Implemented and ready for Product Owner review; approved Vercel + Resend delivery integration implemented |
 | Mobile Apps service page | Approved but not implemented |
 | SaaS Development service page | Approved but not implemented |
-| Technical sitemap | Implemented with the five currently public routes only |
+| Technical sitemap | Implemented with the six currently public routes only, including `/contact` |
 | Codex governance | Transition files prepared for repository history |
 
 Do not mark a page approved merely because it exists. Product Owner review is required.
@@ -152,7 +153,8 @@ Do not mark a page approved merely because it exists. Product Owner review is re
 
 ## 6. Known Follow-Up Items
 
-- Header, footer, service cards, and CTAs currently include links to routes that are not implemented.
+- Header, footer, service cards, and CTAs still include links to routes that are not implemented; `/contact` is now implemented.
+- Contact form delivery uses the approved Vercel + Resend integration with server-side validation. Production requires the provisioned `RESEND_API_KEY` and `RESEND_EMAIL_DOMAIN`; no success state is returned unless Resend confirms acceptance.
 - Business Automation requires the approved 3-column desktop, 2-column tablet, and 1-column mobile Automation Opportunities grid revision.
 - The configured `next lint` command is incompatible with the installed Next.js version and must be repaired in a separate task.
 - No automated test suite is configured.

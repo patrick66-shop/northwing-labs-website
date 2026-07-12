@@ -57,6 +57,7 @@ Before implementing a page, locate the approved page-specific files and confirm 
 | File | Controls | Notes |
 |---|---|---|
 | `/docs/WEBSITE-CONTENT.md` | Approved homepage production copy and global CTA/messaging rules | Do not rewrite during implementation |
+| `/docs/CONTACT-PAGE-CONTENT.md` | Approved Contact page copy, form fields, states, metadata, and delivery status | Contact-page authority |
 | `/docs/HOMEPAGE-ARCHITECTURE.md` | Homepage narrative, section order, purpose, and conversion path | Homepage-specific |
 | `/docs/HOMEPAGE-DESIGN-SPEC.md` | Homepage visual layout and styling | Homepage-specific |
 | `/docs/COMPONENT-SYSTEM.md` | Reusable UI components and component behavior | Global component authority |

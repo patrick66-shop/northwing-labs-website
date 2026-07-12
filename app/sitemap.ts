@@ -8,6 +8,7 @@ const PUBLIC_ROUTES = [
   "/services/custom-software",
   "/services/ai-tools",
   "/services/business-automation",
+  "/contact",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
