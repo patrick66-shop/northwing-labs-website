@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
@@ -14,6 +15,9 @@ type PlatformShowcaseProps = {
   /** Short emphasis line under the visual (e.g. "One connected
    * business platform."). */
   emphasis?: string;
+  /** Cross-service footnote link under the emphasis line (e.g. "Need
+   * more than an AI assistant? Explore Custom Software →"). */
+  footnote?: { prompt: string; label: string; href: string };
   illustration: React.ReactNode;
 };
 
@@ -29,6 +33,7 @@ export default function PlatformShowcase({
   headingId,
   copy,
   emphasis,
+  footnote,
   illustration,
 }: PlatformShowcaseProps) {
   return (
@@ -55,6 +60,19 @@ export default function PlatformShowcase({
             <p className={styles.emphasis}>
               <span className={styles.emphasisRule} aria-hidden="true" />
               {emphasis}
+            </p>
+          </Reveal>
+        ) : null}
+        {footnote ? (
+          <Reveal variant="up" delay={160}>
+            <p className={styles.footnote}>
+              {footnote.prompt}{" "}
+              <Link href={footnote.href} className={styles.footnoteLink}>
+                {footnote.label}
+                <span className={styles.footnoteArrow} aria-hidden="true">
+                  →
+                </span>
+              </Link>
             </p>
           </Reveal>
         ) : null}

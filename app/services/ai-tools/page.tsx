@@ -138,18 +138,20 @@ const CAPABILITIES: CapabilityCard[] = [
   },
 ];
 
-/* Typical AI projects (approved list, issue #20). */
+/* Scenario-based day-to-day uses (chat-approved refinement replacing
+   the original project-name chips, which read too close to the
+   capability cards). */
 const TYPICAL_PROJECTS = [
-  "Company Knowledge Assistant",
-  "Customer FAQ Assistant",
-  "Document Review Tool",
-  "Proposal Drafting Assistant",
-  "Email Response Assistant",
-  "AI Search Across Business Files",
-  "Lead Qualification Assistant",
-  "Reporting Summary Tool",
-  "Data Extraction Workflow",
-  "Internal Training Assistant",
+  "Search company policies and procedures",
+  "Draft consistent customer replies",
+  "Extract information from incoming documents",
+  "Summarize reports and activity",
+  "Qualify and route new leads",
+  "Find answers across business files",
+  "Prepare proposal or estimate drafts",
+  "Organize and categorize incoming information",
+  "Support employee onboarding and training",
+  "Create recurring operational summaries",
 ];
 
 /* Approved step titles; sentences tailored per issue #20 (knowledge
@@ -325,12 +327,12 @@ export default function AIToolsPage() {
       />
       <WhatWeCanBuild
         eyebrow="TYPICAL AI PROJECTS"
-        heading="Typical AI Tool Projects"
+        heading="What AI handles for a business day to day."
         headingId="typical-ai-projects-heading"
         copy={
           <>
-            Practical, focused, and built around your information. If the
-            problem you are facing is not listed,{" "}
+            Less about the tool, more about the workday. If the task eating
+            your team&rsquo;s time is not listed,{" "}
             <Link href="/contact">start a conversation</Link> — these are
             examples, not limits.
           </>
@@ -351,6 +353,11 @@ export default function AIToolsPage() {
           </>
         }
         emphasis="Secure, controlled, and built on information you approve."
+        footnote={{
+          prompt: "Need more than an AI assistant?",
+          label: "Explore Custom Software",
+          href: "/services/custom-software",
+        }}
         illustration={<AIKnowledgeFlowIllustration />}
       />
       <MiniProcessTimeline
