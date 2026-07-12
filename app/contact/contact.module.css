@@ -50,7 +50,6 @@
 .errorSummary { padding: var(--space-5); border: 2px solid #a33a28; border-radius: var(--radius-card-sm); background: #fff5f2; display: grid; gap: var(--space-2); }
 .errorSummary:focus-visible { outline: 3px solid var(--color-flight-blue); outline-offset: 3px; }
 .errorSummary h3 { color: #7a291c; font-size: 1.25rem; }
-.successState { padding: var(--space-6); border: 2px solid var(--color-flight-blue); border-radius: var(--radius-card-lg); background: #eef6ff; display: grid; gap: var(--space-3); }
 .submitButton { justify-self: start; min-width: 220px; }
 .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 

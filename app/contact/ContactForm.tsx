@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import PrimaryButton from "@/components/PrimaryButton";
 import {
   CONTACT_METHODS,
@@ -49,6 +50,7 @@ function describedBy(field: InquiryField, helper: boolean, errors: FieldErrors) 
 }
 
 export default function ContactForm() {
+  const router = useRouter();
   const initialState: InquiryState = { status: "idle", fieldErrors: {} };
   const [serverState, formAction, pending] = useActionState(
     submitInquiry,
@@ -62,6 +64,10 @@ export default function ContactForm() {
   const errors = Object.keys(clientErrors).length ? clientErrors : serverState.fieldErrors;
 
   useEffect(() => {
+    if (serverState.status === "success") {
+      router.push("/contact/thank-you");
+      return;
+    }
     if (serverState.status !== "error") return;
 
     const form = formRef.current;
@@ -81,7 +87,7 @@ export default function ContactForm() {
       }
     }
     summaryRef.current?.focus();
-  }, [serverState]);
+  }, [router, serverState]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     const values = readInquiry(new FormData(event.currentTarget));
@@ -103,15 +109,6 @@ export default function ContactForm() {
     "aria-invalid": errors[field] ? true : undefined,
     "aria-describedby": describedBy(field, helper, errors),
   });
-
-  if (serverState.status === "success") {
-    return (
-      <div className={styles.successState} role="status" aria-live="polite">
-        <h2>Thank you. Your inquiry has been received.</h2>
-        <p>NorthWing Labs will review what you shared and follow up using the contact information you provided.</p>
-      </div>
-    );
-  }
 
   return (
     <form ref={formRef} action={formAction} onSubmit={handleSubmit} noValidate className={styles.form}>

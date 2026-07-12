@@ -47,7 +47,7 @@ Fields, in order:
 - Heading: `Thank you. Your inquiry has been received.`
 - Copy: `NorthWing Labs will review what you shared and follow up using the contact information you provided.`
 
-This state must appear only after confirmed delivery.
+After confirmed delivery of both emails, the browser redirects to `/contact/thank-you`, which displays the approved success content from `/docs/CONTACT-THANK-YOU-PAGE-SPEC.md`.
 
 ### Error
 
@@ -110,6 +110,16 @@ This state must appear only after confirmed delivery.
 - Server-only environment variables: `RESEND_API_KEY`, `RESEND_EMAIL_DOMAIN`
 
 The server action validates all submitted values, applies payload and abuse guards, escapes user content in the HTML email, sends the internal inquiry first, and then sends the approved visitor confirmation. The page displays success only after Resend confirms acceptance of both messages. Secret values are never exposed to the browser or written to application logs.
+
+Successful submission behavior:
+
+1. The visitor submits the contact form.
+2. The server validates and processes the request.
+3. The NorthWing Labs inquiry email is sent.
+4. The visitor confirmation email is sent.
+5. The browser redirects to `/contact/thank-you`.
+
+A failed submission does not redirect. Existing validation and delivery-error messaging remains available on `/contact`.
 
 Production verification confirmed:
 

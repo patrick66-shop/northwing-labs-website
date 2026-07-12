@@ -337,6 +337,19 @@ Contact
 
 The form should feel like the beginning of a useful discovery conversation, not a generic contact form.
 
+### Contact Submission Confirmation
+
+`/contact/thank-you` is the successful contact-form submission confirmation route.
+
+- Purpose: successful contact-form submission confirmation
+- Primary navigation: excluded
+- Footer navigation: excluded
+- Search indexing: `noindex, follow`
+- XML sitemap: excluded
+- Entry method: redirect after successful contact-form processing
+
+This is a submission-only route, not a publicly discoverable marketing page.
+
 ---
 
 ## 10. Footer Navigation
