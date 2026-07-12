@@ -32,6 +32,11 @@
   .cell {
     width: calc((100% - 3 * var(--space-5)) / 4);
   }
+
+  /* Six-card sets stay balanced at 3 × 2 (Business Automation). */
+  .cellThreeUp {
+    width: calc((100% - 2 * var(--space-5)) / 3);
+  }
 }
 
 /* Compact light-family card. */

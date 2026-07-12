@@ -61,8 +61,8 @@ const GLYPHS: Record<DifferentiatorIconName, React.ReactNode> = {
 
 type DifferentiatorCardProps = {
   title: string;
-  /** Short lead sentence between the title and the supporting copy. */
-  lead: string;
+  /** Optional short lead sentence between the title and the copy. */
+  lead?: string;
   icon: DifferentiatorIconName;
   children: React.ReactNode;
 };
@@ -97,7 +97,7 @@ export default function DifferentiatorCard({
         </svg>
       </span>
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.lead}>{lead}</p>
+      {lead ? <p className={styles.lead}>{lead}</p> : null}
       <p className={styles.copy}>{children}</p>
     </article>
   );

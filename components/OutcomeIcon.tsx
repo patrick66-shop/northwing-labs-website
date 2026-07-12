@@ -6,7 +6,8 @@ export type OutcomeIconName =
   | "shield-check"
   | "eye"
   | "people"
-  | "growth";
+  | "growth"
+  | "flow";
 
 /* Restrained single-weight line icons, drawn to one 24px grid with a
    1.8 stroke so all six read at identical visual weight. Decorative —
@@ -43,6 +44,14 @@ const PATHS: Record<OutcomeIconName, React.ReactNode> = {
     <>
       <path d="M3 17.5 9 11.5l4 4 8-8.5" />
       <path d="M15.5 7h5.5v5.8" />
+    </>
+  ),
+  flow: (
+    <>
+      <path d="M4.5 8h12.5" />
+      <path d="m14.5 5 3 3-3 3" />
+      <path d="M19.5 16H7" />
+      <path d="m9.5 13-3 3 3 3" />
     </>
   ),
 };
