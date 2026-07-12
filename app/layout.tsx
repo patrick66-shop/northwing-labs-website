@@ -22,9 +22,8 @@ const inter = Inter({
   display: "swap",
 });
 
-/* Canonical domain: set NEXT_PUBLIC_SITE_URL in the deployment environment.
- * The fallback is a placeholder pending the confirmed production domain. */
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.northwinglabs.com";
+/* Canonical production hostname approved by the Product Owner. */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://northwinglabs.com";
 
 /* Description uses approved hero supporting copy from docs/WEBSITE-CONTENT.md */
 const siteDescription =

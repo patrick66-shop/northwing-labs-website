@@ -124,30 +124,23 @@ Home
 
 Explain what NorthWing Labs can build.
 
-### Version 1 Structure
+### Services Structure
 
-Use one Services page with five major service sections.
+The Services section uses a hub-and-spoke structure.
 
-```text
-Services
-├── Custom Software
-├── AI Tools
-├── Business Automation
-├── Mobile Apps
-└── SaaS Development
-```
+The main Services page at `/services` provides an overview of all NorthWing Labs service categories and directs visitors to dedicated service pages for additional detail.
 
-### Individual Service Pages
+#### Approved Service Pages
 
-Dedicated individual service pages are approved (superseding the
-earlier "Pages to Delay" guidance below). Approved individual service
-pages:
+- `/services/custom-software`
+- `/services/ai-tools`
+- `/services/business-automation`
+- `/services/mobile-apps`
+- `/services/saas-development`
 
-- Custom Software (`/services/custom-software` — GitHub issue #18)
-- AI Tools (`/services/ai-tools` — GitHub issue #20)
-- Business Automation (`/services/business-automation` — GitHub issue #22)
-- Mobile Apps
-- SaaS Development
+The main `/services` page remains the primary overview page. Each dedicated service page expands on a specific customer problem, relevant use cases, business outcomes, NorthWing Labs’ approach, and the appropriate call to action.
+
+Dedicated service pages must use the approved shared service-page design system and messaging hierarchy. They must not introduce separate visual systems or conflicting positioning.
 
 ### Standard Section Structure
 
@@ -387,8 +380,7 @@ Do not build these in Version 1 unless there is a clear business need and enough
 - Large case-study library
 - Pricing page
 
-Individual service pages were originally delayed but are now approved
-and being built — see "Individual Service Pages" in section 4.
+Dedicated service pages are part of the approved Services structure in section 4.
 
 These can be added later when content depth, SEO opportunity, or sales needs justify them.
 
