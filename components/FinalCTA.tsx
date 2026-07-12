@@ -21,6 +21,9 @@ type FinalCTAProps = {
   copy?: string;
   primary?: CTAAction;
   secondary?: CTAAction;
+  /** Optional friction-reducing line between the supporting copy and
+   * the CTA buttons (services page UX polish). */
+  reassurance?: string;
 };
 
 /**
@@ -36,6 +39,7 @@ export default function FinalCTA({
   copy = "Whether you need custom software, AI tools, workflow automation, or a new SaaS product, NorthWing Labs starts by understanding your business and designing the simplest solution that delivers real results.",
   primary = { label: "Start a Conversation →", href: "/contact" },
   secondary = { label: "Explore Our Services", href: "/services" },
+  reassurance,
 }: FinalCTAProps) {
   return (
     <SectionWrapper
@@ -56,6 +60,11 @@ export default function FinalCTA({
           <SupportingCopy>{copy}</SupportingCopy>
         </SectionHeader>
 
+        {reassurance ? (
+          <Reveal variant="up" delay={100}>
+            <p className={styles.reassurance}>{reassurance}</p>
+          </Reveal>
+        ) : null}
         <Reveal variant="up" delay={120} className={styles.ctaRow}>
           <CTAGroup>
             <PrimaryButton href={primary.href}>{primary.label}</PrimaryButton>

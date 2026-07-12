@@ -76,7 +76,8 @@ export default function ServiceComparison() {
               <Link href={match.href} className={styles.row}>
                 <span className={styles.situation}>{match.situation}</span>
                 <span className={styles.service} aria-hidden="true">
-                  {match.service} →
+                  {match.service}
+                  <span className={styles.arrow}>→</span>
                 </span>
                 <span className={styles.srOnly}>
                   — explore {match.service}

@@ -34,8 +34,11 @@
   }
 }
 
+/* Hover: lift, brightened surface, and the arrow slides right — same
+   200ms base timing as the rest of the site's interactive elements. */
 .row:hover {
   transform: translateY(-2px);
+  background-color: #f8fbff; /* subtle blue-white highlight */
   border-color: var(--color-steel);
   box-shadow: 0 6px 16px rgba(5, 18, 49, 0.1);
 }
@@ -60,8 +63,16 @@
 
 .row:hover .service {
   color: var(--color-blue);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.35em;
+  transition: transform var(--transition-base);
+}
+
+.row:hover .arrow {
+  transform: translateX(5px);
 }
 
 .srOnly {

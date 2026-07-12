@@ -68,6 +68,7 @@ export default function ServicesPage() {
         copy="Tell us what is slowing your business down, what you wish worked better, or what you are ready to build. NorthWing Labs will help turn that need into a practical path forward."
         primary={{ label: "Start a Conversation", href: "/contact" }}
         secondary={{ label: "See How We Work", href: "/process" }}
+        reassurance="Every project starts with a conversation—not a commitment."
       />
       <SiteFooter />
     </>
