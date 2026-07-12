@@ -1,6 +1,7 @@
 import SectionWrapper from "./SectionWrapper";
 import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
+import SupportingCopy from "./SupportingCopy";
 import OutcomeCard from "./OutcomeCard";
 import Reveal from "./Reveal";
 import styles from "./ServicesOutcomes.module.css";
@@ -64,7 +65,12 @@ export default function ServicesOutcomes() {
           align="center"
           animate
           className={styles.header}
-        />
+        >
+          <SupportingCopy>
+            Whatever the service, every NorthWing Labs solution is designed
+            around the improvements it creates in day-to-day operations.
+          </SupportingCopy>
+        </SectionHeader>
 
         <ul className={styles.grid}>
           {OUTCOMES.map((outcome, index) => (

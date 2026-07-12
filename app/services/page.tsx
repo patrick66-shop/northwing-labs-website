@@ -6,6 +6,7 @@ import ServiceSelection from "@/components/ServiceSelection";
 import WhatWeCanBuild from "@/components/WhatWeCanBuild";
 import ServiceFitSteps from "@/components/ServiceFitSteps";
 import ServicesOutcomes from "@/components/ServicesOutcomes";
+import ServiceComparison from "@/components/ServiceComparison";
 import FinalCTA from "@/components/FinalCTA";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -61,6 +62,7 @@ export default function ServicesPage() {
       <WhatWeCanBuild />
       <ServiceFitSteps />
       <ServicesOutcomes />
+      <ServiceComparison />
       <FinalCTA
         heading="Start with the problem. We will help define what comes next."
         copy="Tell us what is slowing your business down, what you wish worked better, or what you are ready to build. NorthWing Labs will help turn that need into a practical path forward."
