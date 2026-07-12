@@ -75,6 +75,7 @@ SaaS Development
 /services/custom-software
 /services/ai-tools
 /services/business-automation
+/services/mobile-apps
 /contact
 ```
 
@@ -98,7 +99,6 @@ The documentation sitemap may list approved future routes. The live technical si
 ### Approved but Not Implemented Service Routes
 
 ```text
-/services/mobile-apps
 /services/saas-development
 ```
 
@@ -128,10 +128,10 @@ The following routes are referenced by project documentation or the current inte
 | `/services` overview | Implemented |
 | Custom Software service page | Implemented service-family reference |
 | AI Tools service page | Implemented service-family reference |
-| Business Automation service page | Implemented and reviewed. Approved with one required revision to the Automation Opportunities grid. Final product-owner approval pending. |
+| Business Automation service page | Implemented, revised (3/2/1 Automation Opportunities grid), Product Owner approved, and merged to `main` in PR #23 (2026-07-12). |
 | Contact page | Implemented and live delivery verified. Product Owner approved in production at commit `ab92782`. |
 | Contact thank-you page | Implemented and validated; redirects after confirmed inquiry and visitor-email processing; Product Owner review pending |
-| Mobile Apps service page | Approved but not implemented |
+| Mobile Apps service page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SERVICE-PAGES-CONTENT.md`) and page reviewed and approved by the Product Owner on 2026-07-12. The prior ChatGPT work order was lost to truncation and its stub deleted. |
 | SaaS Development service page | Approved but not implemented |
 | Technical sitemap | Implemented with the six currently public routes only, including `/contact` |
 | Codex governance | Transition files prepared for repository history |
@@ -142,20 +142,19 @@ Do not mark a page approved merely because it exists. Product Owner review is re
 
 ## 5. Current Immediate Priority
 
-1. Review this governance and sitemap checkpoint.
-2. Complete the required Business Automation grid revision through a separate approved task:
-   - Desktop: 3 columns
-   - Tablet: 2 columns
-   - Mobile: 1 column
-3. Resolve or sequence links that currently target unimplemented routes.
-4. Assign future page work only with approved copy and a complete work order.
+1. SaaS Development service page (copy to be drafted for approval on
+   the same model as Mobile Apps).
+2. Resolve or sequence links that currently target unimplemented routes
+   (`/solutions`, `/work`, `/process`, `/about`, `/privacy`, `/terms`).
+
+The Business Automation grid revision is complete: it shipped inside
+PR #23 with Product Owner approval.
 
 ---
 
 ## 6. Known Follow-Up Items
 
-- Header, footer, service cards, and CTAs still include links to routes that are not implemented; `/contact` is now implemented.
-- Business Automation requires the approved 3-column desktop, 2-column tablet, and 1-column mobile Automation Opportunities grid revision.
+- Header, footer, service cards, and CTAs still include links to routes that are not implemented; `/contact` and `/services/mobile-apps` are now implemented.
 - The configured `next lint` command is incompatible with the installed Next.js version and must be repaired in a separate task.
 - No automated test suite is configured.
 - Full keyboard validation and visual review at required desktop, tablet, and mobile widths remain to be completed.
@@ -208,12 +207,14 @@ A page is not complete until it has been checked for:
 
 ## 9. Next Planned Service Pages
 
-After the required Business Automation revision receives final Product Owner approval:
+1. Mobile Apps — implemented and Product Owner approved (2026-07-12).
+2. SaaS Development — not started; copy will be drafted for Product
+   Owner approval on the same model.
 
-1. Mobile Apps
-2. SaaS Development
-
-Each page requires approved copy and a complete implementation work order before coding.
+Each page requires Product Owner-approved copy before it can be marked
+approved. Where a work order is lost or unavailable, the drafted copy
+recorded in `docs/SERVICE-PAGES-CONTENT.md` serves as the review
+artifact.
 
 ---
 
@@ -225,3 +226,6 @@ Each page requires approved copy and a complete implementation work order before
 | 2026-07-12 | Verified repository state; recorded public and planned routes, Business Automation review status, technical stack, and known follow-up work. |
 | 2026-07-12 | Closed the Contact page milestone: production route, internal inquiry delivery, visitor confirmation delivery, Reply-To behavior, Resend events, verified sender domain, success state, and Vercel deployment confirmed at `ab92782`; Product Owner approved. |
 | 2026-07-12 | Implemented `/contact/thank-you`, successful-submission redirect, `noindex, follow`, XML sitemap exclusion, and governing documentation; inquiry and visitor-confirmation delivery behavior preserved. |
+| 2026-07-12 | Recorded that the Business Automation revision and approval completed in PR #23. Claude Code resumed as implementation developer. The truncated Mobile Apps work-order stub was deleted with Product Owner consent. |
+| 2026-07-12 | Implemented `/services/mobile-apps` from drafted copy recorded in `docs/SERVICE-PAGES-CONTENT.md`; added the route to the technical sitemap. |
+| 2026-07-12 | Product Owner reviewed and approved the Mobile Apps page and its copy; copy status updated to approved and the work merged to `main`. |

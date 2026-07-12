@@ -15,7 +15,11 @@ export type CapabilityIconName =
   | "drafting"
   | "extract"
   | "email"
-  | "spark";
+  | "spark"
+  | "mobile"
+  | "camera"
+  | "sync"
+  | "bell";
 
 /* Line icons on the site's 24px grid / 1.8 stroke convention
    (OutcomeIcon family). Decorative — card titles carry the meaning. */
@@ -136,6 +140,41 @@ const PATHS: Record<CapabilityIconName, React.ReactNode> = {
       <path d="M12 3.5 13.8 9l5.5 1.8-5.5 1.8L12 18.2l-1.8-5.6L4.7 10.8 10.2 9 12 3.5z" />
       <path d="m18.8 16.2.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z" />
       <path d="M5.6 17.5v.01" />
+    </>
+  ),
+  mobile: (
+    <>
+      <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+      <path d="M10.5 5h3" />
+      <path d="m9.8 9.6 1.5 1.5 2.9-3.2" />
+      <path d="M15 10.2h.01" />
+      <path d="m9.8 14.6 1.5 1.5 2.9-3.2" />
+      <path d="M15 15.2h.01" />
+      <path d="M11 18.7h2" />
+    </>
+  ),
+  camera: (
+    <>
+      <path d="M8.6 6.5 10 4.5h4l1.4 2h3.1A2.5 2.5 0 0 1 21 9v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17V9a2.5 2.5 0 0 1 2.5-2.5h3.1z" />
+      <circle cx="12" cy="12.8" r="3.6" />
+      <path d="M17.7 9.6h.01" />
+    </>
+  ),
+  sync: (
+    <>
+      <rect x="8" y="4.5" width="8" height="15" rx="2.2" />
+      <path d="M11 7h2" />
+      <path d="M4.8 9.5a7.3 7.3 0 0 1 2-3.4" />
+      <path d="m4 6.6.8 2.9 2.9-.8" />
+      <path d="M19.2 14.5a7.3 7.3 0 0 1-2 3.4" />
+      <path d="m20 17.4-.8-2.9-2.9.8" />
+    </>
+  ),
+  bell: (
+    <>
+      <path d="M12 3.5a5.6 5.6 0 0 1 5.6 5.6c0 4 1.4 5.4 1.9 5.9H4.5c.5-.5 1.9-1.9 1.9-5.9A5.6 5.6 0 0 1 12 3.5z" />
+      <path d="M10 18.5a2 2 0 0 0 4 0" />
+      <path d="M18.8 4.2v.01" />
     </>
   ),
 };

@@ -11,7 +11,7 @@ Approved individual service pages:
 - Custom Software (`/services/custom-software`)
 - AI Tools (`/services/ai-tools`)
 - Business Automation (`/services/business-automation`)
-- Mobile Apps (not yet built)
+- Mobile Apps (`/services/mobile-apps` — copy recorded in full below)
 - SaaS Development (not yet built)
 
 The Custom Software and AI Tools pages were approved and implemented
@@ -326,3 +326,328 @@ NorthWing Labs will help evaluate the process and recommend the simplest practic
 ### Secondary CTA
 
 **See How We Work** → Process page
+
+---
+
+# Mobile Apps (`/services/mobile-apps`)
+
+**Status: APPROVED — copy written by Claude Code (2026-07-12) from the
+approved brand voice (docs/08_Voice_and_Tone.md), the approved
+services-overview Mobile Apps messaging, and the service-page family
+pattern. Reviewed and approved by the Product Owner on 2026-07-12.**
+
+Central message: *Mobile apps built for where the work actually
+happens.* Positioning: practical business tools for field teams,
+employees, and customers — connected to the systems the business
+already runs — not consumer-app hype. Lead with the field-to-office
+information gap.
+
+## SEO and Metadata
+
+- **Page title:** Mobile App Development for Small Businesses | NorthWing Labs
+- **Meta description:** NorthWing Labs designs mobile apps for field teams, employees, and customers — connected to your business systems, so work captured on site reaches the office without retyping.
+- **Canonical route:** `/services/mobile-apps`
+- **Open Graph title:** Mobile App Development for Small Businesses | NorthWing Labs
+- **Open Graph description:** Practical mobile apps for field teams, employees, and customers — connected to the systems your business already runs on.
+- **Social image:** `/images/social/northwing-social-share-default.png` (approved default)
+
+## 1. Hero
+
+### Eyebrow
+
+`MOBILE APPS`
+
+### H1
+
+**Mobile apps built for where the work actually happens.**
+
+### Supporting Copy
+
+NorthWing Labs designs mobile apps for field teams, employees, and customers — connected to the systems your business already runs on, so information captured on site never has to be retyped at the office.
+
+### Primary CTA
+
+**Start a Conversation** → contact route
+
+### Secondary CTA
+
+**Explore Our Process** → Process page
+
+### Trust Line
+
+Built for the way your team works—online, offline, and on the move.
+
+## 2. Problem Recognition
+
+### Eyebrow
+
+`WHY MOBILE APPS?`
+
+### Heading
+
+**When the work leaves the office but the systems stay behind.**
+
+### Supporting Copy
+
+Most business software assumes someone is sitting at a desk. These are the signs your business needs tools that travel.
+
+### Problem Card 1 — Paper in the Field
+
+Job details, checklists, and forms ride around on clipboards — then get retyped, or lost, back at the office.
+
+### Problem Card 2 — Double Data Entry
+
+What gets written down on site has to be entered again into office systems, hours or days later.
+
+### Problem Card 3 — Out-of-Date Job Information
+
+Crews work from this morning's printout while the schedule, scope, or address changed at noon.
+
+### Problem Card 4 — Phone Tag with Customers
+
+Updates, approvals, and questions bounce through calls and voicemails instead of getting answered once.
+
+### Problem Card 5 — Scattered Photos and Paperwork
+
+Job photos live on personal phones, and signed documents surface weeks later — if they surface at all.
+
+### Problem Card 6 — No Field Visibility
+
+The office cannot see job progress without calling someone who is trying to work.
+
+## 3. What We Build
+
+### Eyebrow
+
+`WHAT WE BUILD`
+
+### Heading
+
+**Purpose-built apps for customers, employees, and field teams.**
+
+### Supporting Copy (with contextual links)
+
+Every app is designed around a real workday — and connects to the custom software [link: /services/custom-software] and business automation [link: /services/business-automation] your business already relies on.
+
+### Capability 1 — Field Team Apps (icon: mobile)
+
+Give crews the job details, checklists, and updates they need on site.
+
+### Capability 2 — Customer Apps (icon: customers)
+
+A simple place for customers to book, approve, pay, and check progress.
+
+### Capability 3 — Mobile Forms & Data Capture (icon: extract)
+
+Replace paper forms with structured capture that lands in the right system.
+
+### Capability 4 — Photo & Signature Capture (icon: camera)
+
+Attach photos, notes, and signatures to the job while you are still on site.
+
+### Capability 5 — Scheduling & Dispatch (icon: scheduling)
+
+See today's schedule, get new assignments, and adjust plans from anywhere.
+
+### Capability 6 — On-Site Quotes & Approvals (icon: estimating)
+
+Price the work, collect the approval, and send the paperwork before leaving the driveway.
+
+### Capability 7 — Offline-Ready Tools (icon: sync)
+
+Keep working without a signal — everything syncs when coverage returns.
+
+### Capability 8 — Notifications & Alerts (icon: bell)
+
+Route the updates people need to the device already in their pocket.
+
+### Capability 9 — Time & Job Tracking (icon: tracking)
+
+Log hours, materials, and progress at the source instead of at the office.
+
+### Capability 10 — Connected to Your Systems (icon: workflow)
+
+Apps that talk to the software, records, and workflows you already run.
+
+## 4. Typical Mobile Projects (scenario chips)
+
+### Eyebrow
+
+`TYPICAL MOBILE PROJECTS`
+
+### Heading
+
+**What a business mobile app handles day to day.**
+
+### Supporting Copy (with contextual link)
+
+Less about the phone, more about the workday. If the gap between your field and your office is not listed, start a conversation [link: /contact] — these are examples, not limits.
+
+### Chips
+
+- Update job status from the work site
+- Collect photos and signatures on site
+- Give customers live order or project status
+- Fill out inspections and checklists on a phone
+- Log hours and materials as work happens
+- Send quotes and collect approvals in the field
+- See the day's schedule and assignments
+- Book and confirm appointments
+- Look up customer and job history anywhere
+- Keep field and office working from the same information
+
+## 5. Example Mobile Solution (showcase)
+
+### Eyebrow
+
+`EXAMPLE MOBILE SOLUTION`
+
+### Heading
+
+**The job site and the office, finally on the same page.**
+
+### Supporting Copy (with contextual link)
+
+A field app can capture job progress, photos, forms, and approvals where the work happens — and deliver them instantly to the office systems that run scheduling, invoicing, and reporting. See how connected systems come together in our featured work [link: /work].
+
+### Emphasis Line
+
+One system — in the office, in the truck, and on the job.
+
+### Footnote
+
+Need the office side too? → Explore Custom Software [link: /services/custom-software]
+
+## 6. Our Process (7-step rail, tailored sentences)
+
+### Eyebrow
+
+`OUR PROCESS`
+
+### Heading
+
+**The same clear process, built for the field.**
+
+### Supporting Copy
+
+Seven reviewable steps — with real devices, real job sites, and offline behavior treated as first-class requirements.
+
+### Steps
+
+1. **Discover** — Learn where work happens away from the desk and what information the field and office trade today.
+2. **Define** — Clarify who uses the app, what they need in hand, and which moments it must survive without a signal.
+3. **Design** — Plan screens for on-site use: quick to read, simple to tap, hard to get wrong.
+4. **Build** — Develop the solution in controlled, reviewable stages.
+5. **Test** — Test on real phones and tablets, in the conditions your team actually works in.
+6. **Launch** — Handle distribution — app stores or private installs — and confirm production readiness.
+7. **Improve** — Watch real usage, refine the screens people live in, and expand where it adds value.
+
+## 7. Business Outcomes
+
+### Eyebrow
+
+`BUSINESS OUTCOMES`
+
+### Heading
+
+**Less distance between the work and the business.**
+
+### Supporting Copy
+
+A business mobile app is measured by what stops falling through the cracks between the field and the office.
+
+### Outcome 1 — Information Captured Once (icon: flow)
+
+What gets recorded on site lands in the office systems without retyping.
+
+### Outcome 2 — Fewer Trips and Callbacks (icon: clock)
+
+Crews have what they need in hand instead of driving back for it.
+
+### Outcome 3 — Faster Field-to-Office Updates (icon: bolt)
+
+Status, photos, and paperwork arrive while the job is still fresh.
+
+### Outcome 4 — Better Customer Experience (icon: people)
+
+Customers see progress and respond in taps, not phone tag.
+
+### Outcome 5 — Clearer View of Field Work (icon: eye)
+
+The office sees every job as it happens — without interrupting anyone.
+
+### Outcome 6 — A More Professional Impression (icon: shield-check)
+
+Quotes, approvals, and updates handled on the spot, not next week.
+
+## 8. FAQ
+
+### Eyebrow
+
+`FREQUENTLY ASKED QUESTIONS`
+
+### Heading
+
+**Questions we hear most often.**
+
+### Supporting Copy
+
+Straight answers about how business mobile app projects actually work.
+
+### Q1 — Do you build for both iPhone and Android?
+
+Yes. Most business apps are built from a single codebase that runs on both platforms, so you are not paying for the same app twice — and everyone gets the same experience regardless of what is in their pocket.
+
+### Q2 — Do we actually need an app, or is a mobile-friendly website enough?
+
+Honest answer: sometimes a mobile-friendly web tool is the right call, and we will tell you so. A native app earns its place when the work needs offline access, the camera, notifications, or one-tap speed for people who use it all day. We recommend the simplest solution that fits the workday.
+
+### Q3 — Can the app work without cell service?
+
+Yes. Job sites, basements, and rural routes are exactly where field apps earn their keep, so offline behavior is designed in from the start — work continues without a signal and syncs when coverage returns.
+
+### Q4 — Can it connect to the software we already use?
+
+Yes — that is usually the point. Mobile apps work best as the field end of your existing systems [link: /services/custom-software], often with business automation [link: /services/business-automation] moving what gets captured into records, schedules, and follow-up.
+
+### Q5 — How do employees or customers get the app?
+
+Customer apps are published to the App Store and Google Play. Internal team apps can be distributed privately, without a public listing. We handle the setup, review process, and updates either way.
+
+### Q6 — How much does a mobile app cost?
+
+It depends on scope, and we keep the scope honest. Every engagement starts by defining the smallest app that solves the real problem, so you see a clear picture of the investment before any build work begins. The fastest way to get a real answer is to start a conversation [link: /contact].
+
+### Q7 — How long does a mobile app take?
+
+Focused field tools can ship in weeks; customer-facing apps with store review take longer. After the Discover and Define steps [link: /process] you get a realistic timeline broken into reviewable stages.
+
+### Q8 — Who owns the app, and what happens after launch?
+
+You own it — the app, the code, and the accounts it is published under. After launch, the Improve stage watches real usage and refines where it adds value, and we can keep handling updates, store requirements, and new capabilities as your business grows.
+
+## 9. Final CTA
+
+### Eyebrow
+
+`LET'S TALK ABOUT MOBILE`
+
+### Heading
+
+**What does your team need in hand when they're not at a desk?**
+
+### Supporting Copy
+
+Tell us where work happens away from the office — and where information gets lost between the field, the customer, and the back office. NorthWing Labs will help determine whether a mobile app is the simplest way to improve it.
+
+### Primary CTA
+
+**Start a Conversation** → contact route
+
+### Secondary CTA
+
+**View Our Process** → Process page
+
+### Reassurance Line
+
+Every project starts with a conversation—not a commitment.
