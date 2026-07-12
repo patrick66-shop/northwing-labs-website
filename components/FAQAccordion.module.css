@@ -1,0 +1,103 @@
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cloud);
+  border-radius: var(--radius-card-sm);
+  box-shadow: 0 1px 3px rgba(5, 18, 49, 0.06);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.item:has(.question[aria-expanded="true"]) {
+  border-color: #9cc3ef;
+}
+
+.questionHeading {
+  /* The button carries the type styles; the h3 is structural. */
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 56px; /* comfortable touch target */
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  transition: color var(--transition-base);
+}
+
+.question:hover {
+  color: var(--color-flight-blue);
+}
+
+.question:focus-visible {
+  outline: 3px solid var(--color-flight-blue);
+  outline-offset: -3px;
+  border-radius: var(--radius-card-sm);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-flight-blue);
+  transition: transform var(--transition-base);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Smooth height animation via the grid-rows transition; the global
+   reduced-motion rule collapses it to an instant toggle. */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms ease;
+}
+
+.panelOpen {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--color-slate);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+/* "Still have questions?" callout under the list. */
+.ctaCallout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+  text-align: center;
+}
+
+.ctaText {
+  color: var(--color-navy);
+  font-size: 1.125rem;
+  font-weight: 600;
+}

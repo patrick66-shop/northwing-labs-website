@@ -8,10 +8,12 @@ import styles from "./ServicesOutcomes.module.css";
 
 import type { OutcomeIconName } from "./OutcomeIcon";
 
+export type OutcomeItem = { title: string; icon: OutcomeIconName; copy: string };
+
 /* Outcome titles are approved copy from GitHub issue #16 — do not edit.
    The one-line supporting sentences are new concise copy (the issue
    allows more concise wording here than the homepage section). */
-const OUTCOMES: { title: string; icon: OutcomeIconName; copy: string }[] = [
+const SERVICES_PAGE_OUTCOMES: OutcomeItem[] = [
   {
     title: "Less Manual Work",
     icon: "clock",
@@ -44,36 +46,49 @@ const OUTCOMES: { title: string; icon: OutcomeIconName; copy: string }[] = [
   },
 ];
 
+type ServicesOutcomesProps = {
+  /** All content defaults to the services overview page (issue #16);
+   * the service-detail pages pass their own (issue #18). */
+  eyebrow?: string;
+  heading?: string;
+  headingId?: string;
+  copy?: string;
+  outcomes?: OutcomeItem[];
+};
+
 /**
- * Business outcomes — services page section 6 (GitHub issue #16).
- * Reuses the homepage OutcomeCard system on the dark workflow-lines
- * band with the services-page heading and more concise copy.
+ * Business outcomes — dark outcome band shared by the services pages
+ * (GitHub issues #16 and #18). Reuses the homepage OutcomeCard system
+ * on the workflow-lines band with per-page copy via props.
  */
-export default function ServicesOutcomes() {
+export default function ServicesOutcomes({
+  eyebrow = "WHAT BETTER SYSTEMS CREATE",
+  heading = "The value is not the technology. The value is what improves because of it.",
+  headingId = "services-outcomes-heading",
+  copy = "Whatever the service, every NorthWing Labs solution is designed around the improvements it creates in day-to-day operations.",
+  outcomes = SERVICES_PAGE_OUTCOMES,
+}: ServicesOutcomesProps) {
   return (
     <SectionWrapper
       variant="dark"
       id="services-outcomes"
       className={styles.section}
-      aria-labelledby="services-outcomes-heading"
+      aria-labelledby={headingId}
     >
       <SiteContainer>
         <SectionHeader
-          eyebrow="WHAT BETTER SYSTEMS CREATE"
-          heading="The value is not the technology. The value is what improves because of it."
-          headingId="services-outcomes-heading"
+          eyebrow={eyebrow}
+          heading={heading}
+          headingId={headingId}
           align="center"
           animate
           className={styles.header}
         >
-          <SupportingCopy>
-            Whatever the service, every NorthWing Labs solution is designed
-            around the improvements it creates in day-to-day operations.
-          </SupportingCopy>
+          <SupportingCopy>{copy}</SupportingCopy>
         </SectionHeader>
 
         <ul className={styles.grid}>
-          {OUTCOMES.map((outcome, index) => (
+          {outcomes.map((outcome, index) => (
             <Reveal as="li" variant="up" delay={index * 90} key={outcome.title}>
               <OutcomeCard title={outcome.title} icon={outcome.icon}>
                 {outcome.copy}

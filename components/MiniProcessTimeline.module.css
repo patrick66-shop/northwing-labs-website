@@ -1,0 +1,112 @@
+/* Approved subtle light texture — homepage light-section treatment. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Compact rail: 7 across desktop, 2-up tablet, single column mobile. */
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+.steps > li {
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+/* Numbered node in the process language; the final step lands gold
+   like the homepage timeline. */
+.node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-flight-blue);
+  background-color: rgba(13, 105, 206, 0.08);
+  color: var(--color-flight-blue);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  margin-bottom: var(--space-1);
+}
+
+.steps > li:last-child .node {
+  border-color: var(--color-flight-gold);
+  background-color: rgba(237, 183, 67, 0.14);
+  color: var(--color-navy);
+}
+
+/* Connector arrows between nodes on the 7-across rail. */
+@media (min-width: 1024px) {
+  .steps > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: calc(50% + 30px);
+    width: calc(100% - 60px + var(--space-4) - 8px);
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgba(13, 105, 206, 0.4),
+      rgba(13, 105, 206, 0.14)
+    );
+  }
+
+  /* arrowhead */
+  .steps > li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 16.5px;
+    right: -3px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid rgba(13, 105, 206, 0.45);
+    border-right: 2px solid rgba(13, 105, 206, 0.45);
+    transform: rotate(45deg);
+  }
+}
+
+.title {
+  font-size: 1.0625rem;
+  color: var(--color-navy);
+}
+
+.copy {
+  color: var(--color-slate);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  max-width: 280px;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+}
