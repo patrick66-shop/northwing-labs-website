@@ -93,15 +93,19 @@
   }
 }
 
+/* Readability pass (AI Tools refinement, applies to all service
+   pages): a step up in size and title weight without changing the
+   layout or making the rail heavy. */
 .title {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: var(--color-navy);
 }
 
 .copy {
   color: var(--color-slate);
-  font-size: 0.875rem;
-  line-height: 1.55;
+  font-size: 0.9375rem;
+  line-height: 1.6;
   max-width: 280px;
 }
 

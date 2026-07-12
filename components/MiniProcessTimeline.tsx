@@ -6,9 +6,11 @@ import SecondaryButton from "./SecondaryButton";
 import Reveal from "./Reveal";
 import styles from "./MiniProcessTimeline.module.css";
 
+export type ProcessStepItem = { title: string; copy: string };
+
 /* Approved seven-step process copy from the homepage How We Work
    section (docs/WEBSITE-CONTENT.md §6) — do not edit. */
-const STEPS = [
+const DEFAULT_STEPS: ProcessStepItem[] = [
   {
     title: "Discover",
     copy: "Understand the business, users, workflow, current tools, and problem.",
@@ -44,6 +46,11 @@ type MiniProcessTimelineProps = {
   heading: string;
   headingId: string;
   copy?: string;
+  /** Step sentences default to the approved homepage process copy;
+   * service pages may tailor them (e.g. AI boundaries and response-
+   * quality testing on the AI Tools page). Titles should stay the
+   * approved seven. */
+  steps?: ProcessStepItem[];
 };
 
 /**
@@ -58,6 +65,7 @@ export default function MiniProcessTimeline({
   heading,
   headingId,
   copy,
+  steps = DEFAULT_STEPS,
 }: MiniProcessTimelineProps) {
   return (
     <SectionWrapper
@@ -76,7 +84,7 @@ export default function MiniProcessTimeline({
           {copy ? <SupportingCopy>{copy}</SupportingCopy> : null}
         </SectionHeader>
         <ol className={styles.steps}>
-          {STEPS.map((step, index) => (
+          {steps.map((step, index) => (
             <Reveal as="li" variant="up" delay={index * 70} key={step.title}>
               <article className={styles.step}>
                 <span className={styles.node} aria-hidden="true">

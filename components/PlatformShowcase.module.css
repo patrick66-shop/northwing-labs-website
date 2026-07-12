@@ -40,3 +40,33 @@
   border-radius: 2px;
   background-color: var(--color-flight-gold);
 }
+
+/* Cross-service footnote under the emphasis line: quiet prompt, inline
+   link with the restrained sliding-arrow hover used site-wide. */
+.footnote {
+  margin-top: var(--space-4);
+  text-align: center;
+  color: var(--color-cloud);
+  font-size: 0.9375rem;
+}
+
+.footnoteLink {
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footnoteLink:hover {
+  color: var(--color-flight-gold);
+}
+
+.footnoteArrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  transition: transform var(--transition-base);
+}
+
+.footnoteLink:hover .footnoteArrow {
+  transform: translateX(5px);
+}
