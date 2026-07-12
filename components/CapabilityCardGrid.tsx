@@ -16,7 +16,8 @@ type CapabilityCardGridProps = {
   eyebrow: string;
   heading: string;
   headingId: string;
-  copy?: string;
+  /** Plain text or JSX — contextual internal links welcome. */
+  copy?: React.ReactNode;
   capabilities: CapabilityCard[];
 };
 

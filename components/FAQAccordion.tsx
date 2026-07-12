@@ -5,12 +5,14 @@ import SectionWrapper from "./SectionWrapper";
 import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
+import SecondaryButton from "./SecondaryButton";
 import Reveal from "./Reveal";
 import styles from "./FAQAccordion.module.css";
 
 export type FAQItem = {
   question: string;
-  answer: string;
+  /** Plain text or JSX — contextual internal links welcome. */
+  answer: React.ReactNode;
 };
 
 type FAQAccordionProps = {
@@ -19,6 +21,8 @@ type FAQAccordionProps = {
   headingId: string;
   copy?: string;
   items: FAQItem[];
+  /** "Still have questions?" callout under the list. */
+  cta?: { text: string; label: string; href: string };
 };
 
 /* Chevron rotates when the item is open. Decorative. */
@@ -54,6 +58,7 @@ export default function FAQAccordion({
   headingId,
   copy,
   items,
+  cta,
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const baseId = useId();
@@ -109,6 +114,17 @@ export default function FAQAccordion({
             })}
           </ul>
         </Reveal>
+
+        {cta ? (
+          <Reveal variant="up" delay={100}>
+            <div className={styles.ctaCallout}>
+              <p className={styles.ctaText}>{cta.text}</p>
+              <SecondaryButton variant="on-light" href={cta.href}>
+                {cta.label}
+              </SecondaryButton>
+            </div>
+          </Reveal>
+        ) : null}
       </SiteContainer>
     </SectionWrapper>
   );

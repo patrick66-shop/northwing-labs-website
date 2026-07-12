@@ -9,7 +9,8 @@ type PlatformShowcaseProps = {
   eyebrow: string;
   heading: string;
   headingId: string;
-  copy?: string;
+  /** Plain text or JSX — contextual internal links welcome. */
+  copy?: React.ReactNode;
   /** Short emphasis line under the visual (e.g. "One connected
    * business platform."). */
   emphasis?: string;

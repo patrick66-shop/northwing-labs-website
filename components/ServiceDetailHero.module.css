@@ -63,6 +63,25 @@
   max-width: 560px;
 }
 
+/* Subtle trust statement under the CTA group, centered on its own
+   line within the CTA group's width. */
+.trust {
+  color: var(--color-cloud);
+  opacity: 0.85;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-align: center;
+  align-self: stretch;
+  max-width: 480px;
+  margin-top: calc(-1 * var(--space-2));
+}
+
+@media (min-width: 1024px) {
+  .trust {
+    text-align: left; /* follows the left-aligned column on desktop */
+  }
+}
+
 .visualColumn {
   display: flex;
   justify-content: center;

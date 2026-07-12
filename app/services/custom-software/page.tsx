@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
+import WhatWeCanBuild from "@/components/WhatWeCanBuild";
 import ServiceDetailHero from "@/components/ServiceDetailHero";
 import CustomSoftwareIllustration from "@/components/CustomSoftwareIllustration";
 import ServiceProblemGrid from "@/components/ServiceProblemGrid";
@@ -134,6 +136,22 @@ const CAPABILITIES: CapabilityCard[] = [
   },
 ];
 
+/* Typical-projects chips (chat-approved refinement). */
+const TYPICAL_PROJECTS = [
+  "CRM Systems",
+  "Customer Portals",
+  "Estimating & Proposal Systems",
+  "Order Tracking",
+  "Project Management",
+  "Inventory Management",
+  "Scheduling Systems",
+  "Reporting Dashboards",
+  "Employee Portals",
+  "Workflow Automation",
+  "Business Management Platforms",
+  "Membership Systems",
+];
+
 const OUTCOMES: OutcomeItem[] = [
   {
     title: "Save Hours Every Week",
@@ -175,8 +193,16 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "How much does custom software cost?",
-    answer:
-      "It depends on scope, and we keep the scope honest. Every engagement starts by defining the smallest solution that solves the real problem, so you see a clear picture of the investment before any build work begins — and you never pay for features that do not earn their place.",
+    answer: (
+      <>
+        It depends on scope, and we keep the scope honest. Every engagement
+        starts by defining the smallest solution that solves the real problem,
+        so you see a clear picture of the investment before any build work
+        begins — and you never pay for features that do not earn their place.
+        The fastest way to get a real answer is to{" "}
+        <Link href="/contact">start a conversation</Link>.
+      </>
+    ),
   },
   {
     question: "Can you improve software we already have?",
@@ -185,8 +211,15 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "How long does a project take?",
-    answer:
-      "Focused tools and automations can ship in weeks; connected business platforms take longer. After the Discover and Define steps you get a realistic timeline broken into reviewable stages, so progress is visible from the start.",
+    answer: (
+      <>
+        Focused tools and automations can ship in weeks; connected business
+        platforms take longer. After the{" "}
+        <Link href="/process">Discover and Define steps</Link> you get a
+        realistic timeline broken into reviewable stages, so progress is
+        visible from the start.
+      </>
+    ),
   },
   {
     question: "Do you build mobile apps too?",
@@ -195,8 +228,15 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "Can AI be included?",
-    answer:
-      "Yes, where it earns its place. Practical AI — assistants that organize information, summarize records, or draft responses — can be built into custom software from day one or added later as your needs grow.",
+    answer: (
+      <>
+        Yes, where it earns its place.{" "}
+        <Link href="/services/ai-tools">Practical AI tools</Link> — assistants
+        that organize information, summarize records, or draft responses —
+        can be built into custom software from day one or added later as your
+        needs grow.
+      </>
+    ),
   },
   {
     question: "Will I own the software?",
@@ -226,6 +266,7 @@ export default function CustomSoftwarePage() {
         copy="Every business has unique workflows. NorthWing Labs designs custom software that fits the way your business already works, eliminating manual processes, disconnected spreadsheets, and repetitive tasks."
         primary={{ label: "Start a Conversation", href: "/contact" }}
         secondary={{ label: "Explore Our Process", href: "/process" }}
+        trust="Designed for growing businesses—not enterprise complexity."
         illustration={<CustomSoftwareIllustration />}
       />
       <ServiceProblemGrid
@@ -239,14 +280,39 @@ export default function CustomSoftwarePage() {
         eyebrow="WHAT WE BUILD"
         heading="Software designed specifically for your workflow."
         headingId="what-we-build-heading"
-        copy="Start with one focused tool or grow into a connected business management system — every piece is designed around how your business actually runs."
+        copy={
+          <>
+            Start with one focused tool or grow into a connected business
+            management system — often alongside{" "}
+            <Link href="/services/business-automation">
+              business automation
+            </Link>{" "}
+            and <Link href="/services/ai-tools">AI tools</Link>. Every piece
+            is designed around how your business actually runs.
+          </>
+        }
         capabilities={CAPABILITIES}
+      />
+      <WhatWeCanBuild
+        eyebrow="TYPICAL PROJECTS"
+        heading="Typical Custom Software Projects"
+        headingId="typical-projects-heading"
+        copy="If you can describe how the work should flow, we can usually build it. These are the kinds of systems growing businesses ask for most."
+        items={TYPICAL_PROJECTS}
       />
       <PlatformShowcase
         eyebrow="EXAMPLE BUSINESS PLATFORM"
         heading="Everything your business runs on, working together."
         headingId="platform-showcase-heading"
-        copy="A custom business application can bring quoting, scheduling, orders, customers, and reporting into one system — on the desktop in the office, the tablet in the shop, and the phone in the field."
+        copy={
+          <>
+            A custom business application can bring quoting, scheduling,
+            orders, customers, and reporting into one system — on the desktop
+            in the office, the tablet in the shop, and the phone in the
+            field. See how one came together in{" "}
+            <Link href="/work">our featured work</Link>.
+          </>
+        }
         emphasis="One connected business platform."
         illustration={<PlatformShowcaseIllustration />}
       />
@@ -269,6 +335,11 @@ export default function CustomSoftwarePage() {
         headingId="faq-heading"
         copy="Straight answers about how custom software projects actually work."
         items={FAQ_ITEMS}
+        cta={{
+          text: "Still have questions?",
+          label: "Contact Us",
+          href: "/contact",
+        }}
       />
       <FinalCTA
         heading="Let’s build software that works the way your business works."

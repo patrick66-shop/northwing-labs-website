@@ -15,6 +15,8 @@ type ServiceDetailHeroProps = {
   copy: string;
   primary: CTAAction;
   secondary: CTAAction;
+  /** Subtle trust statement under the CTA buttons. */
+  trust?: string;
   /** Service illustration rendered in the right column on desktop,
    * below the copy on mobile. Decorative — pass aria-hidden SVG. */
   illustration: React.ReactNode;
@@ -33,6 +35,7 @@ export default function ServiceDetailHero({
   copy,
   primary,
   secondary,
+  trust,
   illustration,
 }: ServiceDetailHeroProps) {
   return (
@@ -59,6 +62,11 @@ export default function ServiceDetailHero({
                 </SecondaryButton>
               </CTAGroup>
             </Reveal>
+            {trust ? (
+              <Reveal variant="up" delay={300}>
+                <p className={styles.trust}>{trust}</p>
+              </Reveal>
+            ) : null}
           </div>
           <Reveal variant="scale" delay={200} className={styles.visualColumn}>
             {illustration}
