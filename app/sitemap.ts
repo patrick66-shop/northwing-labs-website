@@ -9,6 +9,7 @@ const PUBLIC_ROUTES = [
   "/services/ai-tools",
   "/services/business-automation",
   "/services/mobile-apps",
+  "/services/saas-development",
   "/contact",
 ] as const;
 

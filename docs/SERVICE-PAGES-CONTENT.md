@@ -12,7 +12,8 @@ Approved individual service pages:
 - AI Tools (`/services/ai-tools`)
 - Business Automation (`/services/business-automation`)
 - Mobile Apps (`/services/mobile-apps` — copy recorded in full below)
-- SaaS Development (not yet built)
+- SaaS Development (`/services/saas-development` — copy recorded in
+  full below)
 
 The Custom Software and AI Tools pages were approved and implemented
 from GitHub issues #18 and #20 respectively; those issues remain the
@@ -639,6 +640,332 @@ You own it — the app, the code, and the accounts it is published under. After 
 ### Supporting Copy
 
 Tell us where work happens away from the office — and where information gets lost between the field, the customer, and the back office. NorthWing Labs will help determine whether a mobile app is the simplest way to improve it.
+
+### Primary CTA
+
+**Start a Conversation** → contact route
+
+### Secondary CTA
+
+**View Our Process** → Process page
+
+### Reassurance Line
+
+Every project starts with a conversation—not a commitment.
+
+---
+
+# SaaS Development (`/services/saas-development`)
+
+**Status: APPROVED — copy written by Claude Code (2026-07-12) from the
+approved brand voice (docs/08_Voice_and_Tone.md), the approved
+services-overview SaaS messaging ("Turn a software idea into a working
+product"), and the service-page family pattern. Reviewed and approved
+by the Product Owner on 2026-07-12.**
+
+Central message: *Turn your software idea into a product customers can
+use.* Positioning: for entrepreneurs and small teams (the approved
+secondary audience) — practical product building that proves the idea
+with a focused first version before big investment. No startup-hype
+language, no invented success metrics.
+
+## SEO and Metadata
+
+- **Page title:** SaaS Development for Founders and Small Businesses | NorthWing Labs
+- **Meta description:** NorthWing Labs turns software product ideas into working SaaS products — scoping the right first version, then designing, building, and launching it in clear, reviewable stages.
+- **Canonical route:** `/services/saas-development`
+- **Open Graph title:** SaaS Development for Founders and Small Businesses | NorthWing Labs
+- **Open Graph description:** Practical SaaS product development: scope the smallest version worth building, develop it in reviewable stages, and launch a product customers can use.
+- **Social image:** `/images/social/northwing-social-share-default.png` (approved default)
+
+## 1. Hero
+
+### Eyebrow
+
+`SAAS DEVELOPMENT`
+
+### H1
+
+**Turn your software idea into a product customers can use.**
+
+### Supporting Copy
+
+NorthWing Labs takes software products from concept to launch — requirements, user experience, architecture, development, and testing — starting with the focused first version that proves the idea before you over-invest.
+
+### Primary CTA
+
+**Start a Conversation** → contact route
+
+### Secondary CTA
+
+**Explore Our Process** → Process page
+
+### Trust Line
+
+For founders and small teams building their first software product—or their next one.
+
+## 2. Problem Recognition
+
+### Eyebrow
+
+`WHY SAAS DEVELOPMENT?`
+
+### Heading
+
+**The idea is not the hard part. Becoming a product is.**
+
+### Supporting Copy
+
+Most software products start with someone who understands a real problem deeply. These are the walls they hit between the idea and the launch.
+
+### Problem Card 1 — The Idea Is Stuck in Your Head
+
+You can describe the product in conversation, but turning it into screens, features, and a plan feels out of reach.
+
+### Problem Card 2 — No Technical Co-Founder
+
+You know the industry and the problem — but nobody on the team builds software.
+
+### Problem Card 3 — Quotes That Make No Sense
+
+Development estimates range from a few thousand to a few hundred thousand, with no way to tell what is realistic.
+
+### Problem Card 4 — The Feature List Keeps Growing
+
+Every conversation adds another must-have, and the product gets bigger, more expensive, and further away.
+
+### Problem Card 5 — Afraid of Building the Wrong Thing
+
+The real risk is not bad code — it is spending months building something customers never asked for.
+
+### Problem Card 6 — The Manual Version Is Straining
+
+The service you deliver by hand today could be a product — but it cannot scale the way it runs now.
+
+## 3. What We Build
+
+### Eyebrow
+
+`WHAT WE BUILD`
+
+### Heading
+
+**Everything a software product needs to earn its first customers.**
+
+### Supporting Copy (with contextual links)
+
+The product is more than its features — accounts, billing, and administration decide whether it can grow. AI capability [link: /services/ai-tools] and mobile experiences [link: /services/mobile-apps] can be part of the product where they earn their place.
+
+### Capability 1 — Product Definition & MVP Scoping (icon: spark)
+
+Turn the idea into a focused first version that proves demand without over-building.
+
+### Capability 2 — User Experience & Interface Design (icon: drafting)
+
+Screens your customers understand the first time — designed before code is written.
+
+### Capability 3 — Accounts & Onboarding (icon: customers)
+
+Sign-up, subscriptions, and self-serve account management built in from day one.
+
+### Capability 4 — Subscriptions & Billing (icon: estimating)
+
+Recurring payments, plans, and invoicing handled by proven billing infrastructure.
+
+### Capability 5 — Customer Workspaces (icon: portal)
+
+Secure multi-tenant spaces where every customer sees only their own data.
+
+### Capability 6 — Roles & Permissions (icon: employee)
+
+Owners, admins, and team members each get the right level of access.
+
+### Capability 7 — Admin & Analytics Dashboards (icon: reporting)
+
+See sign-ups, usage, and revenue — and what customers actually do inside the product.
+
+### Capability 8 — Integrations & APIs (icon: workflow)
+
+Connect your product to the tools your customers already use.
+
+### Capability 9 — Web & Mobile Experiences (icon: mobile)
+
+A product that works wherever your customers are.
+
+### Capability 10 — Launch & Continuous Improvement (icon: sync)
+
+Hosting, monitoring, updates — and a partner after version one ships.
+
+## 4. Typical SaaS Projects (chips)
+
+### Eyebrow
+
+`TYPICAL SAAS PRODUCTS`
+
+### Heading
+
+**The products founders and operators bring to us.**
+
+### Supporting Copy (with contextual link)
+
+Most begin as deep knowledge of one industry's problem. If yours is not listed, start a conversation [link: /contact] — these are examples, not limits.
+
+### Chips
+
+- Industry-specific management platforms
+- Booking and scheduling products
+- Quoting and estimating tools
+- Client portal products
+- Field and trade service platforms
+- Membership and subscription products
+- Marketplace platforms
+- Data and reporting products
+- Internal tools turned into products
+- Niche tools for underserved industries
+
+## 5. Example SaaS Product (showcase)
+
+### Eyebrow
+
+`EXAMPLE SAAS PRODUCT`
+
+### Heading
+
+**One product, serving every customer their own workspace.**
+
+### Supporting Copy (with contextual link)
+
+A SaaS product gives each customer their own secure workspace on one platform you own — with sign-up, subscriptions, and administration working from launch, and an architecture that welcomes growth instead of collapsing under it. See how we put complete systems together in our featured work [link: /work].
+
+### Emphasis Line
+
+Built once. Sold to many. Owned by you.
+
+### Footnote
+
+Not sure it needs to be a product yet? → Explore Custom Software [link: /services/custom-software]
+
+## 6. Our Process (7-step rail, tailored sentences)
+
+### Eyebrow
+
+`OUR PROCESS`
+
+### Heading
+
+**The same clear process, tuned for product building.**
+
+### Supporting Copy
+
+Seven reviewable steps — with market fit, scope discipline, and real-user validation treated as first-class requirements.
+
+### Steps
+
+1. **Discover** — Understand the problem the product solves, who pays for it, and what already exists in the market.
+2. **Define** — Scope the smallest version that proves the idea — and consciously park everything else.
+3. **Design** — Design the experience your first customers see: clear screens, honest flows, no bloat.
+4. **Build** — Develop the product in controlled, reviewable stages.
+5. **Test** — Validate with real users before real customers depend on it.
+6. **Launch** — Ship the first version, set up hosting and monitoring, and start learning.
+7. **Improve** — Let real usage — not guesses — decide what gets built next.
+
+## 7. Business Outcomes
+
+### Eyebrow
+
+`BUSINESS OUTCOMES`
+
+### Heading
+
+**A working product — and proof the idea holds.**
+
+### Supporting Copy
+
+SaaS development is measured by the distance from idea to paying customer, and by what the product can carry after that.
+
+### Outcome 1 — From Idea to Working Product (icon: flow)
+
+A concept becomes something customers can sign up for and use.
+
+### Outcome 2 — Confidence Before Big Investment (icon: shield-check)
+
+Prove the idea with a focused first version before betting the budget.
+
+### Outcome 3 — Faster Time to First Customer (icon: clock)
+
+Scope discipline gets a real product into real hands sooner.
+
+### Outcome 4 — Clarity at Every Stage (icon: eye)
+
+You always know what is being built, why, and what it costs.
+
+### Outcome 5 — Ready for More Than Ten Users (icon: people)
+
+Accounts, billing, and support designed for a growing customer base.
+
+### Outcome 6 — Built to Scale When It Works (icon: growth)
+
+An architecture that welcomes success instead of buckling under it.
+
+## 8. FAQ
+
+### Eyebrow
+
+`FREQUENTLY ASKED QUESTIONS`
+
+### Heading
+
+**Questions we hear most often.**
+
+### Supporting Copy
+
+Straight answers about how SaaS product projects actually work.
+
+### Q1 — I'm not technical. Can I still build a software product?
+
+Yes — that is exactly who this service is for. You bring deep knowledge of the industry and the problem; we handle requirements, design, architecture, and development, and keep every decision in plain business language.
+
+### Q2 — I only have an idea. Is that enough to start?
+
+Yes. Most products start as a conversation, not a specification. The Discover and Define steps exist to turn what is in your head into requirements, screens, and a plan you can react to.
+
+### Q3 — What happens to my idea if I share it with you?
+
+It stays yours. We treat product conversations as confidential, we are happy to sign an NDA, and everything we build — the product, the code, the accounts — belongs to you.
+
+### Q4 — How much does it cost to build a SaaS product?
+
+It depends on scope, and scope is where we earn our keep. Every engagement starts by defining the smallest version that proves the idea, so you see a clear picture of the investment before build work begins — and you never pay for features the market has not asked for yet. The fastest way to get a real answer is to start a conversation [link: /contact].
+
+### Q5 — How long until launch?
+
+Focused first versions launch in months, not years. After the Discover and Define steps [link: /process] you get a realistic timeline broken into reviewable stages, so progress is visible from the start.
+
+### Q6 — Do I own the product and the code?
+
+Yes — fully. The product, the source code, and the accounts it runs on belong to you. We are happy to keep hosting, supporting, and improving it, but you are never locked in.
+
+### Q7 — Can the product include AI features?
+
+Yes, where they earn their place. Practical AI tools [link: /services/ai-tools] — assistants, document processing, intelligent workflows — can be built into the product from day one or added once the core has proven itself.
+
+### Q8 — What if the idea changes after launch?
+
+It probably will — that is a sign customers are using it. The staged approach is designed for learning: the Improve stage reads real usage and feedback, and the product evolves toward what the market actually rewards.
+
+## 9. Final CTA
+
+### Eyebrow
+
+`LET'S BUILD YOUR PRODUCT`
+
+### Heading
+
+**What's the product you've been thinking about?**
+
+### Supporting Copy
+
+Tell us the problem it solves and who it is for. NorthWing Labs will help you find the smallest version worth building — and a realistic path to launching it.
 
 ### Primary CTA
 
