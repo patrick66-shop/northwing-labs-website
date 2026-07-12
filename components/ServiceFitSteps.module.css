@@ -1,0 +1,89 @@
+/* Approved subtle light technical texture — same as the homepage light
+   sections. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.steps > li {
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding-inline: var(--space-4);
+}
+
+/* Numbered node in the homepage process language: Flight Blue ring,
+   gold for the concluding step. */
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-flight-blue);
+  background-color: rgba(13, 105, 206, 0.08);
+  color: var(--color-flight-blue);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.steps > li:last-child .stepNumber {
+  border-color: var(--color-flight-gold);
+  background-color: rgba(237, 183, 67, 0.14);
+  color: var(--color-navy);
+}
+
+/* Connector line between nodes on the three-column layout. */
+@media (min-width: 768px) {
+  .steps > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 24px; /* node vertical center */
+    left: calc(50% + 40px);
+    width: calc(100% - 80px + var(--space-6));
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgba(13, 105, 206, 0.45),
+      rgba(13, 105, 206, 0.15)
+    );
+  }
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  color: var(--color-navy);
+}
+
+.stepCopy {
+  color: var(--color-slate);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 320px;
+}

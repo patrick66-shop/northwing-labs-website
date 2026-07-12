@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import SiteContainer from "./SiteContainer";
 import PrimaryButton from "./PrimaryButton";
 import MobileNavigation from "./MobileNavigation";
@@ -28,6 +29,15 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+
+  /* On inner pages the route itself marks the active nav item; the
+     homepage scroll-spy (below) takes precedence where it applies. */
+  const pathname = usePathname();
+  const routeHref =
+    NAV_LINKS.find(
+      (link) => pathname === link.href || pathname.startsWith(`${link.href}/`)
+    )?.href ?? null;
+  const currentHref = activeHref ?? routeHref;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -91,11 +101,17 @@ export default function SiteHeader() {
                 <Link
                   href={link.href}
                   className={
-                    activeHref === link.href
+                    currentHref === link.href
                       ? `${styles.navLink} ${styles.navLinkActive}`
                       : styles.navLink
                   }
-                  aria-current={activeHref === link.href ? "true" : undefined}
+                  aria-current={
+                    routeHref === link.href
+                      ? "page"
+                      : currentHref === link.href
+                        ? "true"
+                        : undefined
+                  }
                 >
                   {link.label}
                 </Link>
