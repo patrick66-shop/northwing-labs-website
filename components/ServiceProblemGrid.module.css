@@ -25,4 +25,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
+
+  /* Four-card sets keep the homepage's balanced 2 × 2 instead of
+     leaving an orphan on a 3-across rail. */
+  .gridTwoUp {
+    grid-template-columns: 1fr 1fr;
+  }
 }

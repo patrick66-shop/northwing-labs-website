@@ -137,6 +137,18 @@ Services
 └── SaaS Development
 ```
 
+### Individual Service Pages
+
+Dedicated individual service pages are approved (superseding the
+earlier "Pages to Delay" guidance below). Approved individual service
+pages:
+
+- Custom Software (`/services/custom-software` — GitHub issue #18)
+- AI Tools (`/services/ai-tools` — GitHub issue #20)
+- Business Automation (`/services/business-automation` — GitHub issue #22)
+- Mobile Apps
+- SaaS Development
+
 ### Standard Section Structure
 
 Each service section should include:
@@ -371,10 +383,12 @@ Do not build these in Version 1 unless there is a clear business need and enough
 - Blog
 - Resources
 - Careers
-- Individual service pages
 - Industry-specific pages
 - Large case-study library
 - Pricing page
+
+Individual service pages were originally delayed but are now approved
+and being built — see "Individual Service Pages" in section 4.
 
 These can be added later when content depth, SEO opportunity, or sales needs justify them.
 

@@ -19,6 +19,11 @@ type CapabilityCardGridProps = {
   /** Plain text or JSX — contextual internal links welcome. */
   copy?: React.ReactNode;
   capabilities: CapabilityCard[];
+  /** Anchor id for in-page CTAs (scroll offset handled globally). */
+  id?: string;
+  /** Desktop columns. 4 (default) suits the 10-card sets (4/4/2);
+   * 3 keeps six-card sets balanced at 3 × 2. */
+  columns?: 3 | 4;
 };
 
 /**
@@ -33,9 +38,14 @@ export default function CapabilityCardGrid({
   headingId,
   copy,
   capabilities,
+  id,
+  columns = 4,
 }: CapabilityCardGridProps) {
+  const cellClass = [styles.cell, columns === 3 ? styles.cellThreeUp : ""]
+    .filter(Boolean)
+    .join(" ");
   return (
-    <SectionWrapper variant="light" aria-labelledby={headingId}>
+    <SectionWrapper variant="light" id={id} aria-labelledby={headingId}>
       <SiteContainer>
         <SectionHeader
           eyebrow={eyebrow}
@@ -53,7 +63,7 @@ export default function CapabilityCardGrid({
               variant="up"
               delay={index * 60}
               key={capability.title}
-              className={styles.cell}
+              className={cellClass}
             >
               <article className={styles.card}>
                 <CapabilityIcon name={capability.icon} />

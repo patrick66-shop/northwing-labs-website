@@ -52,7 +52,8 @@ type ServicesOutcomesProps = {
   eyebrow?: string;
   heading?: string;
   headingId?: string;
-  copy?: string;
+  /** Supporting paragraph; pass null to omit it. */
+  copy?: string | null;
   outcomes?: OutcomeItem[];
 };
 
@@ -84,7 +85,7 @@ export default function ServicesOutcomes({
           animate
           className={styles.header}
         >
-          <SupportingCopy>{copy}</SupportingCopy>
+          {copy ? <SupportingCopy>{copy}</SupportingCopy> : null}
         </SectionHeader>
 
         <ul className={styles.grid}>

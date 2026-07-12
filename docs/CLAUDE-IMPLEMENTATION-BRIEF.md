@@ -861,7 +861,6 @@ Do not add unless separately approved:
 - Resource center
 - Careers page
 - Pricing page
-- Individual service detail pages
 - Industry-specific landing pages
 - Fake testimonials
 - Fake partner logos
@@ -869,6 +868,11 @@ Do not add unless separately approved:
 - CMS integration
 - Complex animation system
 - Video background
+
+Individual service detail pages have since been separately approved
+(Custom Software, AI Tools, Business Automation, Mobile Apps, SaaS
+Development) — see docs/SITEMAP.md section 4 and
+docs/SERVICE-PAGES-CONTENT.md.
 
 ---
 

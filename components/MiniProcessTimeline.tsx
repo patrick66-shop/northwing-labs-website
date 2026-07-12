@@ -48,9 +48,14 @@ type MiniProcessTimelineProps = {
   copy?: string;
   /** Step sentences default to the approved homepage process copy;
    * service pages may tailor them (e.g. AI boundaries and response-
-   * quality testing on the AI Tools page). Titles should stay the
-   * approved seven. */
+   * quality testing on the AI Tools page). When the rail shows the
+   * development process, titles should stay the approved seven; other
+   * approved step sequences (e.g. the Business Automation
+   * trigger-to-result explainer) size the rail to their step count. */
   steps?: ProcessStepItem[];
+  /** Closing link under the rail. Defaults to the full-process page;
+   * pass null when the rail is not about the development process. */
+  cta?: { label: string; href: string } | null;
 };
 
 /**
@@ -66,6 +71,7 @@ export default function MiniProcessTimeline({
   headingId,
   copy,
   steps = DEFAULT_STEPS,
+  cta = { label: "See the Full Process", href: "/process" },
 }: MiniProcessTimelineProps) {
   return (
     <SectionWrapper
@@ -83,7 +89,10 @@ export default function MiniProcessTimeline({
         >
           {copy ? <SupportingCopy>{copy}</SupportingCopy> : null}
         </SectionHeader>
-        <ol className={styles.steps}>
+        <ol
+          className={styles.steps}
+          style={{ "--rail-columns": steps.length } as React.CSSProperties}
+        >
           {steps.map((step, index) => (
             <Reveal as="li" variant="up" delay={index * 70} key={step.title}>
               <article className={styles.step}>
@@ -96,11 +105,13 @@ export default function MiniProcessTimeline({
             </Reveal>
           ))}
         </ol>
-        <Reveal variant="up" delay={120} className={styles.ctaRow}>
-          <SecondaryButton variant="on-light" href="/process">
-            See the Full Process
-          </SecondaryButton>
-        </Reveal>
+        {cta ? (
+          <Reveal variant="up" delay={120} className={styles.ctaRow}>
+            <SecondaryButton variant="on-light" href={cta.href}>
+              {cta.label}
+            </SecondaryButton>
+          </Reveal>
+        ) : null}
       </SiteContainer>
     </SectionWrapper>
   );

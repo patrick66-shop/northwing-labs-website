@@ -36,38 +36,51 @@ function CheckMark() {
   );
 }
 
+type ProblemChecklistProps = {
+  /** All content defaults to the services overview page (issue #16);
+   * service pages pass their own approved variants (issue #22). */
+  id?: string;
+  headingId?: string;
+  eyebrow?: string;
+  heading?: string;
+  copy?: string;
+  items?: string[];
+};
+
 /**
- * Problem recognition — services page section 2 (GitHub issue #16).
- * A quiet two-column checklist rather than another card grid: six
- * problem indicators a small-business owner can self-select against.
+ * ProblemChecklist — quiet two-column checklist rather than another
+ * card grid (GitHub issue #16; the services page is the template
+ * instance): problem indicators a small-business owner can
+ * self-select against.
  */
-export default function ProblemChecklist() {
+export default function ProblemChecklist({
+  id = "start-with-the-problem",
+  headingId = "problem-checklist-heading",
+  eyebrow = "START WITH THE PROBLEM",
+  heading = "The right service depends on what is slowing your business down.",
+  copy = "Some businesses need a custom internal tool. Others need existing systems connected, repetitive tasks automated, an AI assistant, a mobile experience, or help turning a product idea into software. The best solution begins with understanding the workflow—not choosing technology first.",
+  items = PROBLEMS,
+}: ProblemChecklistProps) {
   return (
     <SectionWrapper
       variant="light"
-      id="start-with-the-problem"
+      id={id}
       className={styles.section}
-      aria-labelledby="problem-checklist-heading"
+      aria-labelledby={headingId}
     >
       <SiteContainer>
         <SectionHeader
-          eyebrow="START WITH THE PROBLEM"
-          heading="The right service depends on what is slowing your business down."
-          headingId="problem-checklist-heading"
+          eyebrow={eyebrow}
+          heading={heading}
+          headingId={headingId}
           align="center"
           animate
         >
-          <SupportingCopy>
-            Some businesses need a custom internal tool. Others need existing
-            systems connected, repetitive tasks automated, an AI assistant, a
-            mobile experience, or help turning a product idea into software.
-            The best solution begins with understanding the workflow—not
-            choosing technology first.
-          </SupportingCopy>
+          <SupportingCopy>{copy}</SupportingCopy>
         </SectionHeader>
 
         <ul className={styles.list}>
-          {PROBLEMS.map((problem, index) => (
+          {items.map((problem, index) => (
             <Reveal as="li" variant="up" delay={index * 70} key={problem}>
               <span className={styles.item}>
                 <CheckMark />

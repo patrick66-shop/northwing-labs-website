@@ -10,7 +10,8 @@ type ServiceProblemGridProps = {
   eyebrow: string;
   heading: string;
   headingId: string;
-  copy?: string;
+  /** One paragraph, or several rendered as separate paragraphs. */
+  copy?: string | string[];
   problems: { title: string; copy: string }[];
 };
 
@@ -40,9 +41,17 @@ export default function ServiceProblemGrid({
           align="center"
           animate
         >
-          {copy ? <SupportingCopy>{copy}</SupportingCopy> : null}
+          {copy
+            ? (Array.isArray(copy) ? copy : [copy]).map((paragraph) => (
+                <SupportingCopy key={paragraph}>{paragraph}</SupportingCopy>
+              ))
+            : null}
         </SectionHeader>
-        <ul className={styles.grid}>
+        <ul
+          className={[styles.grid, problems.length === 4 ? styles.gridTwoUp : ""]
+            .filter(Boolean)
+            .join(" ")}
+        >
           {problems.map((problem, index) => (
             <Reveal as="li" variant="up" delay={index * 80} key={problem.title}>
               <ProblemCard title={problem.title}>{problem.copy}</ProblemCard>

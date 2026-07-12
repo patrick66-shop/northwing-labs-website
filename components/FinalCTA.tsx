@@ -18,7 +18,8 @@ type FinalCTAProps = {
    * spec); inner pages pass their own approved variants. */
   eyebrow?: string;
   heading?: string;
-  copy?: string;
+  /** One paragraph, or several rendered as separate paragraphs. */
+  copy?: string | string[];
   primary?: CTAAction;
   secondary?: CTAAction;
   /** Optional friction-reducing line between the supporting copy and
@@ -57,7 +58,9 @@ export default function FinalCTA({
           animate
           className={styles.header}
         >
-          <SupportingCopy>{copy}</SupportingCopy>
+          {(Array.isArray(copy) ? copy : [copy]).map((paragraph) => (
+            <SupportingCopy key={paragraph}>{paragraph}</SupportingCopy>
+          ))}
         </SectionHeader>
 
         {reassurance ? (

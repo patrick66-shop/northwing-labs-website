@@ -5,7 +5,9 @@
   background-position: center;
 }
 
-/* Compact rail: 7 across desktop, 2-up tablet, single column mobile. */
+/* Compact rail: one column per step on desktop (--rail-columns, set
+   from the step count; 7 for the development process), 2-up tablet,
+   single column mobile. */
 .steps {
   list-style: none;
   padding: 0;
@@ -22,7 +24,7 @@
 
 @media (min-width: 1024px) {
   .steps {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(var(--rail-columns, 7), 1fr);
     gap: var(--space-4);
   }
 }
