@@ -193,3 +193,28 @@
     margin-top: var(--space-8);
   }
 }
+
+/* Transparency label (docs/SITEMAP.md §6): a quiet outlined badge
+   naming what the example is — internal product, demonstration, or
+   client project. */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-3);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  color: var(--color-cloud);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.labelDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-flight-gold);
+}

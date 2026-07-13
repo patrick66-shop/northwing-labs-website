@@ -26,6 +26,10 @@ type CaseStudySectionProps = {
   businessOutcomes: string[];
   buttonText: string;
   buttonLink: string;
+  /** Transparency label per docs/SITEMAP.md §6 (e.g. "Internal
+   * product — in daily use"). Rendered as a quiet badge under the
+   * description. */
+  label?: string;
   /** Unique heading id when more than one case study appears on a page. */
   headingId?: string;
   /** Section element id (e.g. for navigation scroll-spy). */
@@ -68,6 +72,7 @@ export default function CaseStudySection({
   businessOutcomes,
   buttonText,
   buttonLink,
+  label,
   headingId = "case-study-heading",
   id,
 }: CaseStudySectionProps) {
@@ -87,6 +92,12 @@ export default function CaseStudySection({
           animate
         >
           <SupportingCopy>{description}</SupportingCopy>
+          {label ? (
+            <p className={styles.label}>
+              <span className={styles.labelDot} aria-hidden="true" />
+              {label}
+            </p>
+          ) : null}
         </SectionHeader>
 
         <Reveal variant="scale" className={styles.showcase}>

@@ -40,7 +40,7 @@ const WOODWORKING_CASE_STUDY = {
     "Better Business Decisions",
   ],
   buttonText: "View the Complete Case Study →",
-  buttonLink: "#", // dedicated Case Study page arrives in a future sprint
+  buttonLink: "/work#woodworking-toolkit",
 };
 
 /*
