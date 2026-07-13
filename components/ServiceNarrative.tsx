@@ -7,8 +7,9 @@ type ServiceNarrativeProps = {
   eyebrow: string;
   heading: string;
   headingId: string;
-  /** Approved paragraphs, rendered in order. */
-  paragraphs: string[];
+  /** Approved paragraphs, rendered in order — plain text or JSX with
+   * contextual internal links. */
+  paragraphs: React.ReactNode[];
   variant?: "light" | "tinted" | "dark";
   id?: string;
 };
@@ -37,8 +38,8 @@ export default function ServiceNarrative({
           align="center"
           animate
         >
-          {paragraphs.map((paragraph) => (
-            <SupportingCopy key={paragraph}>{paragraph}</SupportingCopy>
+          {paragraphs.map((paragraph, index) => (
+            <SupportingCopy key={index}>{paragraph}</SupportingCopy>
           ))}
         </SectionHeader>
       </SiteContainer>

@@ -10,6 +10,7 @@ const PUBLIC_ROUTES = [
   "/services/business-automation",
   "/services/mobile-apps",
   "/services/saas-development",
+  "/process",
   "/contact",
 ] as const;
 

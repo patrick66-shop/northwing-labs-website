@@ -77,6 +77,7 @@ SaaS Development
 /services/business-automation
 /services/mobile-apps
 /services/saas-development
+/process
 /contact
 ```
 
@@ -108,7 +109,6 @@ The following routes are referenced by project documentation or the current inte
 ```text
 /solutions
 /work
-/process
 /about
 /privacy
 /terms
@@ -132,7 +132,8 @@ The following routes are referenced by project documentation or the current inte
 | Contact thank-you page | Implemented and validated; redirects after confirmed inquiry and visitor-email processing; Product Owner review pending |
 | Mobile Apps service page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SERVICE-PAGES-CONTENT.md`) and page reviewed and approved by the Product Owner on 2026-07-12. The prior ChatGPT work order was lost to truncation and its stub deleted. |
 | SaaS Development service page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SERVICE-PAGES-CONTENT.md`) and page reviewed and approved by the Product Owner on 2026-07-12. |
-| Technical sitemap | Implemented with the six currently public routes only, including `/contact` |
+| Process page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/PROCESS-PAGE-CONTENT.md`, step definitions from approved SITEMAP §7) and page reviewed and approved by the Product Owner on 2026-07-12. |
+| Technical sitemap | Implemented; tracks the currently public routes (now nine, including `/process`) |
 | Codex governance | Transition files prepared for repository history |
 
 Do not mark a page approved merely because it exists. Product Owner review is required.
@@ -144,9 +145,9 @@ Do not mark a page approved merely because it exists. Product Owner review is re
 All five dedicated service pages are implemented and Product Owner
 approved. Next:
 
-1. Resolve or sequence links that currently target unimplemented routes
-   (`/solutions`, `/work`, `/process`, `/about`, `/privacy`, `/terms`)
-   — likely by building `/process` and `/work` next.
+1. Resolve or sequence the remaining links that target unimplemented
+   routes (`/solutions`, `/work`, `/about`, `/privacy`, `/terms`) —
+   likely by building `/work` next.
 
 The Business Automation grid revision is complete: it shipped inside
 PR #23 with Product Owner approval.
@@ -235,4 +236,6 @@ artifact.
 | 2026-07-12 | Implemented `/services/mobile-apps` from drafted copy recorded in `docs/SERVICE-PAGES-CONTENT.md`; added the route to the technical sitemap. |
 | 2026-07-12 | Product Owner reviewed and approved the Mobile Apps page and its copy; copy status updated to approved and the work merged to `main` (PR #24). |
 | 2026-07-12 | Implemented `/services/saas-development` from drafted copy recorded in `docs/SERVICE-PAGES-CONTENT.md`; added the route to the technical sitemap. |
-| 2026-07-12 | Product Owner reviewed and approved the SaaS Development page and its copy; all five dedicated service pages are now implemented and approved. Work merged to `main`. |
+| 2026-07-12 | Product Owner reviewed and approved the SaaS Development page and its copy; all five dedicated service pages are now implemented and approved. Work merged to `main` (PR #25). |
+| 2026-07-12 | Implemented `/process` from drafted copy recorded in `docs/PROCESS-PAGE-CONTENT.md` (step definitions from approved SITEMAP §7); added the route to the technical sitemap. |
+| 2026-07-12 | Product Owner reviewed and approved the Process page and its copy; work merged to `main`. |
