@@ -1,0 +1,152 @@
+/* Approved subtle light texture — homepage light-section treatment. */
+.section {
+  background-image: url("/images/backgrounds/northwing-section-background-light.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Single centered column: readable at every width, node rail on the
+   left, one card per step. */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .item {
+    gap: var(--space-5);
+  }
+}
+
+/* Numbered node in the established process language; the final step
+   lands gold like the homepage timeline. */
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-flight-blue);
+  background-color: rgba(13, 105, 206, 0.08);
+  color: var(--color-flight-blue);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.steps > li:last-child .node {
+  border-color: var(--color-flight-gold);
+  background-color: rgba(237, 183, 67, 0.14);
+  color: var(--color-navy);
+}
+
+.connector {
+  flex: 1;
+  width: 2px;
+  min-height: var(--space-5);
+  margin: var(--space-2) 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 105, 206, 0.35),
+    rgba(13, 105, 206, 0.12)
+  );
+}
+
+/* Light-family card, matching the ProblemCard treatment. */
+.card {
+  display: block;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cloud);
+  border-radius: var(--radius-card-sm);
+  padding: var(--space-6);
+  box-shadow: 0 1px 3px rgba(5, 18, 49, 0.06);
+  margin-bottom: var(--space-6);
+}
+
+.steps > li:last-child .card {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-2);
+}
+
+/* The approved definition sentence — the step's lead. */
+.definition {
+  color: var(--color-slate);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.bulletsLabel {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-flight-blue);
+  margin-bottom: var(--space-2);
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+}
+
+.bullet {
+  position: relative;
+  padding-left: 22px;
+  color: var(--color-slate);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-1);
+}
+
+.bullet::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--color-flight-blue);
+  background-color: rgba(13, 105, 206, 0.08);
+}
+
+/* Closing outcome line under a quiet gold rule. */
+.outcome {
+  border-top: 2px solid rgba(237, 183, 67, 0.5);
+  padding-top: var(--space-3);
+  color: var(--color-navy);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.outcomeLabel {
+  font-weight: 700;
+}
