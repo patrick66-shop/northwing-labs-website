@@ -78,6 +78,7 @@ SaaS Development
 /services/mobile-apps
 /services/saas-development
 /process
+/work
 /contact
 ```
 
@@ -108,7 +109,6 @@ The following routes are referenced by project documentation or the current inte
 
 ```text
 /solutions
-/work
 /about
 /privacy
 /terms
@@ -133,7 +133,8 @@ The following routes are referenced by project documentation or the current inte
 | Mobile Apps service page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SERVICE-PAGES-CONTENT.md`) and page reviewed and approved by the Product Owner on 2026-07-12. The prior ChatGPT work order was lost to truncation and its stub deleted. |
 | SaaS Development service page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SERVICE-PAGES-CONTENT.md`) and page reviewed and approved by the Product Owner on 2026-07-12. |
 | Process page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/PROCESS-PAGE-CONTENT.md`, step definitions from approved SITEMAP §7) and page reviewed and approved by the Product Owner on 2026-07-12. |
-| Technical sitemap | Implemented; tracks the currently public routes (now nine, including `/process`) |
+| Work page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/WORK-PAGE-CONTENT.md`, transparency labels per SITEMAP §6) and page reviewed and approved by the Product Owner on 2026-07-12. Homepage case-study CTA placeholder (`#`) now links to `/work#woodworking-toolkit`. |
+| Technical sitemap | Implemented; tracks the currently public routes (now ten, including `/work`) |
 | Codex governance | Transition files prepared for repository history |
 
 Do not mark a page approved merely because it exists. Product Owner review is required.
@@ -146,8 +147,7 @@ All five dedicated service pages are implemented and Product Owner
 approved. Next:
 
 1. Resolve or sequence the remaining links that target unimplemented
-   routes (`/solutions`, `/work`, `/about`, `/privacy`, `/terms`) —
-   likely by building `/work` next.
+   routes (`/solutions`, `/about`, `/privacy`, `/terms`).
 
 The Business Automation grid revision is complete: it shipped inside
 PR #23 with Product Owner approval.
@@ -238,4 +238,6 @@ artifact.
 | 2026-07-12 | Implemented `/services/saas-development` from drafted copy recorded in `docs/SERVICE-PAGES-CONTENT.md`; added the route to the technical sitemap. |
 | 2026-07-12 | Product Owner reviewed and approved the SaaS Development page and its copy; all five dedicated service pages are now implemented and approved. Work merged to `main` (PR #25). |
 | 2026-07-12 | Implemented `/process` from drafted copy recorded in `docs/PROCESS-PAGE-CONTENT.md` (step definitions from approved SITEMAP §7); added the route to the technical sitemap. |
-| 2026-07-12 | Product Owner reviewed and approved the Process page and its copy; work merged to `main`. |
+| 2026-07-12 | Product Owner reviewed and approved the Process page and its copy; work merged to `main` (PR #26). |
+| 2026-07-12 | Implemented `/work` from drafted copy recorded in `docs/WORK-PAGE-CONTENT.md` (SITEMAP §6 transparency rule; featured case study reuses approved homepage copy); homepage case-study CTA placeholder resolved to `/work#woodworking-toolkit`; route added to the technical sitemap. |
+| 2026-07-12 | Product Owner reviewed and approved the Work page and its copy; work merged to `main`. |
