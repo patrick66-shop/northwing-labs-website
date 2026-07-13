@@ -77,6 +77,7 @@ SaaS Development
 /services/business-automation
 /services/mobile-apps
 /services/saas-development
+/solutions
 /process
 /work
 /about
@@ -109,7 +110,6 @@ None — all five dedicated service pages are implemented.
 The following routes are referenced by project documentation or the current interface but are not implemented:
 
 ```text
-/solutions
 /privacy
 /terms
 ```
@@ -135,7 +135,8 @@ The following routes are referenced by project documentation or the current inte
 | Process page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/PROCESS-PAGE-CONTENT.md`, step definitions from approved SITEMAP §7) and page reviewed and approved by the Product Owner on 2026-07-12. |
 | Work page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/WORK-PAGE-CONTENT.md`, transparency labels per SITEMAP §6) and page reviewed and approved by the Product Owner on 2026-07-12. Homepage case-study CTA placeholder (`#`) now links to `/work#woodworking-toolkit`. |
 | About page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/ABOUT-PAGE-CONTENT.md`; Mission/Vision from approved 01_Brand_Foundation.md) and page reviewed and approved by the Product Owner on 2026-07-12. |
-| Technical sitemap | Implemented; tracks the currently public routes (now eleven, including `/about`) |
+| Solutions page | Implemented by Claude Code (2026-07-12); copy (recorded in `docs/SOLUTIONS-PAGE-CONTENT.md`; six approved SITEMAP §5 categories verbatim) and page reviewed and approved by the Product Owner on 2026-07-12. |
+| Technical sitemap | Implemented; tracks the currently public routes (now twelve, including `/solutions`) |
 | Codex governance | Transition files prepared for repository history |
 
 Do not mark a page approved merely because it exists. Product Owner review is required.
@@ -147,8 +148,12 @@ Do not mark a page approved merely because it exists. Product Owner review is re
 All five dedicated service pages are implemented and Product Owner
 approved. Next:
 
-1. Resolve or sequence the remaining links that target unimplemented
-   routes (`/solutions`, `/privacy`, `/terms`).
+1. Legal pages (`/privacy`, `/terms`) — the last unimplemented linked
+   routes. Drafts should receive careful Product Owner (and ideally
+   professional) review before publishing.
+
+Every navigation route now resolves; only the two footer legal links
+remain.
 
 The Business Automation grid revision is complete: it shipped inside
 PR #23 with Product Owner approval.
@@ -243,4 +248,6 @@ artifact.
 | 2026-07-12 | Implemented `/work` from drafted copy recorded in `docs/WORK-PAGE-CONTENT.md` (SITEMAP §6 transparency rule; featured case study reuses approved homepage copy); homepage case-study CTA placeholder resolved to `/work#woodworking-toolkit`; route added to the technical sitemap. |
 | 2026-07-12 | Product Owner reviewed and approved the Work page and its copy; work merged to `main` (PR #27). |
 | 2026-07-12 | Implemented `/about` from drafted copy recorded in `docs/ABOUT-PAGE-CONTENT.md` (SITEMAP §8 structure; approved Mission/Vision verbatim); added the route to the technical sitemap. |
-| 2026-07-12 | Product Owner reviewed and approved the About page and its copy; work merged to `main`. |
+| 2026-07-12 | Product Owner reviewed and approved the About page and its copy; work merged to `main` (PR #28). |
+| 2026-07-12 | Implemented `/solutions` from drafted copy recorded in `docs/SOLUTIONS-PAGE-CONTENT.md` (approved SITEMAP §5 categories verbatim); added the route to the technical sitemap. |
+| 2026-07-12 | Product Owner reviewed and approved the Solutions page and its copy; work merged to `main`. Every navigation route now resolves; `/privacy` and `/terms` are the last unimplemented links. |
