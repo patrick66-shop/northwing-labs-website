@@ -35,7 +35,7 @@ The NorthWing Labs logo links to the homepage.
 
 ### Headline
 
-**Understand the Problem. Build the Right Solution. Create Real Results.**
+**Your business has outgrown spreadsheets. Your systems should catch up.**
 
 ### Supporting Copy
 
@@ -184,6 +184,54 @@ From concept to working product, NorthWing Labs helps design and build software 
 ### CTA
 
 **Explore Our Services**
+
+---
+
+## 4a. Solutions Teaser (Homepage)
+
+**Status: APPROVED — reviewed and approved by the Product Owner on
+2026-07-13.** Card copy is verbatim from the approved
+`docs/SOLUTIONS-PAGE-CONTENT.md` §3; the bridging supporting-copy
+sentence and section framing were drafted for this section and
+approved alongside it.
+
+### Eyebrow
+
+`SOLUTIONS`
+
+### Headline
+
+**Start with the problem. We'll find the right technology.**
+
+(Verbatim reuse of the approved `/solutions` H1.)
+
+### Supporting Copy
+
+Most owners can describe exactly what is slowing the business down — not which technology fixes it.
+
+Here are three problems we solve again and again.
+
+### Solution Card 1 — Save Time and Reduce Manual Work
+
+Problem: Hours disappear into retyping, copying between systems, formatting documents, and chasing routine follow-up — work that repeats every week and never gets easier.
+
+What changes: Routine work runs itself; people do the work only people can do.
+
+### Solution Card 2 — Connect Disconnected Systems
+
+Problem: Email, spreadsheets, calendars, accounting, job boards — each tool works, but nothing talks to anything, so your people have become the integration.
+
+What changes: Information moves between systems on its own.
+
+### Solution Card 3 — Modernize Spreadsheet Processes
+
+Problem: The business runs on a heroic spreadsheet only one person fully understands — growing more fragile with every row, formula, and copy saved to a desktop.
+
+What changes: A real system: multi-user, reliable, and built for how the work flows.
+
+### CTA
+
+**See All Solutions** → `/solutions`
 
 ---
 
@@ -459,6 +507,36 @@ Account for budget, time, staffing, existing tools, and how the business actuall
 #### Copy
 
 Work closely with the person building the solution instead of navigating a large agency structure.
+
+---
+
+## 8a. About Teaser (Homepage)
+
+**Status: APPROVED — reviewed and approved by the Product Owner on
+2026-07-13.** The heading and second paragraph are verbatim from the
+approved `docs/ABOUT-PAGE-CONTENT.md` §1; the first paragraph is a
+condensed founder-story synthesis drafted for this section and
+approved alongside it.
+
+### Eyebrow
+
+`ABOUT NORTHWING LABS`
+
+### Headline
+
+**The business came first. The technology followed.**
+
+(Verbatim reuse of the approved `/about` H1.)
+
+### Supporting Copy
+
+NorthWing Labs was founded by a business-systems consultant who spent thirty years helping companies untangle how work gets done — then opened his own small business and built the software he needed to run it.
+
+Not a large agency. Not a generic dev shop. A practical technology partner.
+
+### CTA
+
+**Learn More About Us** → `/about`
 
 ---
 

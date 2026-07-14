@@ -22,10 +22,9 @@ export default function Hero() {
           <div className={styles.copy}>
             <SectionEyebrow>SOFTWARE • AI • AUTOMATION</SectionEyebrow>
             <SectionHeading as="h1" id="hero-heading" className={styles.headline}>
-              <span className={styles.headlineLine}>Understand the Problem.</span>{" "}
-              <span className={styles.headlineLine}>Build the Right Solution.</span>{" "}
+              <span className={styles.headlineLine}>Your business has outgrown spreadsheets.</span>{" "}
               <span className={`${styles.headlineLine} ${styles.headlineAccent}`}>
-                Create Real Results.
+                Your systems should catch up.
               </span>
             </SectionHeading>
             <SupportingCopy size="large" className={styles.supporting}>

@@ -17,10 +17,12 @@ The homepage should not feel like a collection of disconnected sections. Each se
 2. Hero
 3. Problem Recognition
 4. Services Overview
+4a. Solutions Teaser (Homepage)
 5. Business Outcomes
 6. How We Work
 7. Featured Work / Demonstration
 8. Why NorthWing Labs
+8a. About Teaser (Homepage)
 9. Results / Value
 10. Final CTA
 11. Footer
@@ -142,7 +144,7 @@ Eyebrow:
 
 Headline:
 
-**Understand the Problem. Build the Right Solution. Create Real Results.**
+**Your business has outgrown spreadsheets. Your systems should catch up.**
 
 Supporting copy:
 
@@ -338,6 +340,42 @@ Icon:
 - Maintain consistent icon size
 - Use live HTML text for all labels and descriptions
 - Avoid replacing approved icons with a generic icon library
+
+---
+
+## 6a. Solutions Teaser (Homepage)
+
+**Status: APPROVED** — reviewed and approved by the Product Owner on 2026-07-13 (see `docs/WEBSITE-CONTENT.md` §4a).
+
+### Purpose
+
+Bridge "what we build" (Services Overview) into "which problem is yours" before Business Outcomes answers "what changes." Previews the `/solutions` page rather than duplicating it — a subset of three categories, not all six, each linking through to the full Solutions page.
+
+### Recommended Eyebrow
+
+`SOLUTIONS`
+
+### Recommended Headline
+
+**Start with the problem. We'll find the right technology.** (verbatim reuse of the `/solutions` H1, so this section reads as a literal preview)
+
+### Featured Categories (3 of the approved 6 from `/solutions`)
+
+- Save Time and Reduce Manual Work
+- Connect Disconnected Systems
+- Modernize Spreadsheet Processes
+
+(The other three — Improve Customer Response, Improve Business Visibility, Build New Digital Products — are intentionally excluded here because their wording already echoes Business Outcomes and Problem Recognition elsewhere on the homepage.)
+
+### CTA
+
+**See All Solutions** → `/solutions`
+
+### Design Direction
+
+- Tinted section background — breaks the light/light/dark rhythm around it and echoes the tinted "Problem First" section on `/solutions` itself
+- Reuses the `SolutionGrid` card component from the Solutions page (no separate card system)
+- No per-card service links (that level of detail belongs on the full page, not the teaser)
 
 ---
 
@@ -552,6 +590,37 @@ Work closely with the person building the solution rather than navigating a larg
 NorthWing Labs is built around a simple belief:
 
 Small businesses should have access to useful software, AI, and automation without enterprise complexity or unnecessary agency overhead.
+
+---
+
+## 10a. About Teaser (Homepage)
+
+**Status: APPROVED** — reviewed and approved by the Product Owner on 2026-07-13 (see `docs/WEBSITE-CONTENT.md` §8a).
+
+### Purpose
+
+Personalize the trust case Why NorthWing Labs just made in the abstract, with the founder story, immediately before the Final CTA closes the page. Previews the `/about` page.
+
+### Recommended Eyebrow
+
+`ABOUT NORTHWING LABS`
+
+### Recommended Headline
+
+**The business came first. The technology followed.** (verbatim reuse of the `/about` H1)
+
+### Supporting Copy Direction
+
+Condensed founder-story synthesis (thirty years of business-systems consulting, opened his own small business, built the software he needed) plus the approved `/about` trust line, verbatim: "Not a large agency. Not a generic dev shop. A practical technology partner."
+
+### CTA
+
+**Learn More About Us** → `/about`
+
+### Design Direction
+
+- Light section background — keeps the tinted → light → dark alternation intact between Why NorthWing Labs (tinted) and Final CTA (dark)
+- Text-only statement band (reuses the `ServiceNarrative` component already used on service pages) — no card grid, this is a narrative beat, not an enumeration
 
 ---
 

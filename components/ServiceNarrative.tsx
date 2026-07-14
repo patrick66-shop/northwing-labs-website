@@ -2,6 +2,9 @@ import SectionWrapper from "./SectionWrapper";
 import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
+import SecondaryButton from "./SecondaryButton";
+import Reveal from "./Reveal";
+import styles from "./ServiceNarrative.module.css";
 
 type ServiceNarrativeProps = {
   eyebrow: string;
@@ -12,6 +15,8 @@ type ServiceNarrativeProps = {
   paragraphs: React.ReactNode[];
   variant?: "light" | "tinted" | "dark";
   id?: string;
+  /** Optional CTA rendered below the paragraphs (homepage teaser use). */
+  cta?: { label: string; href: string };
 };
 
 /**
@@ -27,6 +32,7 @@ export default function ServiceNarrative({
   paragraphs,
   variant = "tinted",
   id,
+  cta,
 }: ServiceNarrativeProps) {
   return (
     <SectionWrapper variant={variant} id={id} aria-labelledby={headingId}>
@@ -42,6 +48,16 @@ export default function ServiceNarrative({
             <SupportingCopy key={index}>{paragraph}</SupportingCopy>
           ))}
         </SectionHeader>
+        {cta ? (
+          <Reveal variant="up" delay={120} className={styles.ctaRow}>
+            <SecondaryButton
+              variant={variant === "dark" ? "on-dark" : "on-light"}
+              href={cta.href}
+            >
+              {cta.label}
+            </SecondaryButton>
+          </Reveal>
+        ) : null}
       </SiteContainer>
     </SectionWrapper>
   );

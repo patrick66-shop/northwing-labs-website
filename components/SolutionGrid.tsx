@@ -3,6 +3,7 @@ import SectionWrapper from "./SectionWrapper";
 import SiteContainer from "./SiteContainer";
 import SectionHeader from "./SectionHeader";
 import SupportingCopy from "./SupportingCopy";
+import SecondaryButton from "./SecondaryButton";
 import Reveal from "./Reveal";
 import styles from "./SolutionGrid.module.css";
 
@@ -28,6 +29,11 @@ type SolutionGridProps = {
   outcomeLabel?: string;
   /** Label before each card's service links. */
   linksLabel?: string;
+  /** Set false to omit each card's service-routing links (homepage teaser use). */
+  showLinks?: boolean;
+  /** Optional CTA rendered below the grid (homepage teaser use). */
+  cta?: { label: string; href: string };
+  variant?: "light" | "tinted" | "dark";
 };
 
 /**
@@ -45,9 +51,12 @@ export default function SolutionGrid({
   id,
   outcomeLabel = "What changes",
   linksLabel = "Where it usually leads",
+  showLinks = true,
+  cta,
+  variant = "light",
 }: SolutionGridProps) {
   return (
-    <SectionWrapper variant="light" id={id} aria-labelledby={headingId}>
+    <SectionWrapper variant={variant} id={id} aria-labelledby={headingId}>
       <SiteContainer>
         <SectionHeader
           eyebrow={eyebrow}
@@ -68,25 +77,34 @@ export default function SolutionGrid({
                   <span className={styles.outcomeLabel}>{outcomeLabel}:</span>{" "}
                   {solution.outcome}
                 </p>
-                <p className={styles.links}>
-                  <span className={styles.linksLabel}>{linksLabel}:</span>
-                  {solution.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={styles.link}
-                    >
-                      {link.label}
-                      <span className={styles.linkArrow} aria-hidden="true">
-                        →
-                      </span>
-                    </Link>
-                  ))}
-                </p>
+                {showLinks ? (
+                  <p className={styles.links}>
+                    <span className={styles.linksLabel}>{linksLabel}:</span>
+                    {solution.links.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={styles.link}
+                      >
+                        {link.label}
+                        <span className={styles.linkArrow} aria-hidden="true">
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </p>
+                ) : null}
               </article>
             </Reveal>
           ))}
         </ul>
+        {cta ? (
+          <Reveal variant="up" delay={120} className={styles.ctaRow}>
+            <SecondaryButton variant="on-light" href={cta.href}>
+              {cta.label}
+            </SecondaryButton>
+          </Reveal>
+        ) : null}
       </SiteContainer>
     </SectionWrapper>
   );

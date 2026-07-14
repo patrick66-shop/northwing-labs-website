@@ -17,6 +17,12 @@
   display: flex;
 }
 
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+}
+
 /* Light-family card (ProblemCard treatment). The card itself is not
    a link; the service links inside carry the interaction. */
 .card {

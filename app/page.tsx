@@ -2,11 +2,13 @@ import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
 import ProblemRecognition from "@/components/ProblemRecognition";
 import ServicesOverview from "@/components/ServicesOverview";
+import SolutionsTeaser from "@/components/SolutionsTeaser";
 import BusinessOutcomes from "@/components/BusinessOutcomes";
 import HowWeWork from "@/components/HowWeWork";
 import CaseStudySection from "@/components/CaseStudySection";
 import WhoWeWorkWith from "@/components/WhoWeWorkWith";
 import WhyNorthWing from "@/components/WhyNorthWing";
+import AboutTeaser from "@/components/AboutTeaser";
 import FinalCTA from "@/components/FinalCTA";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -56,11 +58,13 @@ export default function HomePage() {
       <Hero />
       <ProblemRecognition />
       <ServicesOverview />
+      <SolutionsTeaser />
       <BusinessOutcomes />
       <HowWeWork />
       <CaseStudySection {...WOODWORKING_CASE_STUDY} id="work" />
       <WhoWeWorkWith />
       <WhyNorthWing />
+      <AboutTeaser />
       <FinalCTA />
       <SiteFooter />
     </>

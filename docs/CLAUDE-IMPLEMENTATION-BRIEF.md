@@ -113,14 +113,18 @@ Implement the homepage in this order:
 2. Hero
 3. Problem Recognition
 4. Services Overview
+4a. Solutions Teaser (Homepage)
 5. Business Outcomes
 6. How We Work
 7. Featured Work / Demonstration
 8. Why NorthWing Labs
+8a. About Teaser (Homepage)
 9. Results / Value
 10. Final CTA
 11. Footer
 ```
+
+See `docs/HOMEPAGE-ARCHITECTURE.md` §6a and §10a for the two teaser sections' content and design direction.
 
 Do not reorder these sections without explicit approval.
 
@@ -400,6 +404,8 @@ Light Problem Recognition
 ↓
 Light Services
 ↓
+Tinted Solutions Teaser
+↓
 Dark Business Outcomes
 ↓
 Light Process
@@ -407,6 +413,8 @@ Light Process
 Dark Featured Work
 ↓
 Light Why NorthWing
+↓
+Light About Teaser
 ↓
 Light/Tinted Results
 ↓
