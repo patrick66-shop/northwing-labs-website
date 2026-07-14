@@ -148,7 +148,7 @@ Headline:
 
 Supporting copy:
 
-NorthWing Labs starts by understanding what is slowing your business down. Then we design practical software, AI tools, and automation systems that reduce manual work, improve efficiency, and help your business grow.
+NorthWing Labs replaces repetitive work, disconnected tools, and fragile spreadsheets with practical software, AI, and automation—so your team spends less time copying information, chasing follow-ups, and searching for answers, and more time serving customers and growing the business.
 
 Primary CTA:
 
